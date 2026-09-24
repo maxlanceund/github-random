@@ -1,0 +1,32 @@
+name: 收集GitHub随机项目
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: 安装依赖
+      run: pip install requests
+
+    - name: 运行收集脚本
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python scripts/collect.py
+
+    - name: 提交更新
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add data/random_repos.json
+        git commit -m "更新随机项目库 $(date +'%Y-%m-%d')" || echo "无变化"
+        git push
