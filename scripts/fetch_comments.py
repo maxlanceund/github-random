@@ -4,15 +4,19 @@ import os
 import sys
 import glob
 
+# 让输出目录基于脚本所在位置，无论在本地还是云端都对
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+OUT_DIR = os.path.join(PROJECT_DIR, "data", "comments")
+
 def main():
     if len(sys.argv) < 2:
         print("用法: python fetch_comments.py <YouTube视频链接>")
         sys.exit(1)
 
     url = sys.argv[1]
-    out_dir = os.path.expanduser("~/github-random/data/comments")
-    os.makedirs(out_dir, exist_ok=True)
-
+    os.makedirs(OUT_DIR, exist_ok=True)
+    print(f"输出目录: {OUT_DIR}")
     print(f"正在抓取评论: {url}")
     print("这可能需要几分钟，请耐心等待...")
 
@@ -22,7 +26,7 @@ def main():
         "--skip-download",
         "--extractor-args", "youtube:comment_sort=top;max_comments=100",
         "--no-warnings",
-        "-o", os.path.join(out_dir, "%(id)s.%(ext)s"),
+        "-o", os.path.join(OUT_DIR, "%(id)s.%(ext)s"),
         url
     ]
 
@@ -35,7 +39,7 @@ def main():
 
     print(result.stdout[-2000:])
 
-    json_files = sorted(glob.glob(os.path.join(out_dir, "*.info.json")),
+    json_files = sorted(glob.glob(os.path.join(OUT_DIR, "*.info.json")),
                         key=os.path.getmtime, reverse=True)
     if not json_files:
         print("没有找到输出文件")
