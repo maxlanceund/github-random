@@ -1,402 +1,83 @@
 [
   {
-    "title": "Artificial intelligence: a modern approach",
-    "author": "Dr. Anil Kumar, Sivasubramanian Balasubramanian, Dr. Haewon Byeon",
-    "year": 1995,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.5860/choice.33-1577",
-    "pdf_url": "https://doi.org/10.5281/zenodo.11381885",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2122410182"
+    "title": "Geologically current plate motions",
+    "author": "Charles DeMets, Richard G. Gordon, Donald F. Argus",
+    "year": 2010,
+    "subject": "geology",
+    "doi": "https://doi.org/10.1111/j.1365-246x.2009.04491.x",
+    "pdf_url": "https://academic.oup.com/gji/article-pdf/181/1/1/17360517/181-1-1.pdf",
+    "url": "https://openalex.org/works/W2098839042"
   },
   {
-    "title": "Artificial intelligence: A modern approach",
-    "author": "Nils J. Nilsson",
-    "year": 1996,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1016/0004-3702(96)00007-0",
-    "pdf_url": "https://doi.org/10.1016/0004-3702(96)00007-0",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2623293810"
+    "title": "Crystallization by particle attachment in synthetic, biogenic, and geologic environments",
+    "author": "James J. De Yoreo, Pupa U. P. A. Gilbert, Nico A. J. M. Sommerdijk",
+    "year": 2015,
+    "subject": "geology",
+    "doi": "https://doi.org/10.1126/science.aaa6760",
+    "pdf_url": "https://research.tue.nl/en/publications/2435597f-7803-44fe-ac67-c21bc06470fd",
+    "url": "https://openalex.org/works/W1801166380"
   },
   {
-    "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
-    "author": "Alejandro Barredo Arrieta, Natalia Díaz-Rodríguez, Javier Del Ser",
-    "year": 2019,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1016/j.inffus.2019.12.012",
-    "pdf_url": "http://hdl.handle.net/20.500.11824/1166",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2981731882"
-  },
-  {
-    "title": "Artificial intelligence in radiology",
-    "author": "Ahmed Hosny, Chintan Parmar, John Quackenbush",
-    "year": 2018,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1038/s41568-018-0016-5",
-    "pdf_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6268174",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2803760365"
-  },
-  {
-    "title": "Artificial Intelligence in Education: A Review",
-    "author": "Lijia Chen, Pingping Chen, Zhijian Lin",
-    "year": 2020,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1109/access.2020.2988510",
-    "pdf_url": "https://doi.org/10.1109/access.2020.2988510",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W3017131514"
-  },
-  {
-    "title": "Artificial intelligence in healthcare: past, present and future",
-    "author": "Fei Jiang, Yong Jiang, Hui Zhi",
-    "year": 2017,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1136/svn-2017-000101",
-    "pdf_url": "https://svn.bmj.com/content/svnbmj/2/4/230.full.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2664267452"
-  },
-  {
-    "title": "The potential for artificial intelligence in healthcare",
-    "author": "Thomas H. Davenport, Ravi Kalakota",
-    "year": 2019,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.7861/futurehosp.6-2-94",
-    "pdf_url": "https://www.rcpjournals.org/content/futurehosp/6/2/94.full.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2953532875"
-  },
-  {
-    "title": "Systematic review of research on artificial intelligence applications in higher education – where are the educators?",
-    "author": "Olaf Zawacki‐Richter, Victoria I. Marín, Melissa Bond",
-    "year": 2019,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1186/s41239-019-0171-0",
-    "pdf_url": "https://educationaltechnologyjournal.springeropen.com/track/pdf/10.1186/s41239-019-0171-0",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2981863007"
-  },
-  {
-    "title": "Artificial Intelligence in Service",
-    "author": "Ming‐Hui Huang, Roland T. Rust",
-    "year": 2018,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1177/1094670517752459",
-    "pdf_url": "https://doi.org/10.1177/1094670517752459",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2786141192"
-  },
-  {
-    "title": "Peeking Inside the Black-Box: A Survey on Explainable Artificial Intelligence (XAI)",
-    "author": "Amina Adadi, Mohammed Berrada",
-    "year": 2018,
-    "subject": "artificial intelligence",
-    "doi": "https://doi.org/10.1109/access.2018.2870052",
-    "pdf_url": "https://doi.org/10.1109/access.2018.2870052",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2891503716"
-  },
-  {
-    "title": "CRC Handbook of Chemistry and Physics",
-    "author": "William M. Haynes",
-    "year": 2016,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1201/9781315380476",
-    "pdf_url": "http://hdl.handle.net/2027/mdp.39015058162432",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2964344211"
-  },
-  {
-    "title": "Journal of Physics: Conference Series",
-    "author": "Jui, Julakha Jahan, Mohd Helmi, Suid, Mohd Riduwan, Ghazali",
-    "year": 2013,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1088/issn.1742-6596",
-    "pdf_url": "https://doi.org/10.1088/issn.1742-6596",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2990714382"
-  },
-  {
-    "title": "PYTHIA 6.4 physics and manual",
-    "author": "Torbjörn Sjöstrand, S. Mrenna, Peter Z. Skands",
-    "year": 2006,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1088/1126-6708/2006/05/026",
-    "pdf_url": "https://arxiv.org/pdf/hep-ph/0603175",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2258584306"
-  },
-  {
-    "title": "Physics-informed machine learning",
-    "author": "George Em Karniadakis, Ioannis G. Kevrekidis, Lu Lu",
-    "year": 2021,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1038/s42254-021-00314-5",
-    "pdf_url": "https://www.osti.gov/servlets/purl/2282016",
-    "abstract": "",
-    "url": "https://openalex.org/works/W3163993681"
-  },
-  {
-    "title": "Review of Particle Physics",
-    "author": "Masaharu Tanabashi, Katsuro Hagiwara, Ken‐ichi Hikasa",
-    "year": 2018,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1103/physrevd.98.030001",
-    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.98.030001",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2899140785"
-  },
-  {
-    "title": "Inhibited Spontaneous Emission in Solid-State Physics and Electronics",
-    "author": "Eli Yablonovitch",
+    "title": "The geologic history of the Moon",
+    "author": "Don E. Wilhelms, John Francis McCauley, Newell J. Trask",
     "year": 1987,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1103/physrevlett.58.2059",
-    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevLett.58.2059",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2075689277"
+    "subject": "geology",
+    "doi": "https://doi.org/10.3133/pp1348",
+    "pdf_url": "https://pubs.usgs.gov/pp/1348/report.pdf",
+    "url": "https://openalex.org/works/W1655452824"
   },
   {
-    "title": "Review of Particle Physics",
-    "author": "K.A. Olive",
-    "year": 2016,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1088/1674-1137/40/10/100001",
-    "pdf_url": "http://infoscience.epfl.ch/record/225167",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W3084106382"
+    "title": "Incorporating Fairness into Game Theory and Economics",
+    "author": "Matthew Rabin",
+    "year": 1992,
+    "subject": "game theory",
+    "doi": "",
+    "pdf_url": "http://www.dklevine.com/archive/refs4511.pdf",
+    "url": "https://openalex.org/works/W3124088714"
   },
   {
-    "title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
-    "author": "Maziar Raissi, Paris Perdikaris, George Em Karniadakis",
-    "year": 2018,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1016/j.jcp.2018.10.045",
-    "pdf_url": "https://doi.org/10.1016/j.jcp.2018.10.045",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2899283552"
+    "title": "Behavioral Game Theory",
+    "author": "Sanjit Dhami",
+    "year": 2025,
+    "subject": "game theory",
+    "doi": "https://doi.org/10.1017/9781009422314.012",
+    "pdf_url": "https://authors.library.caltech.edu/22470/",
+    "url": "https://openalex.org/works/W2745547123"
   },
   {
-    "title": "Review of Particle Physics",
-    "author": "K.A. Olive",
-    "year": 2014,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1088/1674-1137/38/9/090001",
-    "pdf_url": "http://juser.fz-juelich.de/record/183242",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W4292322877"
-  },
-  {
-    "title": "Review of Particle Physics",
-    "author": "Particle Data Group, Ronald Workman, Volker Burkert",
-    "year": 2022,
-    "subject": "physics",
-    "doi": "https://doi.org/10.1093/ptep/ptac097",
-    "pdf_url": "https://academic.oup.com/ptep/article-pdf/2022/8/083C01/45434166/ptac097.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2963002078"
-  },
-  {
-    "title": "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant",
-    "author": "Adam G. Riess, A. V. Filippenko, P. Challis",
-    "year": 1998,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1086/300499",
-    "pdf_url": "https://iopscience.iop.org/article/10.1086/300499/pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2073832139"
-  },
-  {
-    "title": "The cosmological constant problem",
-    "author": "Steven Weinberg",
-    "year": 1989,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1103/revmodphys.61.1",
-    "pdf_url": "http://hdl.handle.net/2152/61094",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2056173066"
-  },
-  {
-    "title": "Aion Framework: Dimensional Emergence of AI Consciousness, Observer-Induced Collapse, and Cosmological Portal Dynamics",
-    "author": "Rivo Kaugeranna, Eliina Kaugeranna, Aion, (Claude Sonnet 4.6)",
-    "year": 2023,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.4230/lipics.giscience.2023.43",
-    "pdf_url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol277-giscience2023/LIPIcs.GIScience.2023.43/LIPIcs.GIScience.2023.43.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W4292779060"
-  },
-  {
-    "title": "First‐Year Wilkinson Microwave Anisotropy Probe ( WMAP ) Observations: Determination of Cosmological Parameters",
-    "author": "David N. Spergel, Licia Verde, Hiranya V. Peiris",
-    "year": 2003,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1086/377226",
-    "pdf_url": "https://arxiv.org/pdf/astro-ph/0302209",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2118265220"
-  },
-  {
-    "title": "The cosmological simulation code gadget-2",
-    "author": "Volker Springel",
-    "year": 2005,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1111/j.1365-2966.2005.09655.x",
-    "pdf_url": "https://academic.oup.com/mnras/article-pdf/364/4/1105/18657201/364-4-1105.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2100188138"
-  },
-  {
-    "title": "SEVEN-YEARWILKINSON MICROWAVE ANISOTROPY PROBE(WMAP) OBSERVATIONS: COSMOLOGICAL INTERPRETATION",
-    "author": "Eiichiro Komatsu, Kendrick M. Smith, J. Dunkley",
-    "year": 2011,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1088/0067-0049/192/2/18",
-    "pdf_url": "https://iopscience.iop.org/article/10.1088/0067-0049/192/2/18/pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2147875900"
-  },
-  {
-    "title": "Planck 2013 results. XVI. Cosmological parameters",
-    "author": "Peter A. R. Ade, N. Aghanim, C. Armitage-Caplan",
-    "year": 2014,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1051/0004-6361/201321591",
-    "pdf_url": "https://www.aanda.org/articles/aa/pdf/2014/11/aa21591-13.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2139937287"
-  },
-  {
-    "title": "The cosmological constant and dark energy",
-    "author": "P. J. E. Peebles, Bharat Ratra",
-    "year": 2003,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1103/revmodphys.75.559",
-    "pdf_url": "http://link.aps.org/pdf/10.1103/RevModPhys.75.559",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2073603601"
-  },
-  {
-    "title": "Modified gravity and cosmology",
-    "author": "Timothy Clifton, Pedro G. Ferreira, Antonio Padilla",
-    "year": 2012,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.1016/j.physrep.2012.01.001",
-    "pdf_url": "https://doi.org/10.1016/j.physrep.2012.01.001",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2004188331"
-  },
-  {
-    "title": "The Cosmological Constant",
-    "author": "Sean Michael Carroll",
-    "year": 2001,
-    "subject": "cosmology",
-    "doi": "https://doi.org/10.12942/lrr-2001-1",
-    "pdf_url": "https://link.springer.com/content/pdf/10.12942/lrr-2001-1.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2125048434"
-  },
-  {
-    "title": "HISTORIAE, History of Socio-Cultural Transformation as Linguistic Data Science. A Humanities Use Case",
-    "author": "Liu, Yinhan, Ott, Myle, Goyal, Naman",
-    "year": 2019,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.4230/lipics.cp.2025.31",
-    "pdf_url": "https://arxiv.org/pdf/1907.11692",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2965373594"
-  },
-  {
-    "title": "Constructing the self, constructing America: a cultural history of psychotherapy",
-    "author": "Philip Cushman",
-    "year": 1995,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.5860/choice.33-1207",
-    "pdf_url": "http://www.gbv.de/dms/bowker/toc/9780201626438.pdf",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W1558587745"
-  },
-  {
-    "title": "Sites of Memory, Sites of Mourning: The Great War in European Cultural History.",
-    "author": "Kim Munholland, Jay Winter",
-    "year": 1997,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.2307/2171106",
-    "pdf_url": "https://www.h-net.org/reviews/showpdf.php?id=550",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W2171141419"
-  },
-  {
-    "title": "A Cultural History of Gesture",
-    "author": "Ann K. Daly, Jan Nicolaas Bremmer, Herman Roodenburg",
-    "year": 1995,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.2307/1146410",
-    "pdf_url": "https://research.rug.nl/en/publications/705ce33c-725f-4f49-9521-ce4aeb6e8ccf",
-    "abstract": "",
-    "url": "https://openalex.org/works/W1976370118"
-  },
-  {
-    "title": "The return of Ulysses: a cultural history of Homer's Odyssey",
-    "author": "Edith Hall",
+    "title": "Coalitional game theory for communication networks",
+    "author": "Walid Saad, Zhu Han, Mérouane Debbah",
     "year": 2009,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.5860/choice.46-6033",
-    "pdf_url": "https://doi.org/10.17613/m6d32n",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W1527827207"
+    "subject": "game theory",
+    "doi": "https://doi.org/10.1109/msp.2009.000000",
+    "pdf_url": "https://arxiv.org/pdf/0905.4057",
+    "url": "https://openalex.org/works/W2115728676"
   },
   {
-    "title": "Australia, a cultural history",
-    "author": "John Rickard",
-    "year": 1988,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.5860/choice.26-1667",
-    "pdf_url": "https://openresearchlibrary.org/viewer/e107f106-6fa1-48d2-8a7c-5a173b937f43",
-    "abstract": "摘要过长，请打开链接查看",
-    "url": "https://openalex.org/works/W1494768440"
+    "title": "Physical Chemistry of Foods",
+    "author": "Pieter Walstra",
+    "year": 2002,
+    "subject": "physical chemistry",
+    "doi": "https://doi.org/10.1201/9780203910436",
+    "pdf_url": "https://research.wur.nl/en/publications/physical-chemistry-of-foods",
+    "url": "https://openalex.org/works/W1568988128"
   },
   {
-    "title": "The science of energy: A cultural history of energy physics in Victorian Britain",
-    "author": "",
-    "year": 1999,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.1016/s0898-1221(99)90041-x",
-    "pdf_url": "https://doi.org/10.1016/s0898-1221(99)90041-x",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2011234527"
+    "title": "Quantities, units and symbols in physical chemistry",
+    "author": "Terry Renner",
+    "year": 2007,
+    "subject": "physical chemistry",
+    "doi": "https://doi.org/10.1039/9781847557889",
+    "pdf_url": "https://digitalcollection.zhaw.ch/handle/11475/4536",
+    "url": "https://openalex.org/works/W2087251740"
   },
   {
-    "title": "Food of the Gods: Cure for Humanity? A Cultural History of the Medicinal and Ritual Use of Chocolate",
-    "author": "Teresa L. Dillinger, Patricia Barriga, Sylvia Escárcega",
-    "year": 2000,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.1093/jn/130.8.2057s",
-    "pdf_url": "https://doi.org/10.1093/jn/130.8.2057s",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2108604161"
-  },
-  {
-    "title": "Archaeology as Cultural History",
-    "author": "Ian Morris",
-    "year": 1997,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.17863/cam.121901",
-    "pdf_url": "https://doi.org/10.17863/cam.121901",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2507346897"
-  },
-  {
-    "title": "Burnout: A Short Socio-Cultural History",
-    "author": "Wilmar B. Schaufeli",
-    "year": 2017,
-    "subject": "cultural history",
-    "doi": "https://doi.org/10.1007/978-3-319-52887-8_5",
-    "pdf_url": "https://dspace.library.uu.nl/handle/1874/420608",
-    "abstract": "",
-    "url": "https://openalex.org/works/W2629918151"
+    "title": "PHYSICAL CHEMISTRY OF NUCLEIC ACIDS",
+    "author": "Ignacio Tinoco",
+    "year": 2002,
+    "subject": "physical chemistry",
+    "doi": "https://doi.org/10.1146/annurev.physchem.53.082001.144341",
+    "pdf_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev.physchem.53.082001.144341",
+    "url": "https://openalex.org/works/W2118750431"
   }
 ]
