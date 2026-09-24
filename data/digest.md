@@ -3,26 +3,26 @@
 随机抽取 5 个学科，每科 2 篇。
 
 
-## linguistics
+## geology
 
-抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=linguistics&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue
-
-
-## macroeconomics
-
-抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=macroeconomics&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue
+抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=geology&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue%2Cpublication_year%3A2026
 
 
-## ecology
+## cosmology
 
-抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=ecology&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue
-
-
-## physics
-
-抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=physics&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue
+抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=cosmology&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue%2Cpublication_year%3A2026
 
 
-## neuroscience
+## ancient civilization
 
-抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=neuroscience&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue
+抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=ancient+civilization&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue%2Cpublication_year%3A2026
+
+
+## mathematics
+
+抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=mathematics&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue%2Cpublication_year%3A2026
+
+
+## climate change
+
+抓取失败: 503 Server Error: Service Unavailable for url: https://api.openalex.org/works?search=climate+change&per-page=2&sort=relevance_score%3Adesc&filter=is_oa%3Atrue%2Cpublication_year%3A2026
