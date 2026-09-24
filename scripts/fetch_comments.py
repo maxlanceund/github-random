@@ -3,11 +3,25 @@ import json
 import os
 import sys
 import glob
+import time
+import requests
 
-# 让输出目录基于脚本所在位置，无论在本地还是云端都对
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 OUT_DIR = os.path.join(PROJECT_DIR, "data", "comments")
+
+def translate_text(text):
+    if not text:
+        return ""
+    url = "https://api.mymemory.translated.net/get"
+    params = {"q": text, "langpair": "en|zh-CN"}
+    try:
+        resp = requests.get(url, params=params, timeout=15)
+        data = resp.json()
+        return data["responseData"]["translatedText"]
+    except Exception as e:
+        print(f"翻译失败: {e}")
+        return text
 
 def main():
     if len(sys.argv) < 2:
@@ -53,7 +67,7 @@ def main():
 
     comments = data.get("comments", [])
     title = data.get("title", "未知标题")
-    print(f"共抓取 {len(comments)} 条评论")
+    print(f"共抓取 {len(comments)} 条评论，开始翻译...")
 
     txt_file = latest.replace(".info.json", ".txt")
     with open(txt_file, "w", encoding="utf-8") as f:
@@ -61,13 +75,22 @@ def main():
         f.write(f"链接: {url}\n")
         f.write(f"共 {len(comments)} 条评论\n")
         f.write("=" * 60 + "\n\n")
+
         for i, c in enumerate(comments[:100], 1):
             author = c.get("author", "匿名")
             text = c.get("text", "")
             likes = c.get("like_count", 0)
+
+            zh = translate_text(text)
+            time.sleep(0.3)  # 避免请求过快
+
             f.write(f"[{i}] {author}  👍{likes}\n")
-            f.write(f"{text}\n")
+            f.write(f"原: {text}\n")
+            f.write(f"中: {zh}\n")
             f.write("-" * 60 + "\n")
+
+            if i % 10 == 0:
+                print(f"已翻译 {i}/100 条")
 
     print(f"文本文件已保存: {txt_file}")
 
