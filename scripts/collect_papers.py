@@ -72,7 +72,13 @@ def main():
     seen = set()
 
     # 每次随机抽 15 个学科
-    selected = random.sample(SUBJECTS, 3)
+    PHYSICS = ["physics", "quantum mechanics", "cosmology", "astrophysics",
+               "particle physics", "condensed matter", "relativity", "thermodynamics",
+               "optics", "nuclear physics", "quantum field theory", "string theory",
+               "gravitational waves", "dark matter", "solid state physics"]
+
+    # 固定抓 2 个物理方向 + 随机 1 个其他学科
+    selected = random.sample(PHYSICS, 2) + random.sample([s for s in SUBJECTS if s not in PHYSICS], 1)
     print(f"本次抓取学科: {', '.join(selected)}")
 
     for subject in selected:
