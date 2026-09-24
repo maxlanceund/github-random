@@ -79,5 +79,86 @@
     "doi": "https://doi.org/10.1146/annurev.physchem.53.082001.144341",
     "pdf_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev.physchem.53.082001.144341",
     "url": "https://openalex.org/works/W2118750431"
+  },
+  {
+    "title": "Journal of Entomology and Zoology Studies",
+    "author": "LONGO, CATERINA, Altınsaçlı, Selçuk, Yardımcı, Cumhur Haldun",
+    "year": 2016,
+    "subject": "zoology",
+    "doi": "https://doi.org/10.22271/j.ento",
+    "pdf_url": "https://doi.org/10.22271/j.ento",
+    "url": "https://openalex.org/works/W2763679742"
+  },
+  {
+    "title": "Bulletin of the Museum of Comparative Zoology",
+    "author": "Museum of Comparative Zoology",
+    "year": 2019,
+    "subject": "zoology",
+    "doi": "https://doi.org/10.3099/harv",
+    "pdf_url": "https://mczbase.mcz.harvard.edu/specimen_images/publications/Bulletin_164_02.pdf",
+    "url": "https://openalex.org/works/W4230470331"
+  },
+  {
+    "title": "PROCEEDINGS OF THE ZOOLOGICAL SOCIETY OF LONDON.",
+    "author": "Joseph Sabine",
+    "year": 1833,
+    "subject": "zoology",
+    "doi": "https://doi.org/10.1111/j.1469-7998.1833.tb06418.x",
+    "pdf_url": "https://www.biodiversitylibrary.org/part/382427",
+    "url": "https://openalex.org/works/W4232261224"
+  },
+  {
+    "title": "Unemployment: macroeconomic performance and the labour market",
+    "author": "Richard Layard, Stephen John Nickell, Richard Jackman",
+    "year": 1992,
+    "subject": "macroeconomics",
+    "doi": "https://doi.org/10.5860/choice.29-6396",
+    "pdf_url": "http://www.gbv.de/dms/bowker/toc/9780198284338.pdf",
+    "url": "https://openalex.org/works/W1965561045"
+  },
+  {
+    "title": "The Macroeconomics of Happiness",
+    "author": "Rafael Di Tella, Robert MacCulloch, Andrew J. Oswald",
+    "year": 2003,
+    "subject": "macroeconomics",
+    "doi": "https://doi.org/10.1162/003465303772815745",
+    "pdf_url": "https://wrap.warwick.ac.uk/id/eprint/314/1/WRAP_Oswald_finaldmo30jul.pdf",
+    "url": "https://openalex.org/works/W2911752419"
+  },
+  {
+    "title": "Depression Babies: Do Macroeconomic Experiences Affect Risk Taking?*",
+    "author": "Ulrike Malmendier, Stefan Nagel",
+    "year": 2011,
+    "subject": "macroeconomics",
+    "doi": "https://doi.org/10.1093/qje/qjq004",
+    "pdf_url": "https://academic.oup.com/qje/article-pdf/126/1/373/17088890/qjq004.pdf",
+    "url": "https://openalex.org/works/W2156667558"
+  },
+  {
+    "title": "Global cancer statistics",
+    "author": "Ahmedin Jemal, Freddie Bray, Jacques Ferlay",
+    "year": 2011,
+    "subject": "statistics",
+    "doi": "https://doi.org/10.3322/caac.20107",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.3322/caac.20107",
+    "url": "https://openalex.org/works/W2106787323"
+  },
+  {
+    "title": "Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries",
+    "author": "Hyuna Sung, Adalberto M. Filho, Mathieu Laversanne",
+    "year": 2021,
+    "subject": "statistics",
+    "doi": "https://doi.org/10.3322/caac.21660",
+    "pdf_url": "https://doi.org/10.3322/caac.21660",
+    "url": "https://openalex.org/works/W3128646645"
+  },
+  {
+    "title": "Global cancer statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries",
+    "author": "Freddie Bray, Jacques Ferlay, Isabelle Soerjomataram",
+    "year": 2018,
+    "subject": "statistics",
+    "doi": "https://doi.org/10.3322/caac.21492",
+    "pdf_url": "https://acsjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.3322/caac.21492",
+    "url": "https://openalex.org/works/W2889646458"
   }
 ]
