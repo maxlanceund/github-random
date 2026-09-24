@@ -1,0 +1,31 @@
+name: 每日学术速递
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: 安装依赖
+      run: pip install requests urllib3
+
+    - name: 生成速递
+      run: python scripts/daily_digest.py
+      continue-on-error: true
+
+    - name: 提交结果
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add data/digest.md || true
+        git commit -m "更新速递 $(date +'%Y-%m-%d')" || echo "无变化"
+        git push || echo "推送失败"
