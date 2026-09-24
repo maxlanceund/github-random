@@ -1,0 +1,31 @@
+name: 抓取学术论文
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: 安装依赖
+      run: pip install requests urllib3
+
+    - name: 抓取论文
+      run: python scripts/collect_papers.py
+      continue-on-error: true
+
+    - name: 提交结果
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add data/papers.json || true
+        git commit -m "更新论文库 $(date +'%Y-%m-%d')" || echo "无变化"
+        git push || echo "推送失败"
