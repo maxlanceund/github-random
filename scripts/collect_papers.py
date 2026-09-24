@@ -60,7 +60,7 @@ def search_openalex(query, per_page=3):
         "search": query,
         "per-page": per_page,
         "sort": "relevance_score:desc",
-        "filter": "is_oa:true"
+        "filter": f"is_oa:true,publication_year:{__import__('datetime').datetime.now().year}"
     }
     headers = {"User-Agent": "paper-random/1.0 (mailto:maxlanceund@example.com)"}
     resp = requests.get(url, params=params, headers=headers, timeout=30, verify=False)
