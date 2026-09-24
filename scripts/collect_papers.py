@@ -109,10 +109,24 @@ def main():
         time.sleep(1.5)  # 拉长间隔，避免限流
 
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
-    with open(OUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_papers, f, ensure_ascii=False, indent=2)
 
-    print(f"\n已保存 {len(all_papers)} 篇论文")
+    # 读取旧数据，合并去重
+    old_papers = []
+    if os.path.exists(OUT_FILE):
+        with open(OUT_FILE, "r", encoding="utf-8") as f:
+            old_papers = json.load(f)
+
+    merged = {}
+    for p in old_papers + all_papers:
+        key = p.get("url") or p.get("title")
+        if key:
+            merged[key] = p
+    result = list(merged.values())
+
+    with open(OUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+
+    print(f"\n本次新增 {len(all_papers)} 篇，池子里现在共有 {len(result)} 篇")
 
 if __name__ == "__main__":
     main()
