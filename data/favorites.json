@@ -6,5 +6,35 @@
     "stars": 245624,
     "language": "未知",
     "keyword": "web"
+  },
+  {
+    "name": "Snailclimb/JavaGuide",
+    "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+    "url": "https://github.com/Snailclimb/JavaGuide",
+    "stars": 158846,
+    "language": "JavaScript",
+    "keyword": "AI"
+  },
+  {
+    "name": "TGX-Android/Telegram-X",
+    "description": "The main repository of Telegram X — official alternative Telegram client for Android.",
+    "url": "https://github.com/TGX-Android/Telegram-X",
+    "stars": 6015,
+    "language": "Java",
+    "keyword": "android client",
+    "apk_name": "Telegram-X-0.29.0.1813-legacy.apk",
+    "apk_url": "https://github.com/TGX-Android/Telegram-X/releases/download/v0.29.0.1813/Telegram-X-0.29.0.1813-legacy.apk",
+    "apk_size": 32026563
+  },
+  {
+    "name": "super-productivity/super-productivity",
+    "description": "Super Productivity is an advanced todo list app with integrated Timeboxing and time tracking capabilities. It also comes with integrations for Jira, GitLab, GitHub and Open Project.",
+    "url": "https://github.com/super-productivity/super-productivity",
+    "stars": 22222,
+    "language": "TypeScript",
+    "keyword": "android app",
+    "apk_name": "app-play-release.apk",
+    "apk_url": "https://github.com/super-productivity/super-productivity/releases/download/v19.1.0/app-play-release.apk",
+    "apk_size": 22640772
   }
 ]

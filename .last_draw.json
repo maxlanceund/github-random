@@ -1,8 +1,11 @@
 {
-  "name": "trimstray/the-book-of-secret-knowledge",
-  "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
-  "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
-  "stars": 245624,
-  "language": "未知",
-  "keyword": "web"
+  "name": "Dar9586/NClientV2",
+  "description": "An unofficial NHentai android client",
+  "url": "https://github.com/Dar9586/NClientV2",
+  "stars": 2069,
+  "language": "Java",
+  "keyword": "android client",
+  "apk_name": "NClientV2.3.0.5.Debug.apk",
+  "apk_url": "https://github.com/Dar9586/NClientV2/releases/download/3.0.5/NClientV2.3.0.5.Debug.apk",
+  "apk_size": 8037665
 }

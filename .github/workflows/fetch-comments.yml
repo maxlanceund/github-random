@@ -1,0 +1,32 @@
+name: 抓取YouTube评论
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'YouTube视频链接'
+        required: true
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: 安装 yt-dlp
+      run: pip install yt-dlp
+
+    - name: 抓取评论
+      run: python scripts/fetch_comments.py "${{ github.event.inputs.url }}"
+
+    - name: 提交结果
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add data/comments/
+        git commit -m "抓取评论 $(date +'%Y-%m-%d %H:%M')" || echo "无变化"
+        git push
