@@ -214,5 +214,59 @@
     "doi": "",
     "pdf_url": "http://eduq.info/xmlui/handle/11515/16435",
     "url": "https://openalex.org/works/W353888125"
+  },
+  {
+    "title": "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant",
+    "author": "Adam G. Riess, A. V. Filippenko, P. Challis",
+    "year": 1998,
+    "subject": "cosmology",
+    "doi": "https://doi.org/10.1086/300499",
+    "pdf_url": "https://iopscience.iop.org/article/10.1086/300499/pdf",
+    "url": "https://openalex.org/works/W2073832139"
+  },
+  {
+    "title": "The cosmological constant problem",
+    "author": "Steven Weinberg",
+    "year": 1989,
+    "subject": "cosmology",
+    "doi": "https://doi.org/10.1103/revmodphys.61.1",
+    "pdf_url": "http://hdl.handle.net/2152/61094",
+    "url": "https://openalex.org/works/W2056173066"
+  },
+  {
+    "title": "Aion Framework: Dimensional Emergence of AI Consciousness, Observer-Induced Collapse, and Cosmological Portal Dynamics",
+    "author": "Rivo Kaugeranna, Eliina Kaugeranna, Aion, (Claude Sonnet 4.6)",
+    "year": 2023,
+    "subject": "cosmology",
+    "doi": "https://doi.org/10.4230/lipics.giscience.2023.43",
+    "pdf_url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol277-giscience2023/LIPIcs.GIScience.2023.43/LIPIcs.GIScience.2023.43.pdf",
+    "url": "https://openalex.org/works/W4292779060"
+  },
+  {
+    "title": "Information Theory: Coding Theorems for Discrete Memoryless Systems",
+    "author": "Imre Csiszár, János Körner",
+    "year": 2014,
+    "subject": "information theory",
+    "doi": "",
+    "pdf_url": "http://ci.nii.ac.jp/ncid/BA00859626",
+    "url": "https://openalex.org/works/W1549664537"
+  },
+  {
+    "title": "Science and Information Theory",
+    "author": "Léon Brillouin, R. W. Hellwarth",
+    "year": 1956,
+    "subject": "information theory",
+    "doi": "https://doi.org/10.1063/1.3059856",
+    "pdf_url": "http://hdl.handle.net/2027/mdp.39015036233297",
+    "url": "https://openalex.org/works/W1992649154"
+  },
+  {
+    "title": "The role of relative entropy in quantum information theory",
+    "author": "Vlatko Vedral",
+    "year": 2002,
+    "subject": "information theory",
+    "doi": "https://doi.org/10.1103/revmodphys.74.197",
+    "pdf_url": "https://arxiv.org/pdf/quant-ph/0102094",
+    "url": "https://openalex.org/works/W2151773880"
   }
 ]
