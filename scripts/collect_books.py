@@ -1,64 +1,67 @@
 import requests
 import json
 import os
-import random
 
-# 古腾堡计划：7万+本公共领域书籍，全部免费合法
-API = "https://gutendex.com/books"
-
-def fetch_books(page=1, language=None):
-    params = {"page": page}
-    if language:
-        params["languages"] = language
-    headers = {"User-Agent": "book-random"}
-    resp = requests.get(API, params=params, headers=headers, timeout=30)
+def fetch_category(api, category, limit=50):
+    params = {
+        "action": "query",
+        "list": "categorymembers",
+        "cmtitle": f"Category:{category}",
+        "cmlimit": limit,
+        "cmnamespace": "0",   # 关键：只要主命名空间（真正的作品页）
+        "format": "json"
+    }
+    headers = {"User-Agent": "book-random/1.0"}
+    resp = requests.get(api, params=params, headers=headers, timeout=30)
     resp.raise_for_status()
     return resp.json()
 
-def main():
-    # 随机抓几页，混合多语言
-    all_books = []
-    pages = random.sample(range(1, 50), 5)  # 随机抽5页
-    for p in pages:
+ZH_API = "https://zh.wikisource.org/w/api.php"
+ZH_CATS = ["四庫全書", "中國古典小說", "唐詩", "宋詞",
+           "論語", "道德經", "莊子", "史記", "資治通鑑"]
+
+EN_API = "https://en.wikisource.org/w/api.php"
+EN_CATS = ["Novels", "Poems", "Essays", "Plays",
+           "Philosophy", "Science", "History", "Short stories"]
+
+def collect(api, cats, lang, base_url):
+    books = []
+    for cat in cats:
         try:
-            data = fetch_books(page=p)
-            for book in data.get("results", []):
-                # 优先选有中文或英文的
-                langs = book.get("languages", [])
-                if not any(l in ["en", "zh", "fr", "de", "es"] for l in langs):
+            data = fetch_category(api, cat, limit=20)
+            for item in data.get("query", {}).get("categorymembers", []):
+                title = item.get("title", "")
+                if not title:
                     continue
-                # 找可读的格式链接
-                formats = book.get("formats", {})
-                read_url = (formats.get("text/html") or
-                            formats.get("application/epub+zip") or
-                            formats.get("text/plain; charset=utf-8") or
-                            formats.get("text/plain") or "")
-                if not read_url:
-                    continue
-                authors = book.get("authors", [])
-                author_name = authors[0]["name"] if authors else "未知作者"
-                all_books.append({
-                    "title": book.get("title", "无标题"),
-                    "author": author_name,
-                    "languages": langs,
-                    "download_count": book.get("download_count", 0),
-                    "read_url": read_url,
-                    "gutenberg_url": f"https://www.gutenberg.org/ebooks/{book['id']}"
+                page_url = f"{base_url}/wiki/{title.replace(' ', '_')}"
+                books.append({
+                    "title": title,
+                    "category": cat,
+                    "language": lang,
+                    "url": page_url
                 })
         except Exception as e:
-            print(f"第{p}页抓取失败: {e}")
-    # 去重
+            print(f"抓取 {lang}/{cat} 失败: {e}")
+    return books
+
+def main():
+    all_books = []
+    all_books += collect(ZH_API, ZH_CATS, "zh", "https://zh.wikisource.org")
+    all_books += collect(EN_API, EN_CATS, "en", "https://en.wikisource.org")
+
     seen = set()
     unique = []
     for b in all_books:
-        key = b["gutenberg_url"]
-        if key not in seen:
-            seen.add(key)
+        if b["url"] not in seen:
+            seen.add(b["url"])
             unique.append(b)
+
     os.makedirs("data", exist_ok=True)
     with open("data/books.json", "w", encoding="utf-8") as f:
         json.dump(unique, f, ensure_ascii=False, indent=2)
-    print(f"已保存 {len(unique)} 本书")
+    zh_count = len([b for b in unique if b["language"] == "zh"])
+    en_count = len([b for b in unique if b["language"] == "en"])
+    print(f"已保存 {len(unique)} 本书 (中文 {zh_count} 本，英文 {en_count} 本)")
 
 if __name__ == "__main__":
     main()
