@@ -18,7 +18,7 @@ jobs:
         python-version: '3.11'
 
     - name: 安装 yt-dlp
-      run: pip install yt-dlp
+      run: pip install yt-dlp requests
 
     - name: 抓取评论
       run: python scripts/fetch_comments.py "${{ github.event.inputs.url }}"
