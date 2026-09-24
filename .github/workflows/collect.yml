@@ -1,4 +1,4 @@
-name: 收集GitHub随机项目
+name: 收集GitHub项目与书籍
 
 on:
   schedule:
@@ -18,15 +18,18 @@ jobs:
     - name: 安装依赖
       run: pip install requests
 
-    - name: 运行收集脚本
+    - name: 抓取GitHub项目
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python scripts/collect.py
+
+    - name: 抓取书籍
+      run: python scripts/collect_books.py
 
     - name: 提交更新
       run: |
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
-        git add data/random_repos.json
-        git commit -m "更新随机项目库 $(date +'%Y-%m-%d')" || echo "无变化"
+        git add data/
+        git commit -m "更新数据 $(date +'%Y-%m-%d')" || echo "无变化"
         git push

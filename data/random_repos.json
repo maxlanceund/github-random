@@ -1,0 +1,722 @@
+[
+  {
+    "name": "supabase/supabase",
+    "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+    "url": "https://github.com/supabase/supabase",
+    "stars": 110714,
+    "language": "TypeScript",
+    "keyword": "database"
+  },
+  {
+    "name": "netdata/netdata",
+    "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
+    "url": "https://github.com/netdata/netdata",
+    "stars": 80637,
+    "language": "Go",
+    "keyword": "database"
+  },
+  {
+    "name": "redis/redis",
+    "description": "For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine.",
+    "url": "https://github.com/redis/redis",
+    "stars": 76456,
+    "language": "C",
+    "keyword": "database"
+  },
+  {
+    "name": "Asabeneh/30-Days-Of-Python",
+    "description": "The 30 Days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than 100 days. Follow your own pace. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw",
+    "url": "https://github.com/Asabeneh/30-Days-Of-Python",
+    "stars": 74486,
+    "language": "Python",
+    "keyword": "database"
+  },
+  {
+    "name": "prometheus/prometheus",
+    "description": "The Prometheus monitoring system and time series database.",
+    "url": "https://github.com/prometheus/prometheus",
+    "stars": 66198,
+    "language": "Go",
+    "keyword": "database"
+  },
+  {
+    "name": "coollabsio/coolify",
+    "description": "An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 280+ one-click services on your own servers.",
+    "url": "https://github.com/coollabsio/coolify",
+    "stars": 62208,
+    "language": "PHP",
+    "keyword": "database"
+  },
+  {
+    "name": "meilisearch/meilisearch",
+    "description": "A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications.",
+    "url": "https://github.com/meilisearch/meilisearch",
+    "stars": 59392,
+    "language": "Rust",
+    "keyword": "database"
+  },
+  {
+    "name": "appwrite/appwrite",
+    "description": "Appwrite® - complete cloud infrastructure for your web, mobile and AI apps. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime and more",
+    "url": "https://github.com/appwrite/appwrite",
+    "stars": 57453,
+    "language": "PHP",
+    "keyword": "database"
+  },
+  {
+    "name": "chinese-poetry/chinese-poetry",
+    "description": "The most comprehensive database of Chinese poetry 🧶最全中华古诗词数据库,  唐宋两朝近一万四千古诗人,  接近5.5万首唐诗加26万宋诗.  两宋时期1564位词人，21050首词。",
+    "url": "https://github.com/chinese-poetry/chinese-poetry",
+    "stars": 53479,
+    "language": "JavaScript",
+    "keyword": "database"
+  },
+  {
+    "name": "etcd-io/etcd",
+    "description": "Distributed reliable key-value store for the most critical data of a distributed system",
+    "url": "https://github.com/etcd-io/etcd",
+    "stars": 52307,
+    "language": "Go",
+    "keyword": "database"
+  },
+  {
+    "name": "dbeaver/dbeaver",
+    "description": "Free universal database tool and SQL client",
+    "url": "https://github.com/dbeaver/dbeaver",
+    "stars": 51858,
+    "language": "Java",
+    "keyword": "database"
+  },
+  {
+    "name": "ClickHouse/ClickHouse",
+    "description": "ClickHouse® is a real-time analytics database management system",
+    "url": "https://github.com/ClickHouse/ClickHouse",
+    "stars": 50047,
+    "language": "C++",
+    "keyword": "database"
+  },
+  {
+    "name": "metabase/metabase",
+    "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+    "url": "https://github.com/metabase/metabase",
+    "stars": 49398,
+    "language": "Clojure",
+    "keyword": "database"
+  },
+  {
+    "name": "prisma/orm",
+    "description": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
+    "url": "https://github.com/prisma/orm",
+    "stars": 47666,
+    "language": "TypeScript",
+    "keyword": "database"
+  },
+  {
+    "name": "LeCoupa/awesome-cheatsheets",
+    "description": "👩‍💻👨‍💻 Awesome cheatsheets for popular programming languages, frameworks and development tools. They include everything you should know in one single file.",
+    "url": "https://github.com/LeCoupa/awesome-cheatsheets",
+    "stars": 46498,
+    "language": "JavaScript",
+    "keyword": "database"
+  },
+  {
+    "name": "K-Dense-AI/scientific-agent-skills",
+    "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "stars": 46400,
+    "language": "Python",
+    "keyword": "database"
+  },
+  {
+    "name": "milvus-io/milvus",
+    "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+    "url": "https://github.com/milvus-io/milvus",
+    "stars": 46244,
+    "language": "Go",
+    "keyword": "database"
+  },
+  {
+    "name": "duckdb/duckdb",
+    "description": "DuckDB is an analytical in-process SQL database management system",
+    "url": "https://github.com/duckdb/duckdb",
+    "stars": 41677,
+    "language": "C++",
+    "keyword": "database"
+  },
+  {
+    "name": "appsmithorg/appsmith",
+    "description": "Platform to build admin panels, internal tools, and dashboards. Integrates with 25+ databases and any API.",
+    "url": "https://github.com/appsmithorg/appsmith",
+    "stars": 40931,
+    "language": "TypeScript",
+    "keyword": "database"
+  },
+  {
+    "name": "pingcap/tidb",
+    "description": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+    "url": "https://github.com/pingcap/tidb",
+    "stars": 40582,
+    "language": "Go",
+    "keyword": "database"
+  },
+  {
+    "name": "n8n-io/n8n",
+    "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+    "url": "https://github.com/n8n-io/n8n",
+    "stars": 205824,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "microsoft/vscode",
+    "description": "Visual Studio Code",
+    "url": "https://github.com/microsoft/vscode",
+    "stars": 192837,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "f/prompts.chat",
+    "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+    "url": "https://github.com/f/prompts.chat",
+    "stars": 171134,
+    "language": "HTML",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "langchain-ai/langchain",
+    "description": "The agent engineering platform.",
+    "url": "https://github.com/langchain-ai/langchain",
+    "stars": 146960,
+    "language": "Python",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "immich-app/immich",
+    "description": "High performance self-hosted photo and video management solution.",
+    "url": "https://github.com/immich-app/immich",
+    "stars": 114928,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "microsoft/TypeScript",
+    "description": "TypeScript is a superset of JavaScript that compiles to clean JavaScript output.",
+    "url": "https://github.com/microsoft/TypeScript",
+    "stars": 111171,
+    "language": "Go",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "denoland/deno",
+    "description": "A modern runtime for JavaScript and TypeScript.",
+    "url": "https://github.com/denoland/deno",
+    "stars": 108487,
+    "language": "Rust",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "angular/angular",
+    "description": "Deliver web apps with confidence 🚀",
+    "url": "https://github.com/angular/angular",
+    "stars": 101027,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "ant-design/ant-design",
+    "description": "An enterprise-class UI design language and React UI library",
+    "url": "https://github.com/ant-design/ant-design",
+    "stars": 99600,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "oven-sh/bun",
+    "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
+    "url": "https://github.com/oven-sh/bun",
+    "stars": 96024,
+    "language": "Rust",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "ruvnet/RuView",
+    "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "url": "https://github.com/ruvnet/RuView",
+    "stars": 94877,
+    "language": "Rust",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "storybookjs/storybook",
+    "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
+    "url": "https://github.com/storybookjs/storybook",
+    "stars": 91141,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "mermaid-js/mermaid",
+    "description": "Generation of diagrams like flowcharts or sequence diagrams from text in a similar manner as markdown",
+    "url": "https://github.com/mermaid-js/mermaid",
+    "stars": 90397,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "bytedance/deer-flow",
+    "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+    "url": "https://github.com/bytedance/deer-flow",
+    "stars": 82928,
+    "language": "Python",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "nestjs/nest",
+    "description": "A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications with TypeScript/JavaScript 🚀",
+    "url": "https://github.com/nestjs/nest",
+    "stars": 76719,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "enaqx/awesome-react",
+    "description": "A collection of awesome things regarding React ecosystem",
+    "url": "https://github.com/enaqx/awesome-react",
+    "stars": 74692,
+    "language": "未知",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "unionlabs/union",
+    "description": "The trust-minimized, zero-knowledge bridging protocol, designed for censorship resistance, extremely high security, and usage in decentralized finance.",
+    "url": "https://github.com/unionlabs/union",
+    "stars": 73790,
+    "language": "Rust",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "headroomlabs-ai/headroom",
+    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "stars": 73667,
+    "language": "Python",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "strapi/strapi",
+    "description": "🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.",
+    "url": "https://github.com/strapi/strapi",
+    "stars": 73224,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "ruvnet/ruflo",
+    "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+    "url": "https://github.com/ruvnet/ruflo",
+    "stars": 73170,
+    "language": "TypeScript",
+    "keyword": "TypeScript"
+  },
+  {
+    "name": "donnemartin/system-design-primer",
+    "description": "Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.",
+    "url": "https://github.com/donnemartin/system-design-primer",
+    "stars": 371493,
+    "language": "Python",
+    "keyword": "web"
+  },
+  {
+    "name": "awesome-selfhosted/awesome-selfhosted",
+    "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+    "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+    "stars": 321363,
+    "language": "未知",
+    "keyword": "web"
+  },
+  {
+    "name": "react/react",
+    "description": "The library for web and native user interfaces.",
+    "url": "https://github.com/react/react",
+    "stars": 250677,
+    "language": "JavaScript",
+    "keyword": "web"
+  },
+  {
+    "name": "trimstray/the-book-of-secret-knowledge",
+    "description": "A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more.",
+    "url": "https://github.com/trimstray/the-book-of-secret-knowledge",
+    "stars": 245624,
+    "language": "未知",
+    "keyword": "web"
+  },
+  {
+    "name": "firecrawl/firecrawl",
+    "description": "The web data API to search, scrape, and interact at scale. 🔥",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "stars": 183975,
+    "language": "TypeScript",
+    "keyword": "web"
+  },
+  {
+    "name": "flutter/flutter",
+    "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+    "url": "https://github.com/flutter/flutter",
+    "stars": 179061,
+    "language": "Dart",
+    "keyword": "web"
+  },
+  {
+    "name": "twbs/bootstrap",
+    "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+    "url": "https://github.com/twbs/bootstrap",
+    "stars": 174896,
+    "language": "MDX",
+    "keyword": "web"
+  },
+  {
+    "name": "AUTOMATIC1111/stable-diffusion-webui",
+    "description": "Stable Diffusion web UI",
+    "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "stars": 165092,
+    "language": "Python",
+    "keyword": "web"
+  },
+  {
+    "name": "open-webui/open-webui",
+    "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+    "url": "https://github.com/open-webui/open-webui",
+    "stars": 152967,
+    "language": "Python",
+    "keyword": "web"
+  },
+  {
+    "name": "tauri-apps/tauri",
+    "description": "Build smaller, faster, and more secure desktop and mobile applications with a web frontend.",
+    "url": "https://github.com/tauri-apps/tauri",
+    "stars": 111337,
+    "language": "Rust",
+    "keyword": "web"
+  },
+  {
+    "name": "react/create-react-app",
+    "description": "Set up a modern web app by running one command.",
+    "url": "https://github.com/react/create-react-app",
+    "stars": 103254,
+    "language": "JavaScript",
+    "keyword": "web"
+  },
+  {
+    "name": "fastapi/fastapi",
+    "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+    "url": "https://github.com/fastapi/fastapi",
+    "stars": 102566,
+    "language": "Python",
+    "keyword": "web"
+  },
+  {
+    "name": "microsoft/Web-Dev-For-Beginners",
+    "description": "24 Lessons, 12 Weeks, Get Started as a Web Developer",
+    "url": "https://github.com/microsoft/Web-Dev-For-Beginners",
+    "stars": 96740,
+    "language": "JavaScript",
+    "keyword": "web"
+  },
+  {
+    "name": "microsoft/playwright",
+    "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
+    "url": "https://github.com/microsoft/playwright",
+    "stars": 96599,
+    "language": "TypeScript",
+    "keyword": "web"
+  },
+  {
+    "name": "puppeteer/puppeteer",
+    "description": "JavaScript API for Chrome and Firefox",
+    "url": "https://github.com/puppeteer/puppeteer",
+    "stars": 95617,
+    "language": "TypeScript",
+    "keyword": "web"
+  },
+  {
+    "name": "django/django",
+    "description": "The Web framework for perfectionists with deadlines.",
+    "url": "https://github.com/django/django",
+    "stars": 91167,
+    "language": "Python",
+    "keyword": "web"
+  },
+  {
+    "name": "gin-gonic/gin",
+    "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices.",
+    "url": "https://github.com/gin-gonic/gin",
+    "stars": 89251,
+    "language": "Go",
+    "keyword": "web"
+  },
+  {
+    "name": "ChatGPTNextWeb/NextChat",
+    "description": "✨ Zero-config AI chat assistant. No API key needed — sign up and instantly chat with GPT-5, Claude 4, Gemini 2.5, DeepSeek & 100+ top models. Pay-as-you-go saves you more. Available on Web, iOS, macOS, Android, Linux, Windows.",
+    "url": "https://github.com/ChatGPTNextWeb/NextChat",
+    "stars": 88807,
+    "language": "TypeScript",
+    "keyword": "web"
+  },
+  {
+    "name": "yt-dlp/yt-dlp",
+    "description": "A feature-rich command-line audio/video downloader",
+    "url": "https://github.com/yt-dlp/yt-dlp",
+    "stars": 193280,
+    "language": "Python",
+    "keyword": "CLI"
+  },
+  {
+    "name": "ohmyzsh/ohmyzsh",
+    "description": "🙃   A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
+    "url": "https://github.com/ohmyzsh/ohmyzsh",
+    "stars": 189893,
+    "language": "Shell",
+    "keyword": "CLI"
+  },
+  {
+    "name": "Graphify-Labs/graphify",
+    "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "stars": 120997,
+    "language": "Python",
+    "keyword": "CLI"
+  },
+  {
+    "name": "earendil-works/pi",
+    "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+    "url": "https://github.com/earendil-works/pi",
+    "stars": 109009,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "google-gemini/gemini-cli",
+    "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "stars": 107138,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "nexu-io/open-design",
+    "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / DeepSeek Harness / OpenCode & 20+ CLIs via BYOK.",
+    "url": "https://github.com/nexu-io/open-design",
+    "stars": 97869,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "sherlock-project/sherlock",
+    "description": "Hunt down social media accounts by username across social networks",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "stars": 92560,
+    "language": "Python",
+    "keyword": "CLI"
+  },
+  {
+    "name": "OpenHands/OpenHands",
+    "description": "🙌 OpenHands: AI-Driven Development",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "stars": 89018,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "Panniantong/Agent-Reach",
+    "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "stars": 85152,
+    "language": "Python",
+    "keyword": "CLI"
+  },
+  {
+    "name": "Egonex-AI/Understand-Anything",
+    "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+    "url": "https://github.com/Egonex-AI/Understand-Anything",
+    "stars": 83972,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "junegunn/fzf",
+    "description": ":cherry_blossom: A command-line fuzzy finder",
+    "url": "https://github.com/junegunn/fzf",
+    "stars": 83226,
+    "language": "Go",
+    "keyword": "CLI"
+  },
+  {
+    "name": "jesseduffield/lazygit",
+    "description": "simple terminal UI for git commands",
+    "url": "https://github.com/jesseduffield/lazygit",
+    "stars": 82627,
+    "language": "Go",
+    "keyword": "CLI"
+  },
+  {
+    "name": "rtk-ai/rtk",
+    "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+    "url": "https://github.com/rtk-ai/rtk",
+    "stars": 81605,
+    "language": "Rust",
+    "keyword": "CLI"
+  },
+  {
+    "name": "hoppscotch/hoppscotch",
+    "description": "Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia",
+    "url": "https://github.com/hoppscotch/hoppscotch",
+    "stars": 80492,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "stablyai/orca",
+    "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+    "url": "https://github.com/stablyai/orca",
+    "stars": 76834,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "career-ops-hq/career-ops",
+    "description": "Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+    "url": "https://github.com/career-ops-hq/career-ops",
+    "stars": 72560,
+    "language": "JavaScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "cline/cline",
+    "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+    "url": "https://github.com/cline/cline",
+    "stars": 69195,
+    "language": "TypeScript",
+    "keyword": "CLI"
+  },
+  {
+    "name": "BurntSushi/ripgrep",
+    "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",
+    "url": "https://github.com/BurntSushi/ripgrep",
+    "stars": 68556,
+    "language": "Rust",
+    "keyword": "CLI"
+  },
+  {
+    "name": "openclaw/openclaw",
+    "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
+    "url": "https://github.com/openclaw/openclaw",
+    "stars": 390357,
+    "language": "TypeScript",
+    "keyword": "AI"
+  },
+  {
+    "name": "obra/superpowers",
+    "description": "An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "stars": 290845,
+    "language": "Shell",
+    "keyword": "AI"
+  },
+  {
+    "name": "NousResearch/hermes-agent",
+    "description": "The agent that grows with you",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "stars": 248502,
+    "language": "Python",
+    "keyword": "AI"
+  },
+  {
+    "name": "Significant-Gravitas/AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "stars": 187515,
+    "language": "Python",
+    "keyword": "AI"
+  },
+  {
+    "name": "Snailclimb/JavaGuide",
+    "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+    "url": "https://github.com/Snailclimb/JavaGuide",
+    "stars": 158846,
+    "language": "JavaScript",
+    "keyword": "AI"
+  },
+  {
+    "name": "langgenius/dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "url": "https://github.com/langgenius/dify",
+    "stars": 157033,
+    "language": "TypeScript",
+    "keyword": "AI"
+  },
+  {
+    "name": "langflow-ai/langflow",
+    "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+    "url": "https://github.com/langflow-ai/langflow",
+    "stars": 155196,
+    "language": "Python",
+    "keyword": "AI"
+  },
+  {
+    "name": "msitarzewski/agency-agents",
+    "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "stars": 154414,
+    "language": "Shell",
+    "keyword": "AI"
+  },
+  {
+    "name": "DietrichGebert/ponytail",
+    "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "stars": 145159,
+    "language": "JavaScript",
+    "keyword": "AI"
+  },
+  {
+    "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "stars": 143830,
+    "language": "未知",
+    "keyword": "AI"
+  },
+  {
+    "name": "Shubhamsaboo/awesome-llm-apps",
+    "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "stars": 139591,
+    "language": "Python",
+    "keyword": "AI"
+  },
+  {
+    "name": "github/spec-kit",
+    "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+    "url": "https://github.com/github/spec-kit",
+    "stars": 138631,
+    "language": "Python",
+    "keyword": "AI"
+  },
+  {
+    "name": "Comfy-Org/ComfyUI",
+    "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "stars": 134763,
+    "language": "Python",
+    "keyword": "AI"
+  },
+  {
+    "name": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "stars": 130216,
+    "language": "Python",
+    "keyword": "AI"
+  }
+]
