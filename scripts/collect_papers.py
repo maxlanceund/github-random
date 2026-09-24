@@ -54,7 +54,7 @@ SUBJECTS = [
     "cultural studies", "media studies"
 ]
 
-def search_openalex(query, per_page=5):
+def search_openalex(query, per_page=8):
     url = "https://api.openalex.org/works"
     params = {
         "search": query,
@@ -72,12 +72,12 @@ def main():
     seen = set()
 
     # 每次随机抽 15 个学科
-    selected = random.sample(SUBJECTS, 15)
+    selected = random.sample(SUBJECTS, 6)
     print(f"本次抓取学科: {', '.join(selected)}")
 
     for subject in selected:
         try:
-            results = search_openalex(subject, per_page=5)
+            results = search_openalex(subject, per_page=8)
             count = 0
             for work in results:
                 title = work.get("title") or ""
@@ -106,7 +106,7 @@ def main():
             print(f"  {subject}: {count} 篇")
         except Exception as e:
             print(f"  搜索 {subject} 失败: {e}")
-        time.sleep(1.5)  # 拉长间隔，避免限流
+        time.sleep(1.0)  # 拉长间隔，避免限流
 
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
