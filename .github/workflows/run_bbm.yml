@@ -23,11 +23,11 @@ jobs:
       - name: Install dependencies
         run: pip install numpy numba
 
-      - name: Run BBM D_f analysis
-        run: python scripts/bbm_d_f.py
+      - name: Run BBM comparison
+        run: python scripts/bbm_compare.py
 
       - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: bbm-result
-          path: bbm_result.json
+          name: bbm-compare-result
+          path: bbm_compare_result.json
