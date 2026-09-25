@@ -1,0 +1,33 @@
+name: Run BBM Approx Analysis
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-bbm-approx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Clone BBM repo
+        run: git clone --depth 1 https://github.com/sybila/biodivine-boolean-models.git bbm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy numba
+
+      - name: Run BBM approximate analysis
+        run: python scripts/bbm_approx.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: bbm-approx-result
+          path: bbm_approx_result.json
