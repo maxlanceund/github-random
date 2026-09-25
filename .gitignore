@@ -1,0 +1,20 @@
+# 日志和压缩包
+*_logs/
+*_logs.zip
+*.zip
+
+# 备份文件
+*.bak
+*.bak2
+
+# 模拟结果（本地产物）
+*_result.json
+
+# Termux 状态文件
+.last_draw.json
+.translate_in.txt
+.translate_out.txt
+
+# Python 缓存
+__pycache__/
+*.pyc
