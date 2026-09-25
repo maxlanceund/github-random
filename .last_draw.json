@@ -1,11 +1,11 @@
 {
-  "name": "Dar9586/NClientV2",
-  "description": "An unofficial NHentai android client",
-  "url": "https://github.com/Dar9586/NClientV2",
-  "stars": 2069,
-  "language": "Java",
-  "keyword": "android client",
-  "apk_name": "NClientV2.3.0.5.Debug.apk",
-  "apk_url": "https://github.com/Dar9586/NClientV2/releases/download/3.0.5/NClientV2.3.0.5.Debug.apk",
-  "apk_size": 8037665
+  "name": "shiaho777/web-to-app",
+  "description": "The most full featured web-to-app toolkit on Android, a complete APK workshop that runs entirely on your phone",
+  "url": "https://github.com/shiaho777/web-to-app",
+  "stars": 6516,
+  "language": "Kotlin",
+  "keyword": "android app",
+  "apk_name": "web-to-app-2.6.8.APK",
+  "apk_url": "https://github.com/shiaho777/web-to-app/releases/download/v2.6.8/web-to-app-2.6.8.APK",
+  "apk_size": 25199507
 }

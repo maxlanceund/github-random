@@ -32,14 +32,14 @@ def search_repos(query, per_page=20):
     url = "https://api.github.com/search/repositories"
     page = random.randint(1, 5)
     params = {"q": query, "sort": "stars", "order": "desc", "per_page": per_page, "page": page}
-    resp = requests.get(url, params=params, headers=headers(), timeout=30, verify=False)
+    resp = requests.get(url, params=params, headers=headers(), timeout=30, verify=True)
     resp.raise_for_status()
     return resp.json().get("items", [])
 
 def get_latest_apk(repo_full_name):
     url = f"https://api.github.com/repos/{repo_full_name}/releases/latest"
     try:
-        resp = requests.get(url, headers=headers(), timeout=20, verify=False)
+        resp = requests.get(url, headers=headers(), timeout=20, verify=True)
         if resp.status_code != 200:
             return None
         release = resp.json()

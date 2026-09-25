@@ -273,7 +273,11 @@
     "name": "thunderbird/thunderbird-android",
     "description": "Thunderbird for Android – Open Source Email App for Android (fka K-9 Mail)",
     "url": "https://github.com/thunderbird/thunderbird-android",
+<<<<<<< Updated upstream
     "stars": 14032,
+=======
+    "stars": 14030,
+>>>>>>> Stashed changes
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "k9mail-23.1.apk",
@@ -284,7 +288,11 @@
     "name": "LawnchairLauncher/lawnchair",
     "description": "No clever tagline needed.",
     "url": "https://github.com/LawnchairLauncher/lawnchair",
+<<<<<<< Updated upstream
     "stars": 13577,
+=======
+    "stars": 13574,
+>>>>>>> Stashed changes
     "language": "Java",
     "keyword": "android app",
     "apk_name": "Lawnchair-1.2.0.1884.apk",
@@ -306,7 +314,11 @@
     "name": "maxrave-dev/SimpMusic",
     "description": "A cross-platform music app using YouTube Music for backend",
     "url": "https://github.com/maxrave-dev/SimpMusic",
+<<<<<<< Updated upstream
     "stars": 11462,
+=======
+    "stars": 11459,
+>>>>>>> Stashed changes
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "SimpMusic-foss-arm64-v8a-release.apk",
@@ -317,7 +329,11 @@
     "name": "recloudstream/cloudstream",
     "description": "Android app for streaming and downloading media.",
     "url": "https://github.com/recloudstream/cloudstream",
+<<<<<<< Updated upstream
     "stars": 10765,
+=======
+    "stars": 10756,
+>>>>>>> Stashed changes
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "4.8.0.apk",
@@ -350,7 +366,11 @@
     "name": "Sjj1024/PakePlus-Android",
     "description": "Turn any webpage/HTML/Vue/React and so on into desktop and mobile app under 5M with easy in few minutes. 轻松将任意网站/HTML/Vue/React等项目构建为轻量级(小于5M)多端桌面应用和手机应用仅需几分钟. https://ppofficial.netlify.app",
     "url": "https://github.com/Sjj1024/PakePlus-Android",
+<<<<<<< Updated upstream
     "stars": 10151,
+=======
+    "stars": 10145,
+>>>>>>> Stashed changes
     "language": "Lua",
     "keyword": "android app",
     "apk_name": "PakePlus-v0.0.1.apk",
@@ -383,7 +403,7 @@
     "name": "unclecode/crawl4ai",
     "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
     "url": "https://github.com/unclecode/crawl4ai",
-    "stars": 84184,
+    "stars": 84215,
     "language": "Python",
     "keyword": "AI"
   },
@@ -391,7 +411,7 @@
     "name": "fighting41love/funNLP",
     "description": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取工具、国内电话号码正则匹配、清华大学XLORE:中英文跨语言百科知识图谱、清华大学人工智能技术系列报告、自然语言生成、NLU太难了系列、自动对联数据及机器人、用户名黑名单列表、罪名法务名词及分类模型、微信公众号语料、cs224n深度学习自然语言处理课程、中文手写汉字识别、中文自然语言处理 语料/数据集、变量命名神器、分词语料库+代码、任务型对话英文数据集、ASR 语音数据集 + 基于深度学习的中文语音识别系统、笑声检测器、Microsoft多语言数字/单位/如日期时间识别包、中华新华字典数据库及api(包括常用歇后语、成语、词语和汉字)、文档图谱自动生成、SpaCy 中文模型、Common Voice语音识别数据集新版、神经网络关系抽取、基于bert的命名实体识别、关键词(Keyphrase)抽取包pke、基于医疗领域知识图谱的问答系统、基于依存句法与语义角色标注的事件三元组抽取、依存句法分析4万句高质量标注数据、cnocr：用来做中文OCR的Python3包、中文人物关系知识图谱项目、中文nlp竞赛项目及代码汇总、中文字符数据、speech-aligner: 从“人声语音”及其“语言文本”产生音素级别时间对齐标注的工具、AmpliGraph: 知识图谱表示学习(Python)库：知识图谱概念链接预测、Scattertext 文本可视化(python)、语言/知识表示工具：BERT & ERNIE、中文对比英文自然语言处理NLP的区别综述、Synonyms中文近义词工具包、HarvestText领域自适应文本挖掘工具（新词发现-情感分析-实体链接等）、word2word：(Python)方便易用的多语言词-词对集：62种语言/3,564个多语言对、语音识别语料生成工具：从具有音频/字幕的在线视频创建自动语音识别(ASR)语料库、构建医疗实体识别的模型（包含词典和语料标注）、单文档非监督的关键词抽取、Kashgari中使用gpt-2语言模型、开源的金融投资数据提取工具、文本自动摘要库TextTeaser: 仅支持英文、人民日报语料处理工具集、一些关于自然语言的基本模型、基于14W歌曲知识库的问答尝试--功能包括歌词接龙and已知歌词找歌曲以及歌曲歌手歌词三角关系的问答、基于Siamese bilstm模型的相似句子判定模型并提供训练数据集和测试数据集、用Transformer编解码模型实现的根据Hacker News文章标题自动生成评论、用BERT进行序列标记和文本分类的模板代码、LitBank：NLP数据集——支持自然语言处理和计算人文学科任务的100部带标记英文小说语料、百度开源的基准信息抽取系统、虚假新闻数据集、Facebook: LAMA语言模型分析，提供Transformer-XL/BERT/ELMo/GPT预训练语言模型的统一访问接口、CommonsenseQA：面向常识的英文QA挑战、中文知识图谱资料、数据及工具、各大公司内部里大牛分享的技术文档 PDF 或者 PPT、自然语言生成SQL语句（英文）、中文NLP数据增强（EDA）工具、英文NLP数据增强工具 、基于医药知识图谱的智能问答系统、京东商品知识图谱、基于mongodb存储的军事领域知识图谱问答项目、基于远监督的中文关系抽取、语音情感分析、中文ULMFiT-情感分析-文本分类-语料及模型、一个拍照做题程序、世界各国大规模人名库、一个利用有趣中文语料库 qingyun 训练出来的中文聊天机器人、中文聊天机器人seqGAN、省市区镇行政区划数据带拼音标注、教育行业新闻语料库包含自动文摘功能、开放了对话机器人-知识图谱-语义理解-自然语言处理工具及数据、中文知识图谱：基于百度百科中文页面-抽取三元组信息-构建中文知识图谱、masr: 中文语音识别-提供预训练模型-高识别率、Python音频数据增广库、中文全词覆盖BERT及两份阅读理解数据、ConvLab：开源多域端到端对话系统平台、中文自然语言处理数据集、基于最新版本rasa搭建的对话系统、基于TensorFlow和BERT的管道式实体及关系抽取、一个小型的证券知识图谱/知识库、复盘所有NLP比赛的TOP方案、OpenCLaP：多领域开源中文预训练语言模型仓库、UER：基于不同语料+编码器+目标任务的中文预训练模型仓库、中文自然语言处理向量合集、基于金融-司法领域(兼有闲聊性质)的聊天机器人、g2pC：基于上下文的汉语读音自动标记模块、Zincbase 知识图谱构建工具包、诗歌质量评价/细粒度情感诗歌语料库、快速转化「中文数字」和「阿拉伯数字」、百度知道问答语料库、基于知识图谱的问答系统、jieba_fast 加速版的jieba、正则表达式教程、中文阅读理解数据集、基于BERT等最新语言模型的抽取式摘要提取、Python利用深度学习进行文本摘要的综合指南、知识图谱深度学习相关资料整理、维基大规模平行文本语料、StanfordNLP 0.2.0：纯Python版自然语言处理包、NeuralNLP-NeuralClassifier：腾讯开源深度学习文本分类工具、端到端的封闭域对话系统、中文命名实体识别：NeuroNER vs. BertNER、新闻事件线索抽取、2019年百度的三元组抽取比赛：“科学空间队”源码、基于依存句法的开放域文本知识三元组抽取和知识库构建、中文的GPT2训练代码、ML-NLP - 机器学习(Machine Learning)NLP面试中常考到的知识点和代码实现、nlp4han:中文自然语言处理工具集(断句/分词/词性标注/组块/句法分析/语义分析/NER/N元语法/HMM/代词消解/情感分析/拼写检查、XLM：Facebook的跨语言预训练语言模型、用基于BERT的微调和特征提取方法来进行知识图谱百度百科人物词条属性抽取、中文自然语言处理相关的开放任务-数据集-当前最佳结果、CoupletAI - 基于CNN+Bi-LSTM+Attention 的自动对对联系统、抽象知识图谱、MiningZhiDaoQACorpus - 580万百度知道问答数据挖掘项目、brat rapid annotation tool: 序列标注工具、大规模中文知识图谱数据：1.4亿实体、数据增强在机器翻译及其他nlp任务中的应用及效果、allennlp阅读理解:支持多种数据和模型、PDF表格数据提取工具 、 Graphbrain：AI开源软件库和科研工具，目的是促进自动意义提取和文本理解以及知识的探索和推断、简历自动筛选系统、基于命名实体识别的简历自动摘要、中文语言理解测评基准，包括代表性的数据集&基准模型&语料库&排行榜、树洞 OCR 文字识别 、从包含表格的扫描图片中识别表格和文字、语声迁移、Python口语自然语言处理工具集(英文)、 similarity：相似度计算工具包，java编写、海量中文预训练ALBERT模型 、Transformers 2.0 、基于大规模音频数据集Audioset的音频增强 、Poplar：网页版自然语言标注工具、图片文字去除，可用于漫画翻译 、186种语言的数字叫法库、Amazon发布基于知识的人-人开放领域对话数据集 、中文文本纠错模块代码、繁简体转换 、 Python实现的多种文本可读性评价指标、类似于人名/地名/组织机构名的命名体识别数据集 、东南大学《知识图谱》研究生课程(资料)、. 英文拼写检查库 、 wwsearch是企业微信后台自研的全文检索引擎、CHAMELEON：深度学习新闻推荐系统元架构 、 8篇论文梳理BERT相关模型进展与反思、DocSearch：免费文档搜索引擎、 LIDA：轻量交互式对话标注工具 、aili - the fastest in-memory index in the East 东半球最快并发索引 、知识图谱车音工作项目、自然语言生成资源大全 、中日韩分词库mecab的Python接口库、中文文本摘要/关键词提取、汉字字符特征提取器 (featurizer)，提取汉字的特征（发音特征、字形特征）用做深度学习的特征、中文生成任务基准测评 、中文缩写数据集、中文任务基准测评 - 代表性的数据集-基准(预训练)模型-语料库-baseline-工具包-排行榜、PySS3：面向可解释AI的SS3文本分类器机器可视化工具 、中文NLP数据集列表、COPE - 格律诗编辑程序、doccano：基于网页的开源协同多语言文本标注工具 、PreNLP：自然语言预处理库、简单的简历解析器，用来从简历中提取关键信息、用于中文闲聊的GPT2模型：GPT2-chitchat、基于检索聊天机器人多轮响应选择相关资源列表(Leaderboards、Datasets、Papers)、(Colab)抽象文本摘要实现集锦(教程 、词语拼音数据、高效模糊搜索工具、NLP数据增广资源集、微软对话机器人框架 、 GitHub Typo Corpus：大规模GitHub多语言拼写错误/语法错误数据集、TextCluster：短文本聚类预处理模块 Short text cluster、面向语音识别的中文文本规范化、BLINK：最先进的实体链接库、BertPunc：基于BERT的最先进标点修复模型、Tokenizer：快速、可定制的文本词条化库、中文语言理解测评基准，包括代表性的数据集、基准(预训练)模型、语料库、排行榜、spaCy 医学文本挖掘与信息提取 、 NLP任务示例项目代码集、 python拼写检查库、chatbot-list - 行业内关于智能客服、聊天机器人的应用和架构、算法分享和介绍、语音质量评价指标(MOSNet, BSSEval, STOI, PESQ, SRMR)、 用138GB语料训练的法文RoBERTa预训练语言模型 、BERT-NER-Pytorch：三种不同模式的BERT中文NER实验、无道词典 - 有道词典的命令行版本，支持英汉互查和在线查询、2019年NLP亮点回顾、 Chinese medical dialogue data 中文医疗对话数据集 、最好的汉字数字(中文数字)-阿拉伯数字转换工具、 基于百科知识库的中文词语多词义/义项获取与特定句子词语语义消歧、awesome-nlp-sentiment-analysis - 情感分析、情绪原因识别、评价对象和评价词抽取、LineFlow：面向所有深度学习框架的NLP数据高效加载器、中文医学NLP公开资源整理 、MedQuAD：(英文)医学问答数据集、将自然语言数字串解析转换为整数和浮点数、Transfer Learning in Natural Language Processing (NLP) 、面向语音识别的中文/英文发音辞典、Tokenizers：注重性能与多功能性的最先进分词器、CLUENER 细粒度命名实体识别 Fine Grained Named Entity Recognition、 基于BERT的中文命名实体识别、中文谣言数据库、NLP数据集/基准任务大列表、nlp相关的一些论文及代码, 包括主题模型、词向量(Word Embedding)、命名实体识别(NER)、文本分类(Text Classificatin)、文本生成(Text Generation)、文本相似性(Text Similarity)计算等，涉及到各种与nlp相关的算法，基于keras和tensorflow 、Python文本挖掘/NLP实战示例、 Blackstone：面向非结构化法律文本的spaCy pipeline和NLP模型通过同义词替换实现文本“变脸” 、中文 预训练 ELECTREA 模型: 基于对抗学习 pretrain Chinese Model 、albert-chinese-ner - 用预训练语言模型ALBERT做中文NER 、基于GPT2的特定主题文本生成/文本增广、开源预训练语言模型合集、多语言句向量包、编码、标记和实现：一种可控高效的文本生成方法、 英文脏话大列表 、attnvis：GPT2、BERT等transformer语言模型注意力交互可视化、CoVoST：Facebook发布的多语种语音-文本翻译语料库，包括11种语言(法语、德语、荷兰语、俄语、西班牙语、意大利语、土耳其语、波斯语、瑞典语、蒙古语和中文)的语音、文字转录及英文译文、Jiagu自然语言处理工具 - 以BiLSTM等模型为基础，提供知识图谱关系抽取 中文分词 词性标注 命名实体识别 情感分析 新词发现 关键词 文本摘要 文本聚类等功能、用unet实现对文档表格的自动检测，表格重建、NLP事件提取文献资源列表 、 金融领域自然语言处理研究资源大列表、CLUEDatasetSearch - 中英文NLP数据集：搜索所有中文NLP数据集，附常用英文NLP数据集 、medical_NER - 中文医学知识图谱命名实体识别 、(哈佛)讲因果推理的免费书、知识图谱相关学习资料/数据集/工具资源大列表、Forte：灵活强大的自然语言处理pipeline工具集 、Python字符串相似性算法库、PyLaia：面向手写文档分析的深度学习工具包、TextFooler：针对文本分类/推理的对抗文本生成模块、Haystack：灵活、强大的可扩展问答(QA)框架、中文关键短语抽取工具",
     "url": "https://github.com/fighting41love/funNLP",
-    "stars": 83382,
+    "stars": 83399,
     "language": "Python",
     "keyword": "AI"
   },
@@ -399,7 +419,7 @@
     "name": "D4Vinci/Scrapling",
     "description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
     "url": "https://github.com/D4Vinci/Scrapling",
-    "stars": 83279,
+    "stars": 83430,
     "language": "Python",
     "keyword": "AI"
   },
@@ -407,7 +427,7 @@
     "name": "bytedance/deer-flow",
     "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
     "url": "https://github.com/bytedance/deer-flow",
-    "stars": 82931,
+    "stars": 82946,
     "language": "Python",
     "keyword": "AI"
   },
@@ -415,7 +435,7 @@
     "name": "lobehub/lobehub",
     "description": "🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.",
     "url": "https://github.com/lobehub/lobehub",
-    "stars": 82798,
+    "stars": 82805,
     "language": "TypeScript",
     "keyword": "AI"
   },
@@ -1127,7 +1147,7 @@
     "name": "Fission-AI/OpenSpec",
     "description": "Spec-driven development (SDD) for AI coding assistants.",
     "url": "https://github.com/Fission-AI/OpenSpec",
-    "stars": 70117,
+    "stars": 70221,
     "language": "TypeScript",
     "keyword": "AI"
   },
@@ -1135,7 +1155,7 @@
     "name": "diegosouzapw/OmniRoute",
     "description": "Never stop coding. Free MIT AI gateway: one endpoint, 359 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by hundreds of contributors",
     "url": "https://github.com/diegosouzapw/OmniRoute",
-    "stars": 69707,
+    "stars": 69915,
     "language": "TypeScript",
     "keyword": "AI"
   },
@@ -1143,7 +1163,7 @@
     "name": "code-yeongyu/oh-my-openagent",
     "description": "OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
     "url": "https://github.com/code-yeongyu/oh-my-openagent",
-    "stars": 69354,
+    "stars": 69371,
     "language": "TypeScript",
     "keyword": "AI"
   },
@@ -1151,7 +1171,7 @@
     "name": "microsoft/AI-For-Beginners",
     "description": "12 Weeks, 24 Lessons, AI for All!",
     "url": "https://github.com/microsoft/AI-For-Beginners",
-    "stars": 68923,
+    "stars": 68986,
     "language": "Jupyter Notebook",
     "keyword": "AI"
   },
@@ -1159,11 +1179,12 @@
     "name": "asgeirtj/system_prompts_leaks",
     "description": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
     "url": "https://github.com/asgeirtj/system_prompts_leaks",
-    "stars": 68192,
+    "stars": 68262,
     "language": "JavaScript",
     "keyword": "AI"
   },
   {
+<<<<<<< Updated upstream
     "name": "markqvist/Sideband",
     "description": "LXMF client for Android, Linux and macOS allowing you to communicate with people or LXMF-compatible systems over Reticulum networks using LoRa, Packet Radio, WiFi, I2P, or anything else Reticulum supports.",
     "url": "https://github.com/markqvist/Sideband",
@@ -1294,5 +1315,324 @@
     "apk_name": "OpenCalc.v3.2.1.apk",
     "apk_url": "https://github.com/clementwzk/OpenCalc/releases/download/v3.2.1/OpenCalc.v3.2.1.apk",
     "apk_size": 2298891
+=======
+    "name": "shadowsocksr-backup/shadowsocksr-android",
+    "description": "A ShadowsocksR client for Android",
+    "url": "https://github.com/shadowsocksr-backup/shadowsocksr-android",
+    "stars": 3430,
+    "language": "未知",
+    "keyword": "android client",
+    "apk_name": "shadowsocksr-release.apk",
+    "apk_url": "https://github.com/shadowsocksr-backup/shadowsocksr-android/releases/download/3.4.0.8/shadowsocksr-release.apk",
+    "apk_size": 3703111
+  },
+  {
+    "name": "Telegram-FOSS-Team/Telegram-FOSS",
+    "description": "Unofficial, FOSS-friendly fork of the original Telegram client for Android",
+    "url": "https://github.com/Telegram-FOSS-Team/Telegram-FOSS",
+    "stars": 3309,
+    "language": "Java",
+    "keyword": "android client",
+    "apk_name": "TF-BETA-THERMATK-v10.14.3.apk",
+    "apk_url": "https://github.com/Telegram-FOSS-Team/Telegram-FOSS/releases/download/v10.14.3/TF-BETA-THERMATK-v10.14.3.apk",
+    "apk_size": 125978938
+  },
+  {
+    "name": "trojan-gfw/igniter",
+    "description": "A trojan client for Android (UNDER CONSTRUCTION).",
+    "url": "https://github.com/trojan-gfw/igniter",
+    "stars": 3281,
+    "language": "Java",
+    "keyword": "android client",
+    "apk_name": "io.github.trojan_gfw.igniter-v0.10.4-beta-230001004-arm64-v8a-debug.apk",
+    "apk_url": "https://github.com/trojan-gfw/igniter/releases/download/v0.10.4-beta/io.github.trojan_gfw.igniter-v0.10.4-beta-230001004-arm64-v8a-debug.apk",
+    "apk_size": 19822293
+  },
+  {
+    "name": "vivizzz007/vivi-music",
+    "description": "Vivi-Music is an expressive Material 3–based YouTube Music client for Android.",
+    "url": "https://github.com/vivizzz007/vivi-music",
+    "stars": 3244,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "izzydroid-universal-foss-release.apk",
+    "apk_url": "https://github.com/vivizzz007/vivi-music/releases/download/v6.0.7/izzydroid-universal-foss-release.apk",
+    "apk_size": 29636905
+  },
+  {
+    "name": "wgtunnel/android",
+    "description": "An advanced, open-source client for WireGuard and AmneziaWG on Android.",
+    "url": "https://github.com/wgtunnel/android",
+    "stars": 3195,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "wgtunnel-fdroid-v5.7.4-arm64.apk",
+    "apk_url": "https://github.com/wgtunnel/android/releases/download/5.7.4/wgtunnel-fdroid-v5.7.4-arm64.apk",
+    "apk_size": 18542586
+  },
+  {
+    "name": "xxf098/shadowsocksr-v2ray-trojan-android",
+    "description": "A simple client for Android",
+    "url": "https://github.com/xxf098/shadowsocksr-v2ray-trojan-android",
+    "stars": 3161,
+    "language": "Scala",
+    "keyword": "android client",
+    "apk_name": "ssrray-release-3.8.23.1.apk",
+    "apk_url": "https://github.com/xxf098/shadowsocksr-v2ray-trojan-android/releases/download/v3.8.23/ssrray-release-3.8.23.1.apk",
+    "apk_size": 50491108
+  },
+  {
+    "name": "f-droid/fdroidclient",
+    "description": "Android client application.",
+    "url": "https://github.com/f-droid/fdroidclient",
+    "stars": 3069,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "org.fdroid.fdroid_1018050.apk",
+    "apk_url": "https://github.com/f-droid/fdroidclient/releases/download/1.18.0/org.fdroid.fdroid_1018050.apk",
+    "apk_size": 12688611
+  },
+  {
+    "name": "damontecres/Wholphin",
+    "description": "An OSS Android TV client for Jellyfin",
+    "url": "https://github.com/damontecres/Wholphin",
+    "stars": 2947,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "Wholphin-arm64-v8a.apk",
+    "apk_url": "https://github.com/damontecres/Wholphin/releases/download/v1.0.8/Wholphin-arm64-v8a.apk",
+    "apk_size": 46041302
+  },
+  {
+    "name": "miru-project/miru-app",
+    "description": "🎉 A versatile application that is free, open-source, and supports extension sources for videos, comics, and novels, available on Android, Windows, and Web platforms.",
+    "url": "https://github.com/miru-project/miru-app",
+    "stars": 5644,
+    "language": "Dart",
+    "keyword": "android apk",
+    "apk_name": "app-arm64-v8a-release.apk",
+    "apk_url": "https://github.com/miru-project/miru-app/releases/download/v1.8.1/app-arm64-v8a-release.apk",
+    "apk_size": 18393470
+  },
+  {
+    "name": "rumboalla/apkupdater",
+    "description": "APKUpdater is an open source tool that simplifies the process of finding updates for your installed apps.",
+    "url": "https://github.com/rumboalla/apkupdater",
+    "stars": 4008,
+    "language": "Kotlin",
+    "keyword": "android kotlin app",
+    "apk_name": "com.apkupdater.ci-release.apk",
+    "apk_url": "https://github.com/rumboalla/apkupdater/releases/download/0.0.604-ci/com.apkupdater.ci-release.apk",
+    "apk_size": 4130561
+  },
+  {
+    "name": "bitwarden/android",
+    "description": "Bitwarden mobile apps (Password Manager and Authenticator) for Android.",
+    "url": "https://github.com/bitwarden/android",
+    "stars": 9394,
+    "language": "Kotlin",
+    "keyword": "android app",
+    "apk_name": "com.x8bit.bitwarden-fdroid.apk",
+    "apk_url": "https://github.com/bitwarden/android/releases/download/v2026.9.0-bwpm/com.x8bit.bitwarden-fdroid.apk",
+    "apk_size": 91140277
+  },
+  {
+    "name": "MuntashirAkon/AppManager",
+    "description": "A full-featured package manager and viewer for Android",
+    "url": "https://github.com/MuntashirAkon/AppManager",
+    "stars": 9054,
+    "language": "Java",
+    "keyword": "android app",
+    "apk_name": "AppManager_v4.1.1.apk",
+    "apk_url": "https://github.com/MuntashirAkon/AppManager/releases/download/v4.1.1/AppManager_v4.1.1.apk",
+    "apk_size": 28270163
+  },
+  {
+    "name": "MorpheApp/morphe-manager",
+    "description": "Morphe app patcher for Android",
+    "url": "https://github.com/MorpheApp/morphe-manager",
+    "stars": 8323,
+    "language": "Kotlin",
+    "keyword": "android app",
+    "apk_name": "morphe-manager-1.32.0.apk",
+    "apk_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v1.32.0/morphe-manager-1.32.0.apk",
+    "apk_size": 18461403
+  },
+  {
+    "name": "rikkahub/rikkahub",
+    "description": "RikkaHub is an Android APP that supports for multiple LLM providers.",
+    "url": "https://github.com/rikkahub/rikkahub",
+    "stars": 7822,
+    "language": "Kotlin",
+    "keyword": "android app",
+    "apk_name": "rikkahub-2.5.4-arm64-v8a.apk",
+    "apk_url": "https://github.com/rikkahub/rikkahub/releases/download/2.5.4/rikkahub-2.5.4-arm64-v8a.apk",
+    "apk_size": 40093544
+  },
+  {
+    "name": "aniyomiorg/aniyomi",
+    "description": "An app for manga and anime",
+    "url": "https://github.com/aniyomiorg/aniyomi",
+    "stars": 7712,
+    "language": "Kotlin",
+    "keyword": "android app",
+    "apk_name": "aniyomi-arm64-v8a-v0.18.2.1.apk",
+    "apk_url": "https://github.com/aniyomiorg/aniyomi/releases/download/v0.18.2.1/aniyomi-arm64-v8a-v0.18.2.1.apk",
+    "apk_size": 83370215
+  },
+  {
+    "name": "czy0729/Bangumi",
+    "description": ":electron: An unofficial https://bgm.tv ui first app client for Android and iOS, built with React Native. 一个无广告、以爱好为驱动、不以盈利为目的、专门做 ACG 的类似豆瓣的追番记录，bgm.tv 第三方客户端。为移动端重新设计，内置大量加强的网页端难以实现的功能，且提供了相当的自定义选项。 目前已适配 iOS / Android。",
+    "url": "https://github.com/czy0729/Bangumi",
+    "stars": 5953,
+    "language": "TypeScript",
+    "keyword": "android client",
+    "apk_name": "bangumi_v8.40.2_arm64-v8a.apk",
+    "apk_url": "https://github.com/czy0729/Bangumi/releases/download/8.40.2/bangumi_v8.40.2_arm64-v8a.apk",
+    "apk_size": 32866704
+  },
+  {
+    "name": "Docile-Alligator/Infinity-For-Reddit",
+    "description": "A Reddit client for Android",
+    "url": "https://github.com/Docile-Alligator/Infinity-For-Reddit",
+    "stars": 5516,
+    "language": "Java",
+    "keyword": "android client",
+    "apk_name": "Infinity+-v8.3.2.apk",
+    "apk_url": "https://github.com/Docile-Alligator/Infinity-For-Reddit/releases/download/v8.3.2/Infinity%2B-v8.3.2.apk",
+    "apk_size": 22426742
+  },
+  {
+    "name": "celzero/rethink-app",
+    "description": "DNS over HTTPS / DNS over Tor / DNSCrypt client, WireGuard proxifier, firewall, and connection tracker for Android.",
+    "url": "https://github.com/celzero/rethink-app",
+    "stars": 5472,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "rethink-69-arm64-v8a.apk",
+    "apk_url": "https://github.com/celzero/rethink-app/releases/download/v0.5.7/rethink-69-arm64-v8a.apk",
+    "apk_size": 31680073
+  },
+  {
+    "name": "streamyfin/streamyfin",
+    "description": "A modern Jellyfin client built with Expo",
+    "url": "https://github.com/streamyfin/streamyfin",
+    "stars": 5208,
+    "language": "TypeScript",
+    "keyword": "android client",
+    "apk_name": "streamyfin-android-phone-apk.apk",
+    "apk_url": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-android-phone-apk.apk",
+    "apk_size": 197174334
+  },
+  {
+    "name": "bepass-org/oblivion",
+    "description": "Unofficial warp client for android",
+    "url": "https://github.com/bepass-org/oblivion",
+    "stars": 4850,
+    "language": "Dart",
+    "keyword": "android client",
+    "apk_name": "oblivion-v8-signed.apk",
+    "apk_url": "https://github.com/bepass-org/oblivion/releases/download/v8/oblivion-v8-signed.apk",
+    "apk_size": 62486494
+  },
+  {
+    "name": "jellyfin/jellyfin-androidtv",
+    "description": "Android TV Client for Jellyfin",
+    "url": "https://github.com/jellyfin/jellyfin-androidtv",
+    "stars": 4578,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "jellyfin-androidtv-v0.19.10-debug.apk",
+    "apk_url": "https://github.com/jellyfin/jellyfin-androidtv/releases/download/v0.19.10/jellyfin-androidtv-v0.19.10-debug.apk",
+    "apk_size": 28386222
+  },
+  {
+    "name": "ThirtyDegreesRay/OpenHub",
+    "description": "An open source GitHub Android client app, faster and concise.",
+    "url": "https://github.com/ThirtyDegreesRay/OpenHub",
+    "stars": 4375,
+    "language": "Java",
+    "keyword": "android client",
+    "apk_name": "openhub_v3.2.1.apk",
+    "apk_url": "https://github.com/ThirtyDegreesRay/OpenHub/releases/download/v3.2.1/openhub_v3.2.1.apk",
+    "apk_size": 3382715
+  },
+  {
+    "name": "Chevey339/kelivo",
+    "description": "A Flutter LLM Chat Client. Support Mobile & Desktop.",
+    "url": "https://github.com/Chevey339/kelivo",
+    "stars": 4035,
+    "language": "Dart",
+    "keyword": "android client",
+    "apk_name": "Kelivo_android_1.3.0+79_arm64-v8a.apk",
+    "apk_url": "https://github.com/Chevey339/kelivo/releases/download/v1.3.0/Kelivo_android_1.3.0%2B79_arm64-v8a.apk",
+    "apk_size": 37313157
+  },
+  {
+    "name": "proninyaroslav/libretorrent",
+    "description": "Free and Open Source, full-featured torrent client for Android. Mirrored from https://gitlab.com/proninyaroslav/libretorrent",
+    "url": "https://github.com/proninyaroslav/libretorrent",
+    "stars": 3885,
+    "language": "Java",
+    "keyword": "android client",
+    "apk_name": "LibreTorrent-4.1.1-arm64-v8a.apk",
+    "apk_url": "https://github.com/proninyaroslav/libretorrent/releases/download/4.1.1/LibreTorrent-4.1.1-arm64-v8a.apk",
+    "apk_size": 23110072
+  },
+  {
+    "name": "jarnedemeulemeester/findroid",
+    "description": "Third-party native Jellyfin Android app",
+    "url": "https://github.com/jarnedemeulemeester/findroid",
+    "stars": 4258,
+    "language": "Kotlin",
+    "keyword": "android kotlin app",
+    "apk_name": "findroid-v1.1.0-libre-arm64-v8a.apk",
+    "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v1.1.0/findroid-v1.1.0-libre-arm64-v8a.apk",
+    "apk_size": 38696636
+  },
+  {
+    "name": "owncloud/android",
+    "description": ":phone: The ownCloud Android App",
+    "url": "https://github.com/owncloud/android",
+    "stars": 4171,
+    "language": "Kotlin",
+    "keyword": "android kotlin app",
+    "apk_name": "owncloud_4.8.4-original-release.apk",
+    "apk_url": "https://github.com/owncloud/android/releases/download/v4.8.4/owncloud_4.8.4-original-release.apk",
+    "apk_size": 14447953
+  },
+  {
+    "name": "ProtonVPN/android-app",
+    "description": "Official ProtonVPN Android app",
+    "url": "https://github.com/ProtonVPN/android-app",
+    "stars": 4101,
+    "language": "Kotlin",
+    "keyword": "android kotlin app",
+    "apk_name": "ProtonVPN-5.20.39.0.605203900.-production-vanilla-direct-release.apk",
+    "apk_url": "https://github.com/ProtonVPN/android-app/releases/download/5.20.39.0/ProtonVPN-5.20.39.0.605203900.-production-vanilla-direct-release.apk",
+    "apk_size": 66487077
+  },
+  {
+    "name": "SimpleMobileTools/Simple-Gallery",
+    "description": "A premium app for managing and editing your photos, videos, GIFs without ads",
+    "url": "https://github.com/SimpleMobileTools/Simple-Gallery",
+    "stars": 4019,
+    "language": "Kotlin",
+    "keyword": "android kotlin app",
+    "apk_name": "gallery-396-foss-release.apk",
+    "apk_url": "https://github.com/SimpleMobileTools/Simple-Gallery/releases/download/6.28.1/gallery-396-foss-release.apk",
+    "apk_size": 32223101
+  },
+  {
+    "name": "EhViewer-NekoInverter/EhViewer",
+    "description": "🥥 A fork of EhViewer, feature requests are not accepted. Forked from https://gitlab.com/NekoInverter/EhViewer",
+    "url": "https://github.com/EhViewer-NekoInverter/EhViewer",
+    "stars": 3671,
+    "language": "Kotlin",
+    "keyword": "android kotlin app",
+    "apk_name": "EhViewer-v1.8.13-arm64-v8a.apk",
+    "apk_url": "https://github.com/EhViewer-NekoInverter/EhViewer/releases/download/v1.8.13/EhViewer-v1.8.13-arm64-v8a.apk",
+    "apk_size": 3580474
+>>>>>>> Stashed changes
   }
 ]
