@@ -1,0 +1,30 @@
+name: Run Toy Gravity Simulation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-gravity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy scipy
+
+      - name: Run toy gravity simulation
+        run: python scripts/toy_gravity.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: toy-gravity-result
+          path: toy_gravity_result.txt
