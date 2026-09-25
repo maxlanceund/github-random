@@ -51,7 +51,8 @@ def entanglement_entropy(psi, N, subsystem):
 
 # 初始态：所有自旋向上
 psi0 = np.zeros(2**N, dtype=complex)
-psi0[0] = 1.0
+neel = sum(2**(N-1-i) for i in range(0, N, 2))
+psi0[neel] = 1.0
 
 print(f"{'t':>6} | {'S(1)':>8} | {'S(2)':>8} | {'S(4)':>8} | {'S(边界)':>8}")
 print("-" * 55)
