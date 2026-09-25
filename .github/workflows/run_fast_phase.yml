@@ -1,0 +1,30 @@
+name: Run Fast Phase Detector
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-fast-phase:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy numba
+
+      - name: Run fast phase detector
+        run: python scripts/fast_phase_detector.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: fast-phase-result
+          path: fast_phase_detector_result.json
