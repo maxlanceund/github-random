@@ -1,0 +1,30 @@
+name: Run Thermo First Law
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-thermo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy
+
+      - name: Run thermo first law verification
+        run: python scripts/thermo_first_law.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: thermo-result
+          path: thermo_result.json
