@@ -50,7 +50,9 @@ def run_simulation(L, J, W, t_max, n_steps):
     
     # 初始态：所有自旋向上
     psi0 = np.zeros(2**L, dtype=complex)
-    psi0[0] = 1.0
+    # Néel 态：交替自旋
+    neel_index = sum(2**(L-1-i) for i in range(0, L, 2))
+    psi0[neel_index] = 1.0
     
     times = np.linspace(0, t_max, n_steps)
     entropies = []
