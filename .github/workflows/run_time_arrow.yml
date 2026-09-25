@@ -1,0 +1,30 @@
+name: Run Time Arrow Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-tarrow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy
+
+      - name: Run time arrow test
+        run: python scripts/time_arrow.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: time-arrow-result
+          path: time_arrow_result.json
