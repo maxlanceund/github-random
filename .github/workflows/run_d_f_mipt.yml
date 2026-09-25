@@ -1,0 +1,30 @@
+name: Run D_f MIPT Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-dfmipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy numba
+
+      - name: Run D_f MIPT test
+        run: python scripts/d_f_mipt.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: d-f-mipt-result
+          path: d_f_mipt_result.json
