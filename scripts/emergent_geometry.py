@@ -1,13 +1,14 @@
 import numpy as np
 import json
 
-def xx_correlation_pbc(L, J=1.0):
-    """周期边界 XX 链的基态关联矩阵"""
+def xx_correlation_pbc(L, J=1.0, mu=0.0):
+    """周期边界 XX 链 + 化学势"""
     h = np.zeros((L, L))
     for i in range(L):
         j = (i + 1) % L
         h[i, j] = -J/2
         h[j, i] = -J/2
+        h[i, i] = -mu  # 化学势
     eigenvalues, eigenvectors = np.linalg.eigh(h)
     occupied = eigenvalues < 0
     C = eigenvectors[:, occupied] @ eigenvectors[:, occupied].conj().T
@@ -28,12 +29,16 @@ def mutual_information(C, i, j):
     return float(S_i + S_j - S_ij)
 
 L = 400
-C = xx_correlation_pbc(L, J=1.0)
+# 用化学势让填充约为 0.4（非半填充）
+mu = -0.5
+C = xx_correlation_pbc(L, J=1.0, mu=mu)
 
+# 报告填充数
+filling = np.mean(np.diag(C))
 print("=" * 72)
-print("从纠缠中涌现的几何：周期边界 XX 链")
+print(f"从纠缠中涌现的几何：周期 XX 链（非半填充）")
 print("=" * 72)
-print(f"L = {L}, 中心格点 i0 = {L//2}")
+print(f"L = {L}, 化学势 mu = {mu}, 平均填充 = {filling:.4f}")
 print()
 
 i0 = L // 2
@@ -70,5 +75,6 @@ if len(valid) >= 2:
     print("=" * 72)
 
     with open("emergent_geometry_result.json", "w") as f:
-        json.dump({"results": results, "slope": float(coef[0]), "intercept": float(coef[1])}, f, indent=2)
+        json.dump({"results": results, "slope": float(coef[0]),
+                   "intercept": float(coef[1]), "filling": float(filling)}, f, indent=2)
     print("结果已保存到 emergent_geometry_result.json")
