@@ -1,0 +1,30 @@
+name: Run NN Rank 20cls Long
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-nn-rank-long:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Run NN rank 20cls long analysis
+        run: python scripts/nn_rank_20cls_long.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: nn-rank-long-result
+          path: nn_rank_20cls_long_result.json
