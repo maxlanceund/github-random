@@ -68,7 +68,7 @@ def discretize(x, n_bins=10):
     if x.std() < 1e-8:
         return np.zeros_like(x, dtype=np.int32)
     bins = np.linspace(x.min() - 1e-8, x.max() + 1e-8, n_bins + 1)
-    return np.digitize(x, bins) - 1
+    return np.clip(np.digitize(x, bins) - 1, 0, n_bins - 1)
 
 def entropy_from_counts(counts):
     total = counts.sum()
