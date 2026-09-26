@@ -127,7 +127,7 @@ print(f"{'神经元':>8} | {'D_f':>8}")
 print("-" * 25)
 single_Ds = []
 sample_neurons = [0, 1, 2, 4, 8, 16, 32, 64, 127]
-for i in single_neurons:
+for i in sample_neurons:
     D = compute_D_f(h1[:, [i]])
     single_Ds.append(D)
     print(f"neuron {i:>3} | {D:>8.4f}", flush=True)
@@ -258,7 +258,7 @@ print(f"{'神经元':>8} | {'D_f':>8}")
 print("-" * 25)
 single_Ds = []
 sample_neurons = [0, 1, 2, 4, 8, 16, 32, 64, 127]
-for i in single_neurons:
+for i in sample_neurons:
     D = compute_D_f(h1[:, [i]])
     single_Ds.append(D)
     print(f"neuron {i:>3} | {D:>8.4f}", flush=True)
