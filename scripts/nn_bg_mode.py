@@ -114,7 +114,7 @@ def image_stats(images):
     # 边缘密度：用差分近似
     edge = np.abs(np.diff(img_flat, axis=1)).mean(axis=1)
     # 空间频率：傅里叶变换的高频能量占比
-    freq = np.fft.fft2(images, axes=(1, 2))
+    freq = np.fft.fft2(images[:, 0], axes=(1, 2))
     freq_mag = np.abs(freq)
     # 把频率分成低频和高频
     h, w = images.shape[1], images.shape[2]
