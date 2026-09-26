@@ -1,0 +1,30 @@
+name: Run NN Early Stop
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-nn-earlystop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Run NN early stop analysis
+        run: python scripts/nn_earlystop.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: nn-earlystop-result
+          path: nn_earlystop_result.json
