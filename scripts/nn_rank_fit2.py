@@ -136,7 +136,7 @@ def effective_rank(M):
     return float(np.exp(-np.sum(p * np.log(p))))
 
 hidden = [128, 64, 32, 16]
-class_list = [2, 3, 4, 5, 6, 8, 10]
+class_list = [2, 3, 4, 5, 6, 7, 8, 10]
 
 print("=" * 75)
 print("有效秩 vs 类别数（充分训练版）")
