@@ -1,0 +1,30 @@
+name: Run RQM GR Relation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-rqm-gr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install numpy scipy
+
+      - name: Run RQM GR relation analysis
+        run: python scripts/rqm_gr_relation.py
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqm-gr-result
+          path: rqm_gr_relation_result.json
