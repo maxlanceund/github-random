@@ -22,9 +22,7 @@ def build_H_pbc(N, h):
 
 def ent_L(psi, L, N):
     psi_t = psi.reshape([2]*N)
-    keep = list(range(L))
-    trace = list(range(L, N))
-    perm = keep + trace
+    perm = list(range(L)) + list(range(L, N))
     psi_t = np.transpose(psi_t, perm)
     dk = 2**L
     dt = 2**(N-L)
@@ -32,16 +30,14 @@ def ent_L(psi, L, N):
     rho = psi_mat @ psi_mat.conj().T
     e = np.linalg.eigvalsh(rho)
     e = e[e > 1e-12]
-    return float(-np.sum(e * np.log(e)))  # 自然对数
+    return float(-np.sum(e * np.log(e)))
 
 def fit_pbc(Ls, Ss, N):
-    # 周期边界: S(L) = (c/3) ln(sin(pi L / N)) + const
-    # c = 3 * slope
     Ls = np.array(Ls, dtype=float)
     Ss = np.array(Ss)
     x = np.log(np.sin(np.pi * Ls / N))
     A = np.vstack([x, np.ones_like(x)]).T
-    coef, res, rank, sv = np.linalg.lstsq(A, Ss, rcond=None)
+    coef, _, _, _ = np.linalg.lstsq(A, Ss, rcond=None)
     a, b = coef
     c = 3 * a
     pred = A @ coef
@@ -49,8 +45,8 @@ def fit_pbc(Ls, Ss, N):
     return float(c), float(a), float(b), residual
 
 results = {}
-for N in [14, 16, 18, 20]:
-    print(f"\n=== N = {N} (周期边界, S 用 nats) ===")
+for N in [14, 16, 18]:
+    print(f"\n=== N = {N} ===")
     H = build_H_pbc(N, 1.0)
     val, vec = eigsh(H, k=1, which='SA')
     psi = vec[:, 0]
@@ -60,18 +56,13 @@ for N in [14, 16, 18, 20]:
     for L, S in zip(Ls, Ss):
         print(f"  L={L:>2}  S={S:.6f}")
     c, a, b, resid = fit_pbc(Ls, Ss, N)
-    print(f"  拟合: S = {a:.4f} * ln(sin(pi L/N)) + {b:.4f}")
     print(f"  c = 3a = {c:.4f}, 残差 = {resid:.6f}")
-    results[str(N)] = {
-        "L": Ls, "S": Ss,
-        "a": a, "b": b, "c": c,
-        "residual": resid
-    }
+    results[str(N)] = {"L": Ls, "S": Ss, "a": a, "b": b, "c": c, "residual": resid}
+    # 每跑完一个 N 立刻写文件
+    json.dump(results, open("central_pbc_result.json","w"), indent=2)
 
-print(f"\n=== 中心荷 c 随 N 变化 ===")
-for N in [14,16,18,20]:
+print(f"\n=== 中心荷 c ===")
+for N in [14,16,18]:
     print(f"  N={N:>2}:  c = {results[str(N)]['c']:.4f}")
 print(f"\nCFT 预言: c → 0.5")
-
-json.dump(results, open("central_pbc_result.json","w"), indent=2)
 print("\n保存到 central_pbc_result.json")

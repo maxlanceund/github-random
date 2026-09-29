@@ -16,3 +16,4 @@ jobs:
         with:
           name: central-pbc-result
           path: central_pbc_result.json
+          if-no-files-found: error
