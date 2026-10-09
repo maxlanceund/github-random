@@ -1,5 +1,4 @@
 name: 收集GitHub项目与书籍
-
 on:
   schedule:
     - cron: '0 2 * * *'
@@ -17,6 +16,9 @@ jobs:
 
     - name: 安装依赖
       run: pip install requests
+
+    - name: 写入 token 文件
+      run: echo "${{ secrets.GITHUB_TOKEN }}" > ~/.github_token
 
     - name: 抓取GitHub项目
       env:
