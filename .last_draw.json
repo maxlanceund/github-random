@@ -1,11 +1,8 @@
 {
-  "name": "shiaho777/web-to-app",
-  "description": "The most full featured web-to-app toolkit on Android, a complete APK workshop that runs entirely on your phone",
-  "url": "https://github.com/shiaho777/web-to-app",
-  "stars": 6516,
-  "language": "Kotlin",
-  "keyword": "android app",
-  "apk_name": "web-to-app-2.6.8.APK",
-  "apk_url": "https://github.com/shiaho777/web-to-app/releases/download/v2.6.8/web-to-app-2.6.8.APK",
-  "apk_size": 25199507
+  "name": "PaddlePaddle/PaddleOCR",
+  "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+  "url": "https://github.com/PaddlePaddle/PaddleOCR",
+  "stars": 90130,
+  "language": "Python",
+  "keyword": "AI"
 }

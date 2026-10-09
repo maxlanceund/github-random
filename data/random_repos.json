@@ -3,7 +3,7 @@
     "name": "termux/termux-app",
     "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
     "url": "https://github.com/termux/termux-app",
-    "stars": 61323,
+    "stars": 61489,
     "language": "Java",
     "keyword": "android app",
     "apk_name": "termux-app_v0.118.3+github-debug_arm64-v8a.apk",
@@ -25,7 +25,7 @@
     "name": "gkd-kit/gkd",
     "description": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
     "url": "https://github.com/gkd-kit/gkd",
-    "stars": 42176,
+    "stars": 42253,
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "gkd-v1.12.1.apk",
@@ -36,7 +36,7 @@
     "name": "Predidit/Kazumi",
     "description": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
     "url": "https://github.com/Predidit/Kazumi",
-    "stars": 30227,
+    "stars": 30311,
     "language": "Dart",
     "keyword": "android app",
     "apk_name": "Kazumi_android_2.3.6.apk",
@@ -47,9 +47,9 @@
     "name": "pppscn/SmsForwarder",
     "description": "短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正",
     "url": "https://github.com/pppscn/SmsForwarder",
-    "stars": 28112,
+    "stars": 28125,
     "language": "Kotlin",
-    "keyword": "android app",
+    "keyword": "android apk",
     "apk_name": "SmsF_3.5.0.260224_100055_universal_release.apk",
     "apk_url": "https://github.com/pppscn/SmsForwarder/releases/download/v3.5.0/SmsF_3.5.0.260224_100055_universal_release.apk",
     "apk_size": 19431539
@@ -91,9 +91,9 @@
     "name": "xiaye13579/BBLL",
     "description": "一个第三方哔哩哔哩客户端，A third-party bilibili client。",
     "url": "https://github.com/xiaye13579/BBLL",
-    "stars": 17470,
+    "stars": 17471,
     "language": "未知",
-    "keyword": "android client",
+    "keyword": "android apk",
     "apk_name": "BBLL1.5.2.apk",
     "apk_url": "https://github.com/xiaye13579/BBLL/releases/download/v1.5.2/BBLL1.5.2.apk",
     "apk_size": 6957071
@@ -273,11 +273,7 @@
     "name": "thunderbird/thunderbird-android",
     "description": "Thunderbird for Android – Open Source Email App for Android (fka K-9 Mail)",
     "url": "https://github.com/thunderbird/thunderbird-android",
-<<<<<<< Updated upstream
     "stars": 14032,
-=======
-    "stars": 14030,
->>>>>>> Stashed changes
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "k9mail-23.1.apk",
@@ -288,11 +284,7 @@
     "name": "LawnchairLauncher/lawnchair",
     "description": "No clever tagline needed.",
     "url": "https://github.com/LawnchairLauncher/lawnchair",
-<<<<<<< Updated upstream
     "stars": 13577,
-=======
-    "stars": 13574,
->>>>>>> Stashed changes
     "language": "Java",
     "keyword": "android app",
     "apk_name": "Lawnchair-1.2.0.1884.apk",
@@ -314,11 +306,7 @@
     "name": "maxrave-dev/SimpMusic",
     "description": "A cross-platform music app using YouTube Music for backend",
     "url": "https://github.com/maxrave-dev/SimpMusic",
-<<<<<<< Updated upstream
     "stars": 11462,
-=======
-    "stars": 11459,
->>>>>>> Stashed changes
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "SimpMusic-foss-arm64-v8a-release.apk",
@@ -329,11 +317,7 @@
     "name": "recloudstream/cloudstream",
     "description": "Android app for streaming and downloading media.",
     "url": "https://github.com/recloudstream/cloudstream",
-<<<<<<< Updated upstream
     "stars": 10765,
-=======
-    "stars": 10756,
->>>>>>> Stashed changes
     "language": "Kotlin",
     "keyword": "android app",
     "apk_name": "4.8.0.apk",
@@ -366,11 +350,7 @@
     "name": "Sjj1024/PakePlus-Android",
     "description": "Turn any webpage/HTML/Vue/React and so on into desktop and mobile app under 5M with easy in few minutes. 轻松将任意网站/HTML/Vue/React等项目构建为轻量级(小于5M)多端桌面应用和手机应用仅需几分钟. https://ppofficial.netlify.app",
     "url": "https://github.com/Sjj1024/PakePlus-Android",
-<<<<<<< Updated upstream
     "stars": 10151,
-=======
-    "stars": 10145,
->>>>>>> Stashed changes
     "language": "Lua",
     "keyword": "android app",
     "apk_name": "PakePlus-v0.0.1.apk",
@@ -381,12 +361,12 @@
     "name": "element-hq/element-android",
     "description": "A Matrix collaboration client for Android.",
     "url": "https://github.com/element-hq/element-android",
-    "stars": 3729,
+    "stars": 3727,
     "language": "Kotlin",
     "keyword": "android client",
     "apk_name": "vector-gplay-arm64-v8a-release-signed.apk",
-    "apk_url": "https://github.com/element-hq/element-android/releases/download/v1.6.62/vector-gplay-arm64-v8a-release-signed.apk",
-    "apk_size": 73975127
+    "apk_url": "https://github.com/element-hq/element-android/releases/download/v1.6.66/vector-gplay-arm64-v8a-release-signed.apk",
+    "apk_size": 73983375
   },
   {
     "name": "connectbot/connectbot",
@@ -833,7 +813,7 @@
     "name": "harry0703/MoneyPrinterTurbo",
     "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
     "url": "https://github.com/harry0703/MoneyPrinterTurbo",
-    "stars": 125420,
+    "stars": 126118,
     "language": "Python",
     "keyword": "AI"
   },
@@ -841,7 +821,7 @@
     "name": "microsoft/generative-ai-for-beginners",
     "description": "21 Lessons, Get Started Building with Generative AI ",
     "url": "https://github.com/microsoft/generative-ai-for-beginners",
-    "stars": 120407,
+    "stars": 120618,
     "language": "Jupyter Notebook",
     "keyword": "AI"
   },
@@ -849,7 +829,7 @@
     "name": "supabase/supabase",
     "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
     "url": "https://github.com/supabase/supabase",
-    "stars": 110718,
+    "stars": 110786,
     "language": "TypeScript",
     "keyword": "AI"
   },
@@ -857,7 +837,7 @@
     "name": "earendil-works/pi",
     "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
     "url": "https://github.com/earendil-works/pi",
-    "stars": 109035,
+    "stars": 109570,
     "language": "TypeScript",
     "keyword": "AI"
   },
@@ -865,7 +845,7 @@
     "name": "JuliusBrussee/caveman",
     "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
     "url": "https://github.com/JuliusBrussee/caveman",
-    "stars": 107612,
+    "stars": 107961,
     "language": "Go",
     "keyword": "AI"
   },
@@ -1184,7 +1164,6 @@
     "keyword": "AI"
   },
   {
-<<<<<<< Updated upstream
     "name": "markqvist/Sideband",
     "description": "LXMF client for Android, Linux and macOS allowing you to communicate with people or LXMF-compatible systems over Reticulum networks using LoRa, Packet Radio, WiFi, I2P, or anything else Reticulum supports.",
     "url": "https://github.com/markqvist/Sideband",
@@ -1315,7 +1294,96 @@
     "apk_name": "OpenCalc.v3.2.1.apk",
     "apk_url": "https://github.com/clementwzk/OpenCalc/releases/download/v3.2.1/OpenCalc.v3.2.1.apk",
     "apk_size": 2298891
-=======
+  },
+  {
+    "name": "team-spotube/spotube",
+    "description": "🎧 Open source music streaming app! Available for both desktop & mobile!",
+    "url": "https://github.com/team-spotube/spotube",
+    "stars": 49449,
+    "language": "Dart",
+    "keyword": "android app",
+    "apk_name": "Spotube-android-all-arch.apk",
+    "apk_url": "https://github.com/team-spotube/spotube/releases/download/v5.1.2/Spotube-android-all-arch.apk",
+    "apk_size": 128388471
+  },
+  {
+    "name": "ImranR98/Obtainium",
+    "description": "Get Android app updates straight from the source.",
+    "url": "https://github.com/ImranR98/Obtainium",
+    "stars": 19997,
+    "language": "Dart",
+    "keyword": "android app",
+    "apk_name": "app-arm64-v8a-fdroid-release.apk",
+    "apk_url": "https://github.com/ImranR98/Obtainium/releases/download/v1.6.17/app-arm64-v8a-fdroid-release.apk",
+    "apk_size": 26088490
+  },
+  {
+    "name": "simplex-chat/simplex-chat",
+    "description": "SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!",
+    "url": "https://github.com/simplex-chat/simplex-chat",
+    "stars": 19491,
+    "language": "Haskell",
+    "keyword": "android app",
+    "apk_name": "simplex-aarch64.apk",
+    "apk_url": "https://github.com/simplex-chat/simplex-chat/releases/download/v7.0.2/simplex-aarch64.apk",
+    "apk_size": 87466500
+  },
+  {
+    "name": "komi-store/komi-store",
+    "description": "🩵 A free, open-source app store for developers' releases on GitHub, Codeberg & Forgejo — browse, discover, and install apps with one click. Formerly GitHub Store.",
+    "url": "https://github.com/komi-store/komi-store",
+    "stars": 18810,
+    "language": "Kotlin",
+    "keyword": "android app",
+    "apk_name": "Komi-Store-1.9.2.apk",
+    "apk_url": "https://github.com/komi-store/komi-store/releases/download/v1.9.2/Komi-Store-1.9.2.apk",
+    "apk_size": 44288718
+  },
+  {
+    "name": "bluesky-social/social-app",
+    "description": "The Bluesky Social application for Web, iOS, and Android",
+    "url": "https://github.com/bluesky-social/social-app",
+    "stars": 18306,
+    "language": "TypeScript",
+    "keyword": "android app",
+    "apk_name": "Bluesky-1.133.0.apk",
+    "apk_url": "https://github.com/bluesky-social/social-app/releases/download/1.133.0/Bluesky-1.133.0.apk",
+    "apk_size": 265912545
+  },
+  {
+    "name": "organicmaps/organicmaps",
+    "description": "🍃 Organic Maps is a free Android & iOS offline maps app for more than 6M travelers, tourists, hikers, and cyclists. It uses crowd-sourced OpenStreetMap data and is developed with love by the community. No ads, no tracking, no data collection, no crapware. Please donate to support the development!",
+    "url": "https://github.com/organicmaps/organicmaps",
+    "stars": 15505,
+    "language": "C++",
+    "keyword": "android app",
+    "apk_name": "OrganicMaps-26082718-web-release.apk",
+    "apk_url": "https://github.com/organicmaps/organicmaps/releases/download/2026.08.27-18-android/OrganicMaps-26082718-web-release.apk",
+    "apk_size": 64193127
+  },
+  {
+    "name": "CarGuo/gsy_github_app_flutter",
+    "description": "Flutter 超完整的开源项目，功能丰富，适合学习和日常使用。GSYGithubApp 系列的优势：我们目前已经拥有 Flutter、Weex、ReactNative、Kotlin View、Kotlin Jetpack Compose ，Compose MultiPlatform，Harmony ArkUI 七个版本，功能齐全，项目框架内技术涉及面广，完成度高，持续维护，配套文章，适合全面学习，对比参考。",
+    "url": "https://github.com/CarGuo/gsy_github_app_flutter",
+    "stars": 15498,
+    "language": "Dart",
+    "keyword": "android app",
+    "apk_name": "app-release.apk",
+    "apk_url": "https://github.com/CarGuo/gsy_github_app_flutter/releases/download/8.1.1/app-release.apk",
+    "apk_size": 18476501
+  },
+  {
+    "name": "T8RIN/ImageToolbox",
+    "description": "🖼️ Image Toolbox is a powerful app for advanced image manipulation. It offers dozens of features, from basic tools like crop and draw to filters, OCR, and a wide range of image processing options",
+    "url": "https://github.com/T8RIN/ImageToolbox",
+    "stars": 14766,
+    "language": "Kotlin",
+    "keyword": "android app",
+    "apk_name": "image-toolbox-4.2.0-arm64-v8a.apk",
+    "apk_url": "https://github.com/T8RIN/ImageToolbox/releases/download/4.2.0/image-toolbox-4.2.0-arm64-v8a.apk",
+    "apk_size": 117873788
+  },
+  {
     "name": "shadowsocksr-backup/shadowsocksr-android",
     "description": "A ShadowsocksR client for Android",
     "url": "https://github.com/shadowsocksr-backup/shadowsocksr-android",
@@ -1325,6 +1393,17 @@
     "apk_name": "shadowsocksr-release.apk",
     "apk_url": "https://github.com/shadowsocksr-backup/shadowsocksr-android/releases/download/3.4.0.8/shadowsocksr-release.apk",
     "apk_size": 3703111
+  },
+  {
+    "name": "vivizzz007/vivi-music",
+    "description": "Vivi-Music is an expressive Material 3–based YouTube Music client for Android.",
+    "url": "https://github.com/vivizzz007/vivi-music",
+    "stars": 3363,
+    "language": "Kotlin",
+    "keyword": "android client",
+    "apk_name": "izzydroid-universal-foss-release.apk",
+    "apk_url": "https://github.com/vivizzz007/vivi-music/releases/download/v6.0.8/izzydroid-universal-foss-release.apk",
+    "apk_size": 29694136
   },
   {
     "name": "Telegram-FOSS-Team/Telegram-FOSS",
@@ -1341,7 +1420,7 @@
     "name": "trojan-gfw/igniter",
     "description": "A trojan client for Android (UNDER CONSTRUCTION).",
     "url": "https://github.com/trojan-gfw/igniter",
-    "stars": 3281,
+    "stars": 3280,
     "language": "Java",
     "keyword": "android client",
     "apk_name": "io.github.trojan_gfw.igniter-v0.10.4-beta-230001004-arm64-v8a-debug.apk",
@@ -1349,26 +1428,15 @@
     "apk_size": 19822293
   },
   {
-    "name": "vivizzz007/vivi-music",
-    "description": "Vivi-Music is an expressive Material 3–based YouTube Music client for Android.",
-    "url": "https://github.com/vivizzz007/vivi-music",
-    "stars": 3244,
-    "language": "Kotlin",
-    "keyword": "android client",
-    "apk_name": "izzydroid-universal-foss-release.apk",
-    "apk_url": "https://github.com/vivizzz007/vivi-music/releases/download/v6.0.7/izzydroid-universal-foss-release.apk",
-    "apk_size": 29636905
-  },
-  {
     "name": "wgtunnel/android",
     "description": "An advanced, open-source client for WireGuard and AmneziaWG on Android.",
     "url": "https://github.com/wgtunnel/android",
-    "stars": 3195,
+    "stars": 3203,
     "language": "Kotlin",
     "keyword": "android client",
-    "apk_name": "wgtunnel-fdroid-v5.7.4-arm64.apk",
-    "apk_url": "https://github.com/wgtunnel/android/releases/download/5.7.4/wgtunnel-fdroid-v5.7.4-arm64.apk",
-    "apk_size": 18542586
+    "apk_name": "wgtunnel-fdroid-v5.7.5-arm64.apk",
+    "apk_url": "https://github.com/wgtunnel/android/releases/download/5.7.5/wgtunnel-fdroid-v5.7.5-arm64.apk",
+    "apk_size": 18566786
   },
   {
     "name": "xxf098/shadowsocksr-v2ray-trojan-android",
@@ -1385,7 +1453,7 @@
     "name": "f-droid/fdroidclient",
     "description": "Android client application.",
     "url": "https://github.com/f-droid/fdroidclient",
-    "stars": 3069,
+    "stars": 3094,
     "language": "Kotlin",
     "keyword": "android client",
     "apk_name": "org.fdroid.fdroid_1018050.apk",
@@ -1396,7 +1464,7 @@
     "name": "damontecres/Wholphin",
     "description": "An OSS Android TV client for Jellyfin",
     "url": "https://github.com/damontecres/Wholphin",
-    "stars": 2947,
+    "stars": 2957,
     "language": "Kotlin",
     "keyword": "android client",
     "apk_name": "Wholphin-arm64-v8a.apk",
@@ -1404,235 +1472,14 @@
     "apk_size": 46041302
   },
   {
-    "name": "miru-project/miru-app",
-    "description": "🎉 A versatile application that is free, open-source, and supports extension sources for videos, comics, and novels, available on Android, Windows, and Web platforms.",
-    "url": "https://github.com/miru-project/miru-app",
-    "stars": 5644,
-    "language": "Dart",
+    "name": "xiaojieonly/Ehviewer_CN_SXJ",
+    "description": "ehviewer，用爱发电，快乐前行",
+    "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ",
+    "stars": 27118,
+    "language": "C",
     "keyword": "android apk",
-    "apk_name": "app-arm64-v8a-release.apk",
-    "apk_url": "https://github.com/miru-project/miru-app/releases/download/v1.8.1/app-arm64-v8a-release.apk",
-    "apk_size": 18393470
-  },
-  {
-    "name": "rumboalla/apkupdater",
-    "description": "APKUpdater is an open source tool that simplifies the process of finding updates for your installed apps.",
-    "url": "https://github.com/rumboalla/apkupdater",
-    "stars": 4008,
-    "language": "Kotlin",
-    "keyword": "android kotlin app",
-    "apk_name": "com.apkupdater.ci-release.apk",
-    "apk_url": "https://github.com/rumboalla/apkupdater/releases/download/0.0.604-ci/com.apkupdater.ci-release.apk",
-    "apk_size": 4130561
-  },
-  {
-    "name": "bitwarden/android",
-    "description": "Bitwarden mobile apps (Password Manager and Authenticator) for Android.",
-    "url": "https://github.com/bitwarden/android",
-    "stars": 9394,
-    "language": "Kotlin",
-    "keyword": "android app",
-    "apk_name": "com.x8bit.bitwarden-fdroid.apk",
-    "apk_url": "https://github.com/bitwarden/android/releases/download/v2026.9.0-bwpm/com.x8bit.bitwarden-fdroid.apk",
-    "apk_size": 91140277
-  },
-  {
-    "name": "MuntashirAkon/AppManager",
-    "description": "A full-featured package manager and viewer for Android",
-    "url": "https://github.com/MuntashirAkon/AppManager",
-    "stars": 9054,
-    "language": "Java",
-    "keyword": "android app",
-    "apk_name": "AppManager_v4.1.1.apk",
-    "apk_url": "https://github.com/MuntashirAkon/AppManager/releases/download/v4.1.1/AppManager_v4.1.1.apk",
-    "apk_size": 28270163
-  },
-  {
-    "name": "MorpheApp/morphe-manager",
-    "description": "Morphe app patcher for Android",
-    "url": "https://github.com/MorpheApp/morphe-manager",
-    "stars": 8323,
-    "language": "Kotlin",
-    "keyword": "android app",
-    "apk_name": "morphe-manager-1.32.0.apk",
-    "apk_url": "https://github.com/MorpheApp/morphe-manager/releases/download/v1.32.0/morphe-manager-1.32.0.apk",
-    "apk_size": 18461403
-  },
-  {
-    "name": "rikkahub/rikkahub",
-    "description": "RikkaHub is an Android APP that supports for multiple LLM providers.",
-    "url": "https://github.com/rikkahub/rikkahub",
-    "stars": 7822,
-    "language": "Kotlin",
-    "keyword": "android app",
-    "apk_name": "rikkahub-2.5.4-arm64-v8a.apk",
-    "apk_url": "https://github.com/rikkahub/rikkahub/releases/download/2.5.4/rikkahub-2.5.4-arm64-v8a.apk",
-    "apk_size": 40093544
-  },
-  {
-    "name": "aniyomiorg/aniyomi",
-    "description": "An app for manga and anime",
-    "url": "https://github.com/aniyomiorg/aniyomi",
-    "stars": 7712,
-    "language": "Kotlin",
-    "keyword": "android app",
-    "apk_name": "aniyomi-arm64-v8a-v0.18.2.1.apk",
-    "apk_url": "https://github.com/aniyomiorg/aniyomi/releases/download/v0.18.2.1/aniyomi-arm64-v8a-v0.18.2.1.apk",
-    "apk_size": 83370215
-  },
-  {
-    "name": "czy0729/Bangumi",
-    "description": ":electron: An unofficial https://bgm.tv ui first app client for Android and iOS, built with React Native. 一个无广告、以爱好为驱动、不以盈利为目的、专门做 ACG 的类似豆瓣的追番记录，bgm.tv 第三方客户端。为移动端重新设计，内置大量加强的网页端难以实现的功能，且提供了相当的自定义选项。 目前已适配 iOS / Android。",
-    "url": "https://github.com/czy0729/Bangumi",
-    "stars": 5953,
-    "language": "TypeScript",
-    "keyword": "android client",
-    "apk_name": "bangumi_v8.40.2_arm64-v8a.apk",
-    "apk_url": "https://github.com/czy0729/Bangumi/releases/download/8.40.2/bangumi_v8.40.2_arm64-v8a.apk",
-    "apk_size": 32866704
-  },
-  {
-    "name": "Docile-Alligator/Infinity-For-Reddit",
-    "description": "A Reddit client for Android",
-    "url": "https://github.com/Docile-Alligator/Infinity-For-Reddit",
-    "stars": 5516,
-    "language": "Java",
-    "keyword": "android client",
-    "apk_name": "Infinity+-v8.3.2.apk",
-    "apk_url": "https://github.com/Docile-Alligator/Infinity-For-Reddit/releases/download/v8.3.2/Infinity%2B-v8.3.2.apk",
-    "apk_size": 22426742
-  },
-  {
-    "name": "celzero/rethink-app",
-    "description": "DNS over HTTPS / DNS over Tor / DNSCrypt client, WireGuard proxifier, firewall, and connection tracker for Android.",
-    "url": "https://github.com/celzero/rethink-app",
-    "stars": 5472,
-    "language": "Kotlin",
-    "keyword": "android client",
-    "apk_name": "rethink-69-arm64-v8a.apk",
-    "apk_url": "https://github.com/celzero/rethink-app/releases/download/v0.5.7/rethink-69-arm64-v8a.apk",
-    "apk_size": 31680073
-  },
-  {
-    "name": "streamyfin/streamyfin",
-    "description": "A modern Jellyfin client built with Expo",
-    "url": "https://github.com/streamyfin/streamyfin",
-    "stars": 5208,
-    "language": "TypeScript",
-    "keyword": "android client",
-    "apk_name": "streamyfin-android-phone-apk.apk",
-    "apk_url": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-android-phone-apk.apk",
-    "apk_size": 197174334
-  },
-  {
-    "name": "bepass-org/oblivion",
-    "description": "Unofficial warp client for android",
-    "url": "https://github.com/bepass-org/oblivion",
-    "stars": 4850,
-    "language": "Dart",
-    "keyword": "android client",
-    "apk_name": "oblivion-v8-signed.apk",
-    "apk_url": "https://github.com/bepass-org/oblivion/releases/download/v8/oblivion-v8-signed.apk",
-    "apk_size": 62486494
-  },
-  {
-    "name": "jellyfin/jellyfin-androidtv",
-    "description": "Android TV Client for Jellyfin",
-    "url": "https://github.com/jellyfin/jellyfin-androidtv",
-    "stars": 4578,
-    "language": "Kotlin",
-    "keyword": "android client",
-    "apk_name": "jellyfin-androidtv-v0.19.10-debug.apk",
-    "apk_url": "https://github.com/jellyfin/jellyfin-androidtv/releases/download/v0.19.10/jellyfin-androidtv-v0.19.10-debug.apk",
-    "apk_size": 28386222
-  },
-  {
-    "name": "ThirtyDegreesRay/OpenHub",
-    "description": "An open source GitHub Android client app, faster and concise.",
-    "url": "https://github.com/ThirtyDegreesRay/OpenHub",
-    "stars": 4375,
-    "language": "Java",
-    "keyword": "android client",
-    "apk_name": "openhub_v3.2.1.apk",
-    "apk_url": "https://github.com/ThirtyDegreesRay/OpenHub/releases/download/v3.2.1/openhub_v3.2.1.apk",
-    "apk_size": 3382715
-  },
-  {
-    "name": "Chevey339/kelivo",
-    "description": "A Flutter LLM Chat Client. Support Mobile & Desktop.",
-    "url": "https://github.com/Chevey339/kelivo",
-    "stars": 4035,
-    "language": "Dart",
-    "keyword": "android client",
-    "apk_name": "Kelivo_android_1.3.0+79_arm64-v8a.apk",
-    "apk_url": "https://github.com/Chevey339/kelivo/releases/download/v1.3.0/Kelivo_android_1.3.0%2B79_arm64-v8a.apk",
-    "apk_size": 37313157
-  },
-  {
-    "name": "proninyaroslav/libretorrent",
-    "description": "Free and Open Source, full-featured torrent client for Android. Mirrored from https://gitlab.com/proninyaroslav/libretorrent",
-    "url": "https://github.com/proninyaroslav/libretorrent",
-    "stars": 3885,
-    "language": "Java",
-    "keyword": "android client",
-    "apk_name": "LibreTorrent-4.1.1-arm64-v8a.apk",
-    "apk_url": "https://github.com/proninyaroslav/libretorrent/releases/download/4.1.1/LibreTorrent-4.1.1-arm64-v8a.apk",
-    "apk_size": 23110072
-  },
-  {
-    "name": "jarnedemeulemeester/findroid",
-    "description": "Third-party native Jellyfin Android app",
-    "url": "https://github.com/jarnedemeulemeester/findroid",
-    "stars": 4258,
-    "language": "Kotlin",
-    "keyword": "android kotlin app",
-    "apk_name": "findroid-v1.1.0-libre-arm64-v8a.apk",
-    "apk_url": "https://github.com/jarnedemeulemeester/findroid/releases/download/v1.1.0/findroid-v1.1.0-libre-arm64-v8a.apk",
-    "apk_size": 38696636
-  },
-  {
-    "name": "owncloud/android",
-    "description": ":phone: The ownCloud Android App",
-    "url": "https://github.com/owncloud/android",
-    "stars": 4171,
-    "language": "Kotlin",
-    "keyword": "android kotlin app",
-    "apk_name": "owncloud_4.8.4-original-release.apk",
-    "apk_url": "https://github.com/owncloud/android/releases/download/v4.8.4/owncloud_4.8.4-original-release.apk",
-    "apk_size": 14447953
-  },
-  {
-    "name": "ProtonVPN/android-app",
-    "description": "Official ProtonVPN Android app",
-    "url": "https://github.com/ProtonVPN/android-app",
-    "stars": 4101,
-    "language": "Kotlin",
-    "keyword": "android kotlin app",
-    "apk_name": "ProtonVPN-5.20.39.0.605203900.-production-vanilla-direct-release.apk",
-    "apk_url": "https://github.com/ProtonVPN/android-app/releases/download/5.20.39.0/ProtonVPN-5.20.39.0.605203900.-production-vanilla-direct-release.apk",
-    "apk_size": 66487077
-  },
-  {
-    "name": "SimpleMobileTools/Simple-Gallery",
-    "description": "A premium app for managing and editing your photos, videos, GIFs without ads",
-    "url": "https://github.com/SimpleMobileTools/Simple-Gallery",
-    "stars": 4019,
-    "language": "Kotlin",
-    "keyword": "android kotlin app",
-    "apk_name": "gallery-396-foss-release.apk",
-    "apk_url": "https://github.com/SimpleMobileTools/Simple-Gallery/releases/download/6.28.1/gallery-396-foss-release.apk",
-    "apk_size": 32223101
-  },
-  {
-    "name": "EhViewer-NekoInverter/EhViewer",
-    "description": "🥥 A fork of EhViewer, feature requests are not accepted. Forked from https://gitlab.com/NekoInverter/EhViewer",
-    "url": "https://github.com/EhViewer-NekoInverter/EhViewer",
-    "stars": 3671,
-    "language": "Kotlin",
-    "keyword": "android kotlin app",
-    "apk_name": "EhViewer-v1.8.13-arm64-v8a.apk",
-    "apk_url": "https://github.com/EhViewer-NekoInverter/EhViewer/releases/download/v1.8.13/EhViewer-v1.8.13-arm64-v8a.apk",
-    "apk_size": 3580474
->>>>>>> Stashed changes
+    "apk_name": "EhViewer-2.0.2.4.apk",
+    "apk_url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases/download/2.0.2.4/EhViewer-2.0.2.4.apk",
+    "apk_size": 28205186
   }
 ]

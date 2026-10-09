@@ -1,137 +1,99 @@
-import requests
-import json
-import os
-import urllib3
+import requests, json, os, time, random, urllib3
 urllib3.disable_warnings()
 
-TOKEN_FILE = os.path.expanduser("~/.github_token")
 TOKEN = ""
-if os.path.exists(TOKEN_FILE):
-    with open(TOKEN_FILE, "r", encoding="utf-8") as f:
-        TOKEN = f.read().strip()
+tf = os.path.expanduser("~/.github_token")
+if os.path.exists(tf):
+    TOKEN = open(tf).read().strip()
 
-ANDROID_QUERIES = [
-    "android app", "android client", "android apk",
-    "android kotlin app", "android music player",
-    "android reader", "android browser", "android note app"
-]
-OTHER_QUERIES = ["AI", "Python", "Rust", "CLI"]
+UA = "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36"
 
-MAX_APK = 20       # 最多抓 10 个带 APK 的
-MAX_OTHER = 5     # 最多抓 20 个普通项目
+def h():
+    x = {"Accept": "application/vnd.github+json", "User-Agent": UA}
+    if TOKEN: x["Authorization"] = f"Bearer {TOKEN}"
+    return x
 
-def headers():
-    h = {"Accept": "application/vnd.github+json", "User-Agent": "gh-random"}
-    if TOKEN:
-        h["Authorization"] = f"Bearer {TOKEN}"
-    return h
+def req(url, params=None, timeout=10, retries=3):
+    for i in range(retries):
+        try:
+            r = requests.get(url, params=params, headers=h(), timeout=timeout)
+            if r.status_code == 200: return r
+            if r.status_code == 403: time.sleep(10)
+            else: return r
+        except Exception:
+            if i < retries-1: time.sleep(2)
+    return None
 
-import random
-
-def search_repos(query, per_page=20):
+def search(q):
     url = "https://api.github.com/search/repositories"
-    page = random.randint(1, 5)
-    params = {"q": query, "sort": "stars", "order": "desc", "per_page": per_page, "page": page}
-    resp = requests.get(url, params=params, headers=headers(), timeout=30, verify=True)
-    resp.raise_for_status()
-    return resp.json().get("items", [])
+    p = {"q": q, "sort": "stars", "order": "desc", "per_page": 20, "page": random.randint(1,3)}
+    r = req(url, params=p)
+    if not r: return []
+    try: return r.json().get("items", [])
+    except: return []
 
-def get_latest_apk(repo_full_name):
-    url = f"https://api.github.com/repos/{repo_full_name}/releases/latest"
+def get_apk(name):
+    r = req(f"https://api.github.com/repos/{name}/releases/latest", timeout=8, retries=2)
+    if not r: return None
     try:
-        resp = requests.get(url, headers=headers(), timeout=20, verify=True)
-        if resp.status_code != 200:
-            return None
-        release = resp.json()
-        for asset in release.get("assets", []):
-            if asset["name"].lower().endswith(".apk"):
-                return {
-                    "apk_name": asset["name"],
-                    "apk_url": asset["browser_download_url"],
-                    "apk_size": asset["size"]
-                }
-        return None
-    except Exception:
-        return None
+        for a in r.json().get("assets", []):
+            if a["name"].lower().endswith(".apk"):
+                return {"apk_name": a["name"], "apk_url": a["browser_download_url"], "apk_size": a["size"]}
+    except: pass
+    return None
 
-def save(all_repos):
+def save(new):
     os.makedirs("data", exist_ok=True)
     path = "data/random_repos.json"
-    # 读取旧数据
     old = []
     if os.path.exists(path):
-        with open(path, "r", encoding="utf-8") as f:
-            old = json.load(f)
-    # 合并去重（新的覆盖旧的）
-    merged = {}
-    for r in old + all_repos:
-        merged[r["name"]] = r
-    result = list(merged.values())
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+        try: old = json.load(open(path))
+        except: old = []
+    m = {}
+    for r in old + new: m[r["name"]] = r
+    result = list(m.values())
+    json.dump(result, open(path, "w"), ensure_ascii=False, indent=2)
     return len(result)
 
 def main():
-    all_repos = []
-    apk_count = 0
-    seen = set()
-
-    # 抓安卓项目，凑够 MAX_APK 个就停
-    for q in ANDROID_QUERIES:
-        if apk_count >= MAX_APK:
-            break
+    AQ = ["android app", "android client", "android apk", "android kotlin app",
+          "android music player", "android reader", "android browser", "android note app"]
+    OQ = ["AI", "Python", "Rust", "CLI"]
+    repos, seen, cnt = [], set(), 0
+    for q in AQ:
+        if cnt >= 20: break
         try:
-            for item in search_repos(q):
-                if apk_count >= MAX_APK:
-                    break
-                if item["full_name"] in seen:
-                    continue
-                apk = get_latest_apk(item["full_name"])
+            for it in search(q):
+                if cnt >= 20: break
+                if it["full_name"] in seen: continue
+                apk = get_apk(it["full_name"])
                 if apk:
-                    seen.add(item["full_name"])
-                    all_repos.append({
-                        "name": item["full_name"],
-                        "description": item.get("description") or "无描述",
-                        "url": item["html_url"],
-                        "stars": item["stargazers_count"],
-                        "language": item.get("language") or "未知",
-                        "keyword": q,
-                        "apk_name": apk["apk_name"],
-                        "apk_url": apk["apk_url"],
-                        "apk_size": apk["apk_size"]
-                    })
-                    apk_count += 1
-                    print(f"[{apk_count}/{MAX_APK}] ✅ {item['full_name']} -> {apk['apk_name']}")
-                    save(all_repos)   # 边抓边存
+                    seen.add(it["full_name"])
+                    repos.append({"name": it["full_name"], "description": it.get("description") or "无描述",
+                                  "url": it["html_url"], "stars": it["stargazers_count"],
+                                  "language": it.get("language") or "未知", "keyword": q,
+                                  "apk_name": apk["apk_name"], "apk_url": apk["apk_url"], "apk_size": apk["apk_size"]})
+                    cnt += 1
+                    print(f"[{cnt}/20] OK {it['full_name']} -> {apk['apk_name']}")
+            save(repos)
         except Exception as e:
             print(f"搜索 {q} 失败: {e}")
-
-    # 抓普通项目，凑够 MAX_OTHER 个就停
-    other_count = 0
-    for q in OTHER_QUERIES:
-        if other_count >= MAX_OTHER:
-            break
+    oc = 0
+    for q in OQ:
+        if oc >= 5: break
         try:
-            for item in search_repos(q):
-                if other_count >= MAX_OTHER:
-                    break
-                if item["full_name"] in seen:
-                    continue
-                seen.add(item["full_name"])
-                all_repos.append({
-                    "name": item["full_name"],
-                    "description": item.get("description") or "无描述",
-                    "url": item["html_url"],
-                    "stars": item["stargazers_count"],
-                    "language": item.get("language") or "未知",
-                    "keyword": q
-                })
-                other_count += 1
+            for it in search(q):
+                if oc >= 5: break
+                if it["full_name"] in seen: continue
+                seen.add(it["full_name"])
+                repos.append({"name": it["full_name"], "description": it.get("description") or "无描述",
+                              "url": it["html_url"], "stars": it["stargazers_count"],
+                              "language": it.get("language") or "未知", "keyword": q})
+                oc += 1
         except Exception as e:
             print(f"搜索 {q} 失败: {e}")
-
-    total = save(all_repos)
-    print(f"\n本次新抓 {len(all_repos)} 个，文件里现在共有 {total} 个项目")
+    total = save(repos)
+    print(f"\n本次新抓 {len(repos)} 个，文件里现在共有 {total} 个项目")
 
 if __name__ == "__main__":
     main()
