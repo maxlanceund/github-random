@@ -1,0 +1,40 @@
+name: Uncertainty H1 H2 Experiments
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exp1b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        K: [1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          cd uncertainty-subsumption
+          python experiments/exp1b_condensation_v2.py --K ${{ matrix.K }} | tee results/exp1b_K${{ matrix.K }}.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exp1b-K${{ matrix.K }}
+          path: uncertainty-subsumption/results/exp1b_K${{ matrix.K }}.txt
+
+  exp2b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          cd uncertainty-subsumption
+          python experiments/exp2b_maintenance_v2.py | tee results/exp2b.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exp2b
+          path: uncertainty-subsumption/results/exp2b.txt
