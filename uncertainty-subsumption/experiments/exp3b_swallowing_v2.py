@@ -1,5 +1,5 @@
 """实验三补强：确定性吞没 (H3) - 完整衰减曲线
-云端版本，支持 --K 参数
+云端版，小规模
 """
 import random, sys, os, statistics, math, argparse
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
@@ -28,8 +28,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--K", type=int, default=2)
     args = parser.parse_args()
-    N, T, n_trials = 10, 100, 1000000
-    seeds = list(range(1, 11))
+    N, T, n_trials = 10, 100, 50000
+    seeds = list(range(1, 4))
     print("=" * 60)
     print(f"实验三补强：确定性吞没 (H3)")
     print(f"N={N}  样本={n_trials}  采样天花板={math.log2(n_trials):.2f}")
