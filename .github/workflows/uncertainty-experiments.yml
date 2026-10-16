@@ -1,0 +1,26 @@
+name: Uncertainty Subsumption Experiments
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exp3b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        K: [1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run exp3b for K=${{ matrix.K }}
+        run: |
+          cd uncertainty-subsumption
+          python experiments/exp3b_swallowing_v2.py --K ${{ matrix.K }} | tee results/exp3b_K${{ matrix.K }}.txt
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: exp3b-K${{ matrix.K }}
+          path: uncertainty-subsumption/results/exp3b_K${{ matrix.K }}.txt
