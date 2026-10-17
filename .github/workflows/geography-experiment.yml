@@ -1,0 +1,23 @@
+name: Geography Philosophy Experiment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run experiment
+        run: |
+          cd geography-philosophy/experiments
+          python exp_cloud.py | tee results/cloud_output.txt
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: geography-results
+          path: geography-philosophy/experiments/results/
