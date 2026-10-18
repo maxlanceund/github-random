@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         // 把方向切回垂直上下滑动
         viewPager.orientation = ViewPager2.ORIENTATION_VERTICAL
-        viewPager.offscreenPageLimit = 3
+        viewPager.offscreenPageLimit = 1
         
         pickBtn.setOnClickListener { pickFolder.launch(null) }
 
