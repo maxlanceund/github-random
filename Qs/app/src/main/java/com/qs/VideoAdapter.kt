@@ -41,13 +41,12 @@ class VideoAdapter(
         var player = playerCache.get(position)
 
         if (player == null) {
-            // 【修正 1】去掉 EXTENSION_RENDERER_MODE_PREFER，纯走系统原生硬解
+            // 【好刀】纯硬解优先，但开启 Fallback（遇到硬骨头自动换软解兜底）
             val renderersFactory = DefaultRenderersFactory(context)
                 .setEnableDecoderFallback(true)
 
-            // 极速起播策略：起播仅需 200ms 数据
             val loadControl = DefaultLoadControl.Builder()
-                .setBufferDurationsMs(15000, 60000, 200, 1000)
+                .setBufferDurationsMs(30000, 60000, 300, 1000)
                 .build()
 
             player = ExoPlayer.Builder(context, renderersFactory)
@@ -57,7 +56,7 @@ class VideoAdapter(
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
             
-            // 【修正 2】只预读数据，绝对不预播放！这样不抢占硬件解码器
+            // 【削皮刀】只预读数据，绝对不播放
             player.prepare()
 
             val saved = historyStore.getPosition(uri.toString())
@@ -72,8 +71,10 @@ class VideoAdapter(
         }
 
         holder.playerView.player = player
+        
+        // 【关键】保留上一帧画面，防止滑动时出现黑屏闪烁
+        holder.playerView.setKeepContentOnPlayerReset(true)
 
-        // 只有当前页才播放，其他页保持静音暂停（但是后台数据已经在读了）
         if (position == currentPos) {
             player.volume = 1f
             player.play()
@@ -113,11 +114,11 @@ class VideoAdapter(
             it.play()
         }
 
-        // 【修正 3】保洁员：超过距离 2 的视频才释放
+        // 【保洁员】滑动距离超过 3 页（当前 + 前后各一页），才彻底释放
         val keysToRemove = mutableListOf<Int>()
         for (i in 0 until playerCache.size()) {
             val key = playerCache.keyAt(i)
-            if (abs(key - currentPos) > 2) {
+            if (abs(key - currentPos) > 3) {
                 val p = playerCache.valueAt(i)
                 historyStore.savePosition(videos[key].toString(), p.currentPosition)
                 p.release()
