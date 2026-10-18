@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import androidx.recyclerview.widget.RecyclerView
@@ -36,17 +37,20 @@ class VideoAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val uri = videos[position]
         var player = players.get(position)
-        
+
         if (player == null) {
-            player = ExoPlayer.Builder(context).build()
+            // 关键修改：开启解码器回退
+            val renderersFactory = DefaultRenderersFactory(context)
+                .setEnableDecoderFallback(true)
+            player = ExoPlayer.Builder(context, renderersFactory).build()
+
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
             player.prepare()
-            
+
             val saved = historyStore.getPosition(uri.toString())
             if (saved > 0) player.seekTo(saved)
-            
-            // 加上错误监听，如果解码失败会直接弹提示
+
             player.addListener(object : Player.Listener {
                 override fun onPlayerError(error: PlaybackException) {
                     super.onPlayerError(error)
@@ -54,10 +58,10 @@ class VideoAdapter(
                     Toast.makeText(context, "播放失败: ${error.errorCodeName}", Toast.LENGTH_LONG).show()
                 }
             })
-            
+
             players.put(position, player)
         }
-        
+
         holder.playerView.player = player
         if (position == currentPos) {
             player.play()
