@@ -55,12 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                handler.postDelayed({
-                    if (viewPager.adapter != null && viewPager.adapter!!.itemCount > position) {
-                        // 【修复点】：把 setCurrent 改成了 onScrollIdle
-                        (viewPager.adapter as? VideoAdapter)?.onScrollIdle(position)
-                    }
-                }, 50)
+                (viewPager.adapter as? VideoAdapter)?.setCurrent(position)
             }
         })
     }
@@ -87,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                         handler.postDelayed(hideBtnRunnable, 3000)
                     }
                     viewPager.adapter = adapter
-                    handler.postDelayed({ adapter.onScrollIdle(0) }, 300)
+                    adapter.setCurrent(0)
                 }
             }
         }
