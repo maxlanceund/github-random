@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             emptyView.visibility = View.GONE
             loadVideos(uri)
         } else {
-            // 如果用户按了返回键取消了，且原本没选过文件夹，显示按钮让他重选
             if (prefs.getString("folder", null) == null) {
                 emptyView.text = "请点击下方按钮选择视频文件夹"
                 emptyView.visibility = View.VISIBLE
@@ -53,12 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         val savedUri = prefs.getString("folder", null)
         if (savedUri != null) {
-            // 有记录，直接秒进，绝不显示按钮
             pickBtn.visibility = View.GONE
             emptyView.visibility = View.GONE
             loadVideos(Uri.parse(savedUri))
         } else {
-            // 第一次打开，没有记录，直接自动呼出系统选择器！
             emptyView.text = "请选择包含视频的文件夹"
             emptyView.visibility = View.VISIBLE
             pickBtn.visibility = View.GONE
@@ -87,9 +84,7 @@ class MainActivity : AppCompatActivity() {
                     emptyView.visibility = View.GONE
                     pickBtn.visibility = View.GONE
                     viewPager.visibility = View.VISIBLE
-                    
                     viewPager.adapter = VideoAdapter(this, videos, historyStore) {
-                        // 长按回调：弹出按钮3秒
                         pickBtn.visibility = View.VISIBLE
                         Toast.makeText(this, "点击下方按钮可更换文件夹", Toast.LENGTH_SHORT).show()
                         handler.removeCallbacks(hideBtnRunnable)

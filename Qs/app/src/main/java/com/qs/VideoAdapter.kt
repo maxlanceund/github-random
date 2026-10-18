@@ -7,7 +7,6 @@ import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
@@ -19,7 +18,8 @@ import androidx.recyclerview.widget.RecyclerView
 class VideoAdapter(
     private val context: Context,
     private val videos: List<Uri>,
-    private val historyStore: HistoryStore
+    private val historyStore: HistoryStore,
+    private val onLongPress: () -> Unit
 ) : RecyclerView.Adapter<VideoAdapter.VH>() {
 
     private val players = SparseArray<ExoPlayer>()
@@ -39,11 +39,8 @@ class VideoAdapter(
         var player = players.get(position)
 
         if (player == null) {
-            // 关键修改：开启解码器回退
-            val renderersFactory = DefaultRenderersFactory(context)
-                .setEnableDecoderFallback(true)
+            val renderersFactory = DefaultRenderersFactory(context).setEnableDecoderFallback(true)
             player = ExoPlayer.Builder(context, renderersFactory).build()
-
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
             player.prepare()
@@ -55,22 +52,21 @@ class VideoAdapter(
                 override fun onPlayerError(error: PlaybackException) {
                     super.onPlayerError(error)
                     Log.e("QsPlayer", "播放失败: ${error.errorCodeName}", error)
-                    Toast.makeText(context, "播放失败: ${error.errorCodeName}", Toast.LENGTH_LONG).show()
                 }
             })
-
             players.put(position, player)
         }
 
         holder.playerView.player = player
-        if (position == currentPos) {
-            player.play()
-        } else {
-            player.pause()
-        }
+        if (position == currentPos) player.play() else player.pause()
 
         holder.itemView.setOnClickListener {
             if (player.isPlaying) player.pause() else player.play()
+        }
+        
+        holder.itemView.setOnLongClickListener {
+            onLongPress()
+            true
         }
     }
 
