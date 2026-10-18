@@ -38,10 +38,8 @@ class VideoAdapter(
         var player = playerPool.get(position)
 
         if (player == null) {
-            // 【终极兜底】如果芯片硬解失败，立刻允许自动降级为软解（CPU）
             val renderersFactory = DefaultRenderersFactory(context)
                 .setEnableDecoderFallback(true)
-                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
 
             player = ExoPlayer.Builder(context, renderersFactory).build()
             player.setMediaItem(MediaItem.fromUri(uri))
@@ -53,15 +51,19 @@ class VideoAdapter(
             player.volume = 0f
             player.prepare()
             
-            // 强制预渲染第一帧
+            // 强制预渲染
             player.playWhenReady = true
             player.pause()
             
             playerPool.put(position, player)
         }
 
-        holder.playerView.player = player
+        // 【绝杀1】彻底防止画框重建时黑屏：保留最后一帧残影
         holder.playerView.setKeepContentOnPlayerReset(true)
+        // 【绝杀2】设置一个深灰色背景，哪怕万一没画面，也不是死黑
+        holder.playerView.setShutterBackgroundColor(android.graphics.Color.DKGRAY)
+        
+        holder.playerView.player = player
 
         if (position == currentPos) {
             player.volume = 1f
@@ -83,7 +85,8 @@ class VideoAdapter(
 
     override fun onViewRecycled(holder: VH) {
         super.onViewRecycled(holder)
-        holder.playerView.player = null
+        // 【修改】不要直接清空 player，让画面残留在上面。
+        // 直到新的视频绑定上来，才会覆盖掉。这样就绝对不会闪黑！
     }
 
     override fun getItemCount() = videos.size
