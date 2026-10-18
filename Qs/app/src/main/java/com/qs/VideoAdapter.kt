@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
+import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import androidx.recyclerview.widget.RecyclerView
@@ -37,7 +38,12 @@ class VideoAdapter(
         var player = playerPool.get(position)
 
         if (player == null) {
-            player = ExoPlayer.Builder(context).build()
+            // 【终极兜底】如果芯片硬解失败，立刻允许自动降级为软解（CPU）
+            val renderersFactory = DefaultRenderersFactory(context)
+                .setEnableDecoderFallback(true)
+                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
+
+            player = ExoPlayer.Builder(context, renderersFactory).build()
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
             
