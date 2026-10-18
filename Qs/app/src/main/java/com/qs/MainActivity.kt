@@ -30,12 +30,6 @@ class MainActivity : AppCompatActivity() {
             prefs.edit().putString("folder", uri.toString()).apply()
             emptyView.visibility = View.GONE
             loadVideos(uri)
-        } else {
-            if (prefs.getString("folder", null) == null) {
-                emptyView.text = "请点击下方按钮选择视频文件夹"
-                emptyView.visibility = View.VISIBLE
-                pickBtn.visibility = View.VISIBLE
-            }
         }
     }
 
@@ -56,15 +50,17 @@ class MainActivity : AppCompatActivity() {
             emptyView.visibility = View.GONE
             loadVideos(Uri.parse(savedUri))
         } else {
-            emptyView.text = "请选择包含视频的文件夹"
-            emptyView.visibility = View.VISIBLE
-            pickBtn.visibility = View.GONE
             pickFolder.launch(null)
         }
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                (viewPager.adapter as? VideoAdapter)?.setCurrent(position)
+                handler.postDelayed({
+                    if (viewPager.adapter != null && viewPager.adapter!!.itemCount > position) {
+                        // 【修复点】：把 setCurrent 改成了 onScrollIdle
+                        (viewPager.adapter as? VideoAdapter)?.onScrollIdle(position)
+                    }
+                }, 50)
             }
         })
     }
@@ -84,12 +80,14 @@ class MainActivity : AppCompatActivity() {
                     emptyView.visibility = View.GONE
                     pickBtn.visibility = View.GONE
                     viewPager.visibility = View.VISIBLE
-                    viewPager.adapter = VideoAdapter(this, videos, historyStore) {
+                    val adapter = VideoAdapter(this, videos, historyStore) {
                         pickBtn.visibility = View.VISIBLE
                         Toast.makeText(this, "点击下方按钮可更换文件夹", Toast.LENGTH_SHORT).show()
                         handler.removeCallbacks(hideBtnRunnable)
                         handler.postDelayed(hideBtnRunnable, 3000)
                     }
+                    viewPager.adapter = adapter
+                    handler.postDelayed({ adapter.onScrollIdle(0) }, 300)
                 }
             }
         }
@@ -98,11 +96,8 @@ class MainActivity : AppCompatActivity() {
     private fun collectVideos(dir: DocumentFile, out: MutableList<Uri>) {
         val exts = listOf(".mp4", ".webm", ".mkv", ".mov", ".m4v")
         for (f in dir.listFiles()) {
-            if (f.isDirectory) {
-                collectVideos(f, out)
-            } else if (f.isFile && exts.any { f.name?.lowercase()?.endsWith(it) == true }) {
-                out.add(f.uri)
-            }
+            if (f.isDirectory) collectVideos(f, out)
+            else if (f.isFile && exts.any { f.name?.lowercase()?.endsWith(it) == true }) out.add(f.uri)
         }
     }
 
