@@ -15,6 +15,7 @@ import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.abs
 
 class VideoAdapter(
     private val context: Context,
@@ -23,7 +24,7 @@ class VideoAdapter(
     private val onLongPress: () -> Unit
 ) : RecyclerView.Adapter<VideoAdapter.VH>() {
 
-    // 播放器池：Key 是位置，Value 是播放器实例
+    // 播放器池
     private val playerPool = SparseArray<ExoPlayer>()
     private var currentPos = 0
 
@@ -42,11 +43,11 @@ class VideoAdapter(
 
         holder.playerView.player = player
 
+        // 预渲染：只要不是当前页，静音偷偷播第一帧
         if (position == currentPos) {
             player.volume = 1f
             player.play()
         } else {
-            // 预渲染：静音播放第一帧，让画面提前就绪
             player.volume = 0f
             player.play()
         }
@@ -96,7 +97,6 @@ class VideoAdapter(
     override fun onViewRecycled(holder: VH) {
         super.onViewRecycled(holder)
         holder.playerView.player = null
-        // 注意：这里不释放播放器，因为池中可能还需要它
     }
 
     override fun getItemCount() = videos.size
@@ -116,6 +116,17 @@ class VideoAdapter(
             it.volume = 1f
             it.play()
         }
+
+        // 【保洁员逻辑】清理掉离当前位置超过 2 页的播放器，防止内存爆炸
+        val keysToRemove = mutableListOf<Int>()
+        for (i in 0 until playerPool.size()) {
+            val key = playerPool.keyAt(i)
+            if (abs(key - currentPos) > 2) {
+                playerPool.valueAt(i).release()
+                keysToRemove.add(key)
+            }
+        }
+        keysToRemove.forEach { playerPool.remove(it) }
     }
 
     fun saveCurrentPosition() {
