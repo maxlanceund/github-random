@@ -40,17 +40,31 @@ class VideoAdapter(
             player = ExoPlayer.Builder(context).build()
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
-            player.prepare()
+            
             val saved = historyStore.getPosition(uri.toString())
             if (saved > 0) player.seekTo(saved)
+            
+            player.volume = 0f
+            player.prepare()
+            
+            // 【终极预渲染】先播放一下，把第一帧画面顶出来，然后瞬间静音暂停
+            player.playWhenReady = true
+            player.pause()
+            
             playerPool.put(position, player)
         }
 
         holder.playerView.player = player
+        // 【防黑屏核心】哪怕切换了播放器，上一帧画面依然保留
         holder.playerView.setKeepContentOnPlayerReset(true)
 
-        player.volume = 0f
-        player.pause()
+        if (position == currentPos) {
+            player.volume = 1f
+            player.play()
+        } else {
+            player.volume = 0f
+            player.pause()
+        }
 
         holder.itemView.setOnClickListener {
             if (player.isPlaying) player.pause() else player.play()
@@ -69,29 +83,32 @@ class VideoAdapter(
 
     override fun getItemCount() = videos.size
 
-    fun onScrollIdle(position: Int) {
-        currentPos = position
-        for (i in 0 until playerPool.size()) {
-            val p = playerPool.valueAt(i)
-            p.pause()
-            p.volume = 0f
+    fun setCurrent(position: Int) {
+        playerPool.get(currentPos)?.let {
+            historyStore.savePosition(videos[currentPos].toString(), it.currentPosition)
+            it.pause()
+            it.volume = 0f
         }
+
+        currentPos = position
+
         playerPool.get(position)?.let {
             it.volume = 1f
             it.play()
         }
 
-        val toRemove = mutableListOf<Int>()
+        // 清理距离超过 3 的播放器
+        val keysToRemove = mutableListOf<Int>()
         for (i in 0 until playerPool.size()) {
             val key = playerPool.keyAt(i)
             if (abs(key - currentPos) > 3) {
                 val p = playerPool.valueAt(i)
                 historyStore.savePosition(videos[key].toString(), p.currentPosition)
                 p.release()
-                toRemove.add(key)
+                keysToRemove.add(key)
             }
         }
-        toRemove.forEach { playerPool.remove(it) }
+        keysToRemove.forEach { playerPool.remove(it) }
     }
 
     fun saveCurrentPosition() {
