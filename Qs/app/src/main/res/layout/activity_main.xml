@@ -20,12 +20,14 @@
         android:gravity="center"
         android:text="点下方按钮选择视频文件夹" />
 
+    <!-- 默认隐藏 -->
     <Button
         android:id="@+id/pickBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="32dp"
+        android:visibility="gone"
         android:text="选择视频文件夹" />
 
 </FrameLayout>

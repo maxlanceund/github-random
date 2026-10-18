@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.documentfile.provider.DocumentFile
@@ -35,10 +36,16 @@ class MainActivity : AppCompatActivity() {
         pickBtn = findViewById(R.id.pickBtn)
         historyStore = HistoryStore(this)
 
-        // 提前加载下一页，减少滑动卡顿
         viewPager.offscreenPageLimit = 1
 
         pickBtn.setOnClickListener { pickFolder.launch(null) }
+
+        // 长按屏幕，弹出选择文件夹按钮
+        viewPager.setOnLongClickListener {
+            pickBtn.visibility = View.VISIBLE
+            Toast.makeText(this, "点击下方按钮可更换文件夹", Toast.LENGTH_SHORT).show()
+            true
+        }
 
         val savedUri = prefs.getString("folder", null)
         if (savedUri != null) {
@@ -61,9 +68,11 @@ class MainActivity : AppCompatActivity() {
                 if (videos.isEmpty()) {
                     emptyView.text = "文件夹里没有视频\n支持 mp4 / webm / mkv / mov / m4v"
                     emptyView.visibility = View.VISIBLE
+                    pickBtn.visibility = View.VISIBLE // 没视频时显示按钮
                     viewPager.visibility = View.GONE
                 } else {
                     emptyView.visibility = View.GONE
+                    pickBtn.visibility = View.GONE    // 有视频时彻底隐藏按钮
                     viewPager.visibility = View.VISIBLE
                     viewPager.adapter = VideoAdapter(this, videos, historyStore)
                 }
