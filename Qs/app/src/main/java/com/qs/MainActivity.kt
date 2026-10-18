@@ -3,13 +3,12 @@ package com.qs
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.documentfile.provider.DocumentFile
 import androidx.viewpager2.widget.ViewPager2
@@ -21,8 +20,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pickBtn: Button
     private lateinit var historyStore: HistoryStore
     private val prefs by lazy { getSharedPreferences("app", MODE_PRIVATE) }
-    private val handler = Handler(Looper.getMainLooper())
-    private val hideBtnRunnable = Runnable { pickBtn.visibility = View.GONE }
 
     private val pickFolder = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) { uri ->
         if (uri != null) {
@@ -41,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         pickBtn = findViewById(R.id.pickBtn)
         historyStore = HistoryStore(this)
 
-        // 把方向切回垂直上下滑动
+        // 默认上下滑动，1页缓存（给芯片减负）
         viewPager.orientation = ViewPager2.ORIENTATION_VERTICAL
         viewPager.offscreenPageLimit = 1
         
@@ -79,10 +76,8 @@ class MainActivity : AppCompatActivity() {
                     pickBtn.visibility = View.GONE
                     viewPager.visibility = View.VISIBLE
                     val adapter = VideoAdapter(this, videos, historyStore) {
-                        pickBtn.visibility = View.VISIBLE
-                        Toast.makeText(this, "点击下方按钮可更换文件夹", Toast.LENGTH_SHORT).show()
-                        handler.removeCallbacks(hideBtnRunnable)
-                        handler.postDelayed(hideBtnRunnable, 3000)
+                        // 【长按触发菜单】
+                        showSettingsMenu()
                     }
                     viewPager.adapter = adapter
                     adapter.setCurrent(0)
@@ -91,13 +86,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showSettingsMenu() {
+        val options = arrayOf("切换滑动方向 (上下/左右)", "重新选择视频文件夹")
+        AlertDialog.Builder(this)
+            .setTitle("Qs 设置")
+            .setItems(options) { _, which ->
+                when (which) {
+                    0 -> toggleOrientation()
+                    1 -> pickFolder.launch(null)
+                }
+            }
+            .show()
+    }
+
+    private fun toggleOrientation() {
+        if (viewPager.orientation == ViewPager2.ORIENTATION_VERTICAL) {
+            viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            Toast.makeText(this, "已切换为：左右滑动", Toast.LENGTH_SHORT).show()
+        } else {
+            viewPager.orientation = ViewPager2.ORIENTATION_VERTICAL
+            Toast.makeText(this, "已切换为：上下滑动", Toast.LENGTH_SHORT).show()
+        }
+        // 切换方向后，强制刷新一下播放状态
+        (viewPager.adapter as? VideoAdapter)?.setCurrent(viewPager.currentItem)
+    }
+
     private fun collectVideos(dir: DocumentFile, out: MutableList<Uri>) {
         val exts = listOf(".mp4", ".webm", ".mkv", ".mov", ".m4v")
         for (f in dir.listFiles()) {
             if (f.isDirectory) {
                 collectVideos(f, out)
             } else if (f.isFile && exts.any { f.name?.lowercase()?.endsWith(it) == true }) {
-                // 【火眼金睛】过滤掉隐藏文件（如 ._xxx.mp4）和 0 字节的废文件
+                // 过滤隐藏文件和 0 字节废文件
                 val fileName = f.name ?: ""
                 if (!fileName.startsWith(".") && f.length() > 1024) {
                     out.add(f.uri)
@@ -113,7 +133,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        handler.removeCallbacks(hideBtnRunnable)
         (viewPager.adapter as? VideoAdapter)?.releaseAll()
     }
 }
