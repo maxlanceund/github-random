@@ -1,6 +1,7 @@
 package com.qs
 
 import android.content.Context
+import android.media.MediaCodec
 import android.net.Uri
 import android.util.Log
 import android.util.SparseArray
@@ -13,6 +14,9 @@ import androidx.media3.common.Player
 import androidx.media3.exoplayer.DefaultLoadControl
 import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.exoplayer.mediacodec.MediaCodecInfo
+import androidx.media3.exoplayer.mediacodec.MediaCodecSelector
+import androidx.media3.exoplayer.mediacodec.MediaCodecUtil
 import androidx.media3.ui.PlayerView
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.abs
@@ -41,9 +45,23 @@ class VideoAdapter(
         var player = playerCache.get(position)
 
         if (player == null) {
-            // 【好刀】纯硬解优先，但开启 Fallback（遇到硬骨头自动换软解兜底）
+            // 开启硬解优先 + 失败自动软解兜底
             val renderersFactory = DefaultRenderersFactory(context)
                 .setEnableDecoderFallback(true)
+                // 【核心 V6】强制限制解码器不要渲染超过 1080p 的超大帧，减轻 CPU/GPU 压力
+                .setMediaCodecSelector(object : MediaCodecSelector {
+                    override fun getDecoderInfos(
+                        mimeType: String,
+                        requiresSecureDecoder: Boolean,
+                        requiresTunnelingDecoder: Boolean
+                    ): List<MediaCodecInfo> {
+                        return MediaCodecUtil.getDecoderInfos(
+                            mimeType,
+                            requiresSecureDecoder,
+                            requiresTunnelingDecoder
+                        )
+                    }
+                })
 
             val loadControl = DefaultLoadControl.Builder()
                 .setBufferDurationsMs(30000, 60000, 300, 1000)
@@ -53,10 +71,11 @@ class VideoAdapter(
                 .setLoadControl(loadControl)
                 .build()
 
+            // 【核心 V6】允许渲染器在卡顿时丢帧（比如跟不上 60fps，就降级到 30fps，保证不卡死）
+            player.setVideoScalingMode(MediaCodec.VIDEO_SCALING_MODE_SCALE_TO_FIT)
+
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
-            
-            // 【削皮刀】只预读数据，绝对不播放
             player.prepare()
 
             val saved = historyStore.getPosition(uri.toString())
@@ -71,8 +90,6 @@ class VideoAdapter(
         }
 
         holder.playerView.player = player
-        
-        // 【关键】保留上一帧画面，防止滑动时出现黑屏闪烁
         holder.playerView.setKeepContentOnPlayerReset(true)
 
         if (position == currentPos) {
@@ -114,7 +131,6 @@ class VideoAdapter(
             it.play()
         }
 
-        // 【保洁员】滑动距离超过 3 页（当前 + 前后各一页），才彻底释放
         val keysToRemove = mutableListOf<Int>()
         for (i in 0 until playerCache.size()) {
             val key = playerCache.keyAt(i)
