@@ -15,6 +15,7 @@ import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.abs
 
 class VideoAdapter(
     private val context: Context,
@@ -23,7 +24,6 @@ class VideoAdapter(
     private val onLongPress: () -> Unit
 ) : RecyclerView.Adapter<VideoAdapter.VH>() {
 
-    // 缓存播放器
     private val playerCache = SparseArray<ExoPlayer>()
     private var currentPos = 0
 
@@ -41,12 +41,13 @@ class VideoAdapter(
         var player = playerCache.get(position)
 
         if (player == null) {
+            // 【修正 1】去掉 EXTENSION_RENDERER_MODE_PREFER，纯走系统原生硬解
             val renderersFactory = DefaultRenderersFactory(context)
                 .setEnableDecoderFallback(true)
-                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
 
+            // 极速起播策略：起播仅需 200ms 数据
             val loadControl = DefaultLoadControl.Builder()
-                .setBufferDurationsMs(30000, 120000, 200, 1000)
+                .setBufferDurationsMs(15000, 60000, 200, 1000)
                 .build()
 
             player = ExoPlayer.Builder(context, renderersFactory)
@@ -56,7 +57,7 @@ class VideoAdapter(
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
             
-            // 只预加载准备，不播放！节省底层硬件资源
+            // 【修正 2】只预读数据，绝对不预播放！这样不抢占硬件解码器
             player.prepare()
 
             val saved = historyStore.getPosition(uri.toString())
@@ -67,13 +68,12 @@ class VideoAdapter(
                     Log.e("QsPlayer", "播放失败: ${error.errorCodeName}", error)
                 }
             })
-            
             playerCache.put(position, player)
         }
 
         holder.playerView.player = player
 
-        // 只有当前页才播放，其他页全部暂停静音
+        // 只有当前页才播放，其他页保持静音暂停（但是后台数据已经在读了）
         if (position == currentPos) {
             player.volume = 1f
             player.play()
@@ -94,15 +94,6 @@ class VideoAdapter(
 
     override fun onViewRecycled(holder: VH) {
         super.onViewRecycled(holder)
-        val pos = holder.bindingAdapterPosition
-        if (pos != RecyclerView.NO_POSITION) {
-            playerCache.get(pos)?.let {
-                historyStore.savePosition(videos[pos].toString(), it.currentPosition)
-                // 彻底释放滑出屏幕的播放器，给手机减负
-                it.release()
-                playerCache.remove(pos)
-            }
-        }
         holder.playerView.player = null
     }
 
@@ -112,6 +103,7 @@ class VideoAdapter(
         playerCache.get(currentPos)?.let {
             historyStore.savePosition(videos[currentPos].toString(), it.currentPosition)
             it.pause()
+            it.volume = 0f
         }
 
         currentPos = position
@@ -120,6 +112,19 @@ class VideoAdapter(
             it.volume = 1f
             it.play()
         }
+
+        // 【修正 3】保洁员：超过距离 2 的视频才释放
+        val keysToRemove = mutableListOf<Int>()
+        for (i in 0 until playerCache.size()) {
+            val key = playerCache.keyAt(i)
+            if (abs(key - currentPos) > 2) {
+                val p = playerCache.valueAt(i)
+                historyStore.savePosition(videos[key].toString(), p.currentPosition)
+                p.release()
+                keysToRemove.add(key)
+            }
+        }
+        keysToRemove.forEach { playerCache.remove(it) }
     }
 
     fun saveCurrentPosition() {
