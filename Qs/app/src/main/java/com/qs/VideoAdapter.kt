@@ -15,7 +15,6 @@ import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.math.abs
 
 class VideoAdapter(
     private val context: Context,
@@ -24,8 +23,8 @@ class VideoAdapter(
     private val onLongPress: () -> Unit
 ) : RecyclerView.Adapter<VideoAdapter.VH>() {
 
-    // 播放器池
-    private val playerPool = SparseArray<ExoPlayer>()
+    // 缓存播放器
+    private val playerCache = SparseArray<ExoPlayer>()
     private var currentPos = 0
 
     inner class VH(view: View) : RecyclerView.ViewHolder(view) {
@@ -39,17 +38,48 @@ class VideoAdapter(
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val uri = videos[position]
-        val player = getOrCreatePlayer(position, uri)
+        var player = playerCache.get(position)
+
+        if (player == null) {
+            val renderersFactory = DefaultRenderersFactory(context)
+                .setEnableDecoderFallback(true)
+                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
+
+            val loadControl = DefaultLoadControl.Builder()
+                .setBufferDurationsMs(30000, 120000, 200, 1000)
+                .build()
+
+            player = ExoPlayer.Builder(context, renderersFactory)
+                .setLoadControl(loadControl)
+                .build()
+
+            player.setMediaItem(MediaItem.fromUri(uri))
+            player.repeatMode = Player.REPEAT_MODE_ONE
+            
+            // 只预加载准备，不播放！节省底层硬件资源
+            player.prepare()
+
+            val saved = historyStore.getPosition(uri.toString())
+            if (saved > 0) player.seekTo(saved)
+
+            player.addListener(object : Player.Listener {
+                override fun onPlayerError(error: PlaybackException) {
+                    Log.e("QsPlayer", "播放失败: ${error.errorCodeName}", error)
+                }
+            })
+            
+            playerCache.put(position, player)
+        }
 
         holder.playerView.player = player
 
-        // 预渲染：只要不是当前页，静音偷偷播第一帧
+        // 只有当前页才播放，其他页全部暂停静音
         if (position == currentPos) {
             player.volume = 1f
             player.play()
         } else {
             player.volume = 0f
-            player.play()
+            player.pause()
         }
 
         holder.itemView.setOnClickListener {
@@ -62,85 +92,48 @@ class VideoAdapter(
         }
     }
 
-    private fun getOrCreatePlayer(position: Int, uri: Uri): ExoPlayer {
-        playerPool.get(position)?.let { return it } // 池中有，直接复用
-
-        val renderersFactory = DefaultRenderersFactory(context)
-            .setEnableDecoderFallback(true)
-            .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
-
-        val loadControl = DefaultLoadControl.Builder()
-            .setBufferDurationsMs(30000, 120000, 200, 1000)
-            .build()
-
-        val player = ExoPlayer.Builder(context, renderersFactory)
-            .setLoadControl(loadControl)
-            .build()
-
-        player.setMediaItem(MediaItem.fromUri(uri))
-        player.repeatMode = Player.REPEAT_MODE_ONE
-        player.prepare()
-
-        val saved = historyStore.getPosition(uri.toString())
-        if (saved > 0) player.seekTo(saved)
-
-        player.addListener(object : Player.Listener {
-            override fun onPlayerError(error: PlaybackException) {
-                Log.e("QsPlayer", "播放失败: ${error.errorCodeName}", error)
-            }
-        })
-
-        playerPool.put(position, player)
-        return player
-    }
-
     override fun onViewRecycled(holder: VH) {
         super.onViewRecycled(holder)
+        val pos = holder.bindingAdapterPosition
+        if (pos != RecyclerView.NO_POSITION) {
+            playerCache.get(pos)?.let {
+                historyStore.savePosition(videos[pos].toString(), it.currentPosition)
+                // 彻底释放滑出屏幕的播放器，给手机减负
+                it.release()
+                playerCache.remove(pos)
+            }
+        }
         holder.playerView.player = null
     }
 
     override fun getItemCount() = videos.size
 
     fun setCurrent(position: Int) {
-        // 离开的页面：保存进度、暂停、静音
-        playerPool.get(currentPos)?.let {
+        playerCache.get(currentPos)?.let {
             historyStore.savePosition(videos[currentPos].toString(), it.currentPosition)
             it.pause()
-            it.volume = 0f
         }
 
         currentPos = position
 
-        // 进入的页面：恢复声音、播放
-        playerPool.get(position)?.let {
+        playerCache.get(position)?.let {
             it.volume = 1f
             it.play()
         }
-
-        // 【保洁员逻辑】清理掉离当前位置超过 2 页的播放器，防止内存爆炸
-        val keysToRemove = mutableListOf<Int>()
-        for (i in 0 until playerPool.size()) {
-            val key = playerPool.keyAt(i)
-            if (abs(key - currentPos) > 2) {
-                playerPool.valueAt(i).release()
-                keysToRemove.add(key)
-            }
-        }
-        keysToRemove.forEach { playerPool.remove(it) }
     }
 
     fun saveCurrentPosition() {
-        playerPool.get(currentPos)?.let {
+        playerCache.get(currentPos)?.let {
             historyStore.savePosition(videos[currentPos].toString(), it.currentPosition)
         }
     }
 
     fun releaseAll() {
-        for (i in 0 until playerPool.size()) {
-            val p = playerPool.valueAt(i)
-            historyStore.savePosition(videos[playerPool.keyAt(i)].toString(), p.currentPosition)
+        for (i in 0 until playerCache.size()) {
+            val p = playerCache.valueAt(i)
+            historyStore.savePosition(videos[playerCache.keyAt(i)].toString(), p.currentPosition)
             p.release()
         }
-        playerPool.clear()
+        playerCache.clear()
     }
 }
