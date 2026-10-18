@@ -41,7 +41,10 @@ class MainActivity : AppCompatActivity() {
         pickBtn = findViewById(R.id.pickBtn)
         historyStore = HistoryStore(this)
 
-        viewPager.offscreenPageLimit = 1
+        // 把方向切回垂直上下滑动
+        viewPager.orientation = ViewPager2.ORIENTATION_VERTICAL
+        viewPager.offscreenPageLimit = 3
+        
         pickBtn.setOnClickListener { pickFolder.launch(null) }
 
         val savedUri = prefs.getString("folder", null)
@@ -91,8 +94,15 @@ class MainActivity : AppCompatActivity() {
     private fun collectVideos(dir: DocumentFile, out: MutableList<Uri>) {
         val exts = listOf(".mp4", ".webm", ".mkv", ".mov", ".m4v")
         for (f in dir.listFiles()) {
-            if (f.isDirectory) collectVideos(f, out)
-            else if (f.isFile && exts.any { f.name?.lowercase()?.endsWith(it) == true }) out.add(f.uri)
+            if (f.isDirectory) {
+                collectVideos(f, out)
+            } else if (f.isFile && exts.any { f.name?.lowercase()?.endsWith(it) == true }) {
+                // 【火眼金睛】过滤掉隐藏文件（如 ._xxx.mp4）和 0 字节的废文件
+                val fileName = f.name ?: ""
+                if (!fileName.startsWith(".") && f.length() > 1024) {
+                    out.add(f.uri)
+                }
+            }
         }
     }
 
