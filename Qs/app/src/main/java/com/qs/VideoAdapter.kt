@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.media3.exoplayer.DefaultLoadControl
 import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
@@ -39,10 +40,29 @@ class VideoAdapter(
         var player = players.get(position)
 
         if (player == null) {
-            val renderersFactory = DefaultRenderersFactory(context).setEnableDecoderFallback(true)
-            player = ExoPlayer.Builder(context, renderersFactory).build()
+            // 【加速1】开启解码回退，防止 4K 报错
+            val renderersFactory = DefaultRenderersFactory(context)
+                .setEnableDecoderFallback(true)
+                .setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER)
+
+            // 【加速2】极其激进的缓冲策略：起播只要 500ms，后面疯狂缓存 50秒
+            val loadControl = DefaultLoadControl.Builder()
+                .setBufferDurationsMs(
+                    15000, // 最小缓冲 15秒
+                    50000, // 最大缓冲 50秒
+                    500,   // 起播只要 500ms！立马出画面
+                    2000   // 卡顿后重新缓冲 2秒
+                )
+                .build()
+
+            player = ExoPlayer.Builder(context, renderersFactory)
+                .setLoadControl(loadControl)
+                .build()
+
             player.setMediaItem(MediaItem.fromUri(uri))
             player.repeatMode = Player.REPEAT_MODE_ONE
+            
+            // 【加速3】预加载但不自动播放
             player.prepare()
 
             val saved = historyStore.getPosition(uri.toString())
@@ -58,7 +78,14 @@ class VideoAdapter(
         }
 
         holder.playerView.player = player
-        if (position == currentPos) player.play() else player.pause()
+        // 【加速4】提前把第一帧画出来，滑过去不黑屏
+        holder.playerView.setKeepContentOnPlayerReset(true) 
+        
+        if (position == currentPos) {
+            player.play()
+        } else {
+            player.pause()
+        }
 
         holder.itemView.setOnClickListener {
             if (player.isPlaying) player.pause() else player.play()
