@@ -47,7 +47,7 @@ class VideoAdapter(
             player.volume = 0f
             player.prepare()
             
-            // 【终极预渲染】先播放一下，把第一帧画面顶出来，然后瞬间静音暂停
+            // 强制预渲染第一帧
             player.playWhenReady = true
             player.pause()
             
@@ -55,7 +55,6 @@ class VideoAdapter(
         }
 
         holder.playerView.player = player
-        // 【防黑屏核心】哪怕切换了播放器，上一帧画面依然保留
         holder.playerView.setKeepContentOnPlayerReset(true)
 
         if (position == currentPos) {
@@ -97,7 +96,6 @@ class VideoAdapter(
             it.play()
         }
 
-        // 清理距离超过 3 的播放器
         val keysToRemove = mutableListOf<Int>()
         for (i in 0 until playerPool.size()) {
             val key = playerPool.keyAt(i)
