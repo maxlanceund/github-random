@@ -11,13 +11,31 @@ if not os.path.exists(file_name):
     urllib.request.urlretrieve(url, file_name)
     print("下载完成！")
 
-print("正在提取黑洞质量和自旋数据...")
-with h5py.File(file_name, 'r') as f:
-    group_name = list(f.keys())[0]
-    g = f[group_name]
-    masses = g['final_mass_source'][:10000]
-    spins = g['final_spin'][:10000]
+print("正在深度搜索真实黑洞参数...")
+masses = None
+spins = None
 
+with h5py.File(file_name, 'r') as f:
+    # 定义一个搜索函数，遍历文件里的所有对象
+    def find_data(name, obj):
+        global masses, spins
+        if isinstance(obj, h5py.Dataset):
+            # 只要找到名字匹配的数据集，就抓取
+            if name.endswith('final_mass_source') and masses is None:
+                print(f"找到质量数据路径: {name}")
+                masses = obj[:10000]
+            if name.endswith('final_spin') and spins is None:
+                print(f"找到自旋数据路径: {name}")
+                spins = obj[:10000]
+
+    # 启动深度搜索
+    f.visititems(find_data)
+
+if masses is None or spins is None:
+    print("❌ 没找到数据！")
+    exit(1)
+
+# 3. 转换成极小极小的 CSV 文件
 csv_file = "blackhole_data.csv"
 with open(csv_file, mode='w', newline='') as file:
     writer = csv.writer(file)
