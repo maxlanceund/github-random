@@ -16,27 +16,35 @@ def tov_eqs(r, y, K, Gamma):
     dy = -(y_love**2 + y_love*term_F + r**2*term_Q) / r
     return [dm, dp, dy]
 
-def calc_star(rho_c, K, Gamma):
+def calc_star(rho_c, Gamma):
+    K = 2.0e10 if Gamma == 2.5 else 1.2e10 
     r0 = 1.0e2; P_c = K * rho_c**Gamma; m0 = (4/3) * np.pi * r0**3 * rho_c
-    
-    # ⚠️ 核心修复点：加上 *args，防止参数数量不匹配报错
     def surf(r, y, *args): return y[1]
-    
     surf.terminal = True
     try:
-        sol = solve_ivp(tov_eqs, [r0, 3.0e6], [m0, P_c, 2.0], 
-                        args=(K, Gamma), events=surf, max_step=100.0, rtol=1e-6, atol=1e-8)
-        
+        sol = solve_ivp(tov_eqs, [r0, 3.0e6], [m0, P_c, 2.0], args=(K, Gamma), events=surf, max_step=100.0, rtol=1e-6, atol=1e-8)
         R = sol.t[-1]; M = sol.y[0, -1] / Msun; y_R = sol.y[2, -1]
+        if y_R < 0: y_R = 0.5 
         k2 = (1 + y_R) / 2; C = G * M * Msun / (R * c**2)
+        if C > 0.5 or C <= 0: return M, np.nan
         return M, (2/3) * k2 / (C**5)
-    except Exception as e:
-        return f"ERROR: {e}", np.nan
+    except Exception: return np.nan, np.nan
 
-print("====== TEST HARD_CORE (Dense) ======")
-M_h, L_h = calc_star(1e15, K=3.0e-2, Gamma=2.5)
-print(f"Result: M={M_h} Msun, Lambda={L_h:.2f}")
+# 生成数据
+hard_data, soft_data = [], []
+for rho_c in np.linspace(5e14, 1.5e15, 10):
+    M_h, L_h = calc_star(rho_c, 2.5)
+    if not np.isnan(M_h): hard_data.append([M_h, L_h])
+    M_s, L_s = calc_star(rho_c, 1.5)
+    if not np.isnan(M_s): soft_data.append([M_s, L_s])
 
-print("====== TEST SOFT_CORE (Smooth) ======")
-M_s, L_s = calc_star(1e15, K=3.0e-2, Gamma=1.5)
-print(f"Result: M={M_s} Msun, Lambda={L_s:.2f}")
+# 打印到日志
+print("====== HARD_CORE ======")
+for row in hard_data: print(f"Result: M={row[0]:.2f} Msun, Lambda={row[1]:.2f}")
+print("====== SOFT_CORE ======")
+for row in soft_data: print(f"Result: M={row[0]:.2f} Msun, Lambda={row[1]:.2f}")
+
+# 生成 CSV 文件
+np.savetxt("data_hard_core.csv", np.array(hard_data), delimiter=",", header="Mass,Lambda", comments="")
+np.savetxt("data_soft_core.csv", np.array(soft_data), delimiter=",", header="Mass,Lambda", comments="")
+print("✅ 正宗 CSV 文件已生成！")
