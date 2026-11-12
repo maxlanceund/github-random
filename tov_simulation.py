@@ -1,12 +1,10 @@
 import numpy as np
 from scipy.integrate import solve_ivp
 
-# 采用物理标准的几何单位制 (G=c=1)
 def tov_eqs(r, y, gamma):
     m, P, y_love = y
     if P <= 1e-10: return [0, 0, 0]
     
-    # 状态方程 (Polytrope)
     K = 0.05 
     rho = (P / K)**(1/gamma)
     eps = rho + P 
@@ -25,14 +23,14 @@ def tov_eqs(r, y, gamma):
     return [dm_dr, dp_dr, dy_dr]
 
 def get_star(gamma, target_mass=1.78):
-    # 二分法扫描中心压强，寻找目标质量
     Pc_low, Pc_high = 1e-4, 0.5
     for _ in range(30):
         Pc_mid = (Pc_low + Pc_high) / 2
-        def surf(r, y): return y[1]
+        
+        # ⚠️ 核心修复点：加上 *args 接住多余参数
+        def surf(r, y, *args): return y[1]
         surf.terminal = True
         
-        # 专业的自适应求解器，绝对不会溢出
         sol = solve_ivp(tov_eqs, [1e-4, 20], [0.0, Pc_mid, 2.0], 
                         args=(gamma,), events=surf, max_step=0.05, rtol=1e-8, atol=1e-10)
         
@@ -43,7 +41,7 @@ def get_star(gamma, target_mass=1.78):
             R = sol.t[-1]
             y_R = sol.y[2, -1]
             C = target_mass / R
-            k2 = (1 + y_R * 0.1) / 2 # 表面边界截断
+            k2 = (1 + y_R * 0.1) / 2
             return (2/3) * k2 / (C**5)
             
         if m < target_mass: Pc_low = Pc_mid
