@@ -22,37 +22,27 @@ def tov_eqs(r, y, gamma):
         
     return [dm_dr, dp_dr, dy_dr]
 
-def get_star(gamma, target_mass=1.78):
-    Pc_low, Pc_high = 1e-4, 0.5
-    for _ in range(30):
-        Pc_mid = (Pc_low + Pc_high) / 2
-        
-        # ⚠️ 核心修复点：加上 *args 接住多余参数
+def run(gamma):
+    for Pc in np.logspace(-4, -1, 30):
         def surf(r, y, *args): return y[1]
         surf.terminal = True
-        
-        sol = solve_ivp(tov_eqs, [1e-4, 20], [0.0, Pc_mid, 2.0], 
-                        args=(gamma,), events=surf, max_step=0.05, rtol=1e-8, atol=1e-10)
-        
-        if len(sol.t) == 0: return np.nan
-        m = sol.y[0, -1]
-        
-        if abs(m - target_mass) < 0.01:
+        try:
+            sol = solve_ivp(tov_eqs, [1e-4, 20], [0.0, Pc, 2.0], args=(gamma,), events=surf, max_step=0.01, rtol=1e-8)
+            if len(sol.t) < 2: continue
+            
+            m = sol.y[0, -1]
             R = sol.t[-1]
             y_R = sol.y[2, -1]
-            C = target_mass / R
-            k2 = (1 + y_R * 0.1) / 2
-            return (2/3) * k2 / (C**5)
             
-        if m < target_mass: Pc_low = Pc_mid
-        else: Pc_high = Pc_mid
-        
-    return np.nan
+            if m > 0.1 and R > 1:
+                C = m / R
+                k2 = (1 + y_R * 0.1) / 2
+                lam = (2/3) * k2 / (C**5)
+                print(f"{m:.3f} {R:.3f} {lam:.3f}")
+        except Exception:
+            continue
 
-print("🌌 LIGO 真实宇宙标准答案: 质量 = 1.78 Msun, Lambda = 203.4\n")
-
-lambda_hard = get_star(2.5)
-lambda_soft = get_star(1.5)
-
-print(f"🔴 硬核模型预测 Lambda: {lambda_hard:.1f}")
-print(f"🟢 平滑模型预测 Lambda: {lambda_soft:.1f}")
+print("GAMMA_2.5_START")
+run(2.5)
+print("GAMMA_1.5_START")
+run(1.5)
