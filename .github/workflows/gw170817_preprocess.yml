@@ -25,11 +25,5 @@ jobs:
           wget -c https://dcc.ligo.org/public/0157/P1800370/002/GWTC-1_sample_release.tar.gz
           tar -xf GWTC-1_sample_release.tar.gz
 
-      - name: Convert GW170817 hdf5 to csv
-        run: python gw_h5_to_csv.py
-
-      - name: Commit generated csv
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: gw170817_posterior.csv
-          commit_message: Auto-generate GW170817 posterior csv from GWTC-1 full sample release
+      - name: Inspect hdf5 structure
+        run: python inspect_h5.py
