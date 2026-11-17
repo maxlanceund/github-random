@@ -5,7 +5,7 @@ h5_path = "./GWTC-1_sample_release/GW170817_GWTC-1.hdf5"
 out_name = "gw170817_lambda.csv"
 
 with h5py.File(h5_path, 'r') as f:
-    grp = f['IMRPhenomPv2NRT_lowSpin_posterior']['samples']
+    grp = f['IMRPhenomPv2NRT_lowSpin_posterior']
     m1 = grp['mass_1']
     m2 = grp['mass_2']
     lamt = grp['lambda_tilde']
