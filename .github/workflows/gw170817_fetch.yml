@@ -13,35 +13,37 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download low spin PhenomPNRT dat sample
+      - name: Download GWTC‑1 sample release
         run: |
-          wget https://dcc.ligo.org/public/0146/P1800061/011/low_spin_PhenomPNRT_posterior_samples.dat.gz
-          gunzip low_spin_PhenomPNRT_posterior_samples.dat.gz
+          wget https://dcc.ligo.org/public/0157/GWTC‑1/001/GWTC‑1_sample_release.tar.gz
+          tar -xf GWTC‑1_sample_release.tar.gz
 
-      - name: Convert dat to csv
+      - name: Install h5py
+        run: pip install h5py
+
+      - name: Extract mass_1,mass_2,lambda_tilde to csv
         run: |
           python3 -c "
-import csv
-out = open('gw170817_posterior.csv', 'w')
-w = csv.writer(out)
-w.writerow(['mass_1','mass_2','lambda_tilde'])
-with open('low_spin_PhenomPNRT_posterior_samples.dat','r') as f:
-    for line in f:
-        line = line.strip()
-        if not line or line.startswith('#'):
-            continue
-        parts = line.split()
-        m1 = parts[0]
-        m2 = parts[1]
-        lamt = parts[10]
-        w.writerow([m1,m2,lamt])
-out.close()
+import h5py,csv
+h5_path='./GWTC-1_sample_release/GW170817_GWTC-1.hdf5'
+out_name='gw170817_lambda.csv'
+with h5py.File(h5_path,'r') as f:
+    grp=f['IMRPhenomPv2NRT_lowSpin_posterior']['samples']
+    m1=grp['mass_1']
+    m2=grp['mass_2']
+    lamt=grp['lambda_tilde']
+with open(out_name,'w',newline='') as fw:
+    w=csv.writer(fw)
+    w.writerow(['mass_1','mass_2','lambda_tilde'])
+    for a,b,c in zip(m1,m2,lamt):
+        w.writerow([float(a),float(b),float(c)])
+print('wrote csv')
           "
 
-      - name: Commit csv file
+      - name: Commit csv back to repo
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add gw170817_posterior.csv
-          git commit -m "Generate GW170817 posterior csv from DCC dat (no h5py)" || echo "No new csv, skip commit"
+          git add gw170817_lambda.csv
+          git commit -m "export GW170817 lambda_tilde csv from GWTC‑1" || true
           git push
