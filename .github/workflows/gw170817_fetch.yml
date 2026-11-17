@@ -1,6 +1,7 @@
 name: Fetch GW170817 posterior
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
   fetch:
@@ -8,15 +9,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Fetch lowSpin.dat and convert to csv
+
+      - name: Get GW170817 lowspin samples from GWOSC
         run: |
-          wget https://dcc.ligo.org/public/0157/P1800061/003/lowSpin.dat -O lowSpin.dat
-          echo "mass_1,mass_2,lambda_tilde" > gw170817_posterior.csv
-          awk '{print $1","$2","$3}' lowSpin.dat >> gw170817_posterior.csv
+          wget https://gwosc.org/dataset/GW170817/posterior_samples/GW170817_PhenomPNRT_lowSpin_posterior_samples.h5
+          apt update && apt install -y python3-h5py
+          python3 - <<PY
+import h5py, csv
+with h5py.File("GW170817_PhenomPNRT_lowSpin_posterior_samples.h5","r") as f:
+    m1 = f["posterior_samples"]["mass_1"]
+    m2 = f["posterior_samples"]["mass_2"]
+    lamt = f["posterior_samples"]["lambda_tilde"]
+with open("gw170817_posterior.csv","w") as fw:
+    w = csv.writer(fw)
+    w.writerow(["mass_1","mass_2","lambda_tilde"])
+    for a,b,c in zip(m1,m2,lamt):
+        w.writerow([float(a), float(b), float(c)])
+PY
+
       - name: Commit csv
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add gw170817_posterior.csv
-          git commit -m "add GW170817 lowSpin posterior csv with lambda_tilde"
+          git commit -m "GW170817 lowSpin posterior csv from GWOSC h5"
           git push
