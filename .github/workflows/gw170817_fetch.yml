@@ -3,9 +3,6 @@ on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: write
-
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -15,13 +12,13 @@ jobs:
 
       - name: Download GWTC‑1 sample release
         run: |
-          wget https://dcc.ligo.org/public/0157/GWTC‑1/001/GWTC‑1_sample_release.tar.gz
+          wget --user-agent="Mozilla/5.0" https://dcc.ligo.org/public/0157/GWTC‑1/001/GWTC‑1_sample_release.tar.gz
           tar -xf GWTC‑1_sample_release.tar.gz
 
       - name: Install h5py
         run: pip install h5py
 
-      - name: Extract mass_1,mass_2,lambda_tilde to csv
+      - name: Extract csv
         run: |
           python3 -c "
 import h5py,csv
@@ -37,13 +34,11 @@ with open(out_name,'w',newline='') as fw:
     w.writerow(['mass_1','mass_2','lambda_tilde'])
     for a,b,c in zip(m1,m2,lamt):
         w.writerow([float(a),float(b),float(c)])
-print('wrote csv')
+print('csv generated')
           "
 
-      - name: Commit csv back to repo
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add gw170817_lambda.csv
-          git commit -m "export GW170817 lambda_tilde csv from GWTC‑1" || true
-          git push
+      - name: Upload csv as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gw170817-lambda-csv
+          path: gw170817_lambda.csv
