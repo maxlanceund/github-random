@@ -1,7 +1,6 @@
 name: Fetch GW170817 posterior
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   fetch:
@@ -10,10 +9,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get GW170817 lowspin samples from GWOSC
+      - name: Get GW170817 lowspin h5 sample
         run: |
           wget https://gwosc.org/dataset/GW170817/posterior_samples/GW170817_PhenomPNRT_lowSpin_posterior_samples.h5
-          apt update && apt install -y python3-h5py
+
+      - name: Install h5py via pip
+        run: |
+          python3 -m pip install h5py
+
+      - name: Convert h5 to csv
+        run: |
           python3 - <<PY
 import h5py, csv
 with h5py.File("GW170817_PhenomPNRT_lowSpin_posterior_samples.h5","r") as f:
@@ -27,10 +32,10 @@ with open("gw170817_posterior.csv","w") as fw:
         w.writerow([float(a), float(b), float(c)])
 PY
 
-      - name: Commit csv
+      - name: Commit csv file
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add gw170817_posterior.csv
-          git commit -m "GW170817 lowSpin posterior csv from GWOSC h5"
+          git commit -m "Generate GW170817 posterior csv (pip h5py)" || echo "No new csv file generated"
           git push
