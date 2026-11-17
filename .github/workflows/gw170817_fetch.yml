@@ -20,15 +20,15 @@ jobs:
 
       - name: Convert dat to csv
         run: |
-          python3 - <<PY
+          python3 -c "
 import csv
-out = open("gw170817_posterior.csv", "w")
+out = open('gw170817_posterior.csv', 'w')
 w = csv.writer(out)
-w.writerow(["mass_1","mass_2","lambda_tilde"])
-with open("low_spin_PhenomPNRT_posterior_samples.dat","r") as f:
+w.writerow(['mass_1','mass_2','lambda_tilde'])
+with open('low_spin_PhenomPNRT_posterior_samples.dat','r') as f:
     for line in f:
         line = line.strip()
-        if not line or line.startswith("#"):
+        if not line or line.startswith('#'):
             continue
         parts = line.split()
         m1 = parts[0]
@@ -36,7 +36,7 @@ with open("low_spin_PhenomPNRT_posterior_samples.dat","r") as f:
         lamt = parts[10]
         w.writerow([m1,m2,lamt])
 out.close()
-PY
+          "
 
       - name: Commit csv file
         run: |
