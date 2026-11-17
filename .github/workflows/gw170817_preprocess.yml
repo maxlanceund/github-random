@@ -14,17 +14,21 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
-          pip install numpy pandas pesummary
+          pip install numpy h5py pandas
 
-      - name: Run pesummary script to fetch posterior
-        run: python gw_fetch_posterior.py
+      - name: Download GW170817 lowspin posterior hdf5 (stable mirror)
+        run: |
+          wget -c -O GW170817_lowspin.hdf5 https://www.gw-openscience.org/eventapi/html/GW170817/v3/GW170817-IMRPhenomPv2NRT_lowSpin_posterior.hdf5
+
+      - name: Convert hdf5 to csv
+        run: python gw_h5_to_csv.py
 
       - name: Commit generated csv
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: gw170817_posterior.csv
-          commit_message: Auto-generate GW170817 posterior csv via pesummary
+          commit_message: Auto-generate GW170817 lowspin posterior csv
