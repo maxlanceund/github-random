@@ -18,9 +18,9 @@ jobs:
       - name: Install dependencies
         run: pip install h5py numpy
 
-      - name: Download GWTC-1 data
+      - name: Download GWTC-1 sample release
         run: |
-          wget --user-agent="Mozilla/5.0" https://dcc.ligo.org/public/0157/GWTC-1/001/GWTC-1_sample_release.tar.gz
+          wget --user-agent="Mozilla/5.0" https://dcc.ligo.org/public/0157/P1800370/002/GWTC-1_sample_release.tar.gz
           tar -xf GWTC-1_sample_release.tar.gz
 
       - name: Run extract script
