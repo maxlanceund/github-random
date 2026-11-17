@@ -18,18 +18,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install numpy h5py pandas
+          pip install numpy pandas gwpy
 
-      # 改用wget从gwosc镜像下载GWTC‑1 GW170817后验
-      - name: Download GW170817 posterior hdf5 from GWOSC
-        run: |
-          wget -O GW170817_GWTC-1.hdf5 https://gwosc.org/eventapi/json/GWTC-1-confident/GW170817/v3/posterior.hdf5
-
-      - name: Run convert hdf5 to csv
-        run: python gw_h5_to_csv.py
+      - name: Run gwpy script to fetch posterior and export csv
+        run: python gw_fetch_posterior.py
 
       - name: Commit generated csv
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: gw170817_posterior.csv
-          commit_message: Auto‑generate GW170817 posterior csv
+          commit_message: Auto-generate GW170817 posterior csv via gwpy
