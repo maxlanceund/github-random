@@ -14,17 +14,17 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
-          pip install numpy pandas gwpy
+          pip install numpy pandas pesummary
 
-      - name: Run gwpy script to fetch posterior and export csv
+      - name: Run pesummary script to fetch posterior
         run: python gw_fetch_posterior.py
 
       - name: Commit generated csv
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: gw170817_posterior.csv
-          commit_message: Auto-generate GW170817 posterior csv via gwpy
+          commit_message: Auto-generate GW170817 posterior csv via pesummary
