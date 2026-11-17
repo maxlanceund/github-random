@@ -1,0 +1,34 @@
+name: GW170817 preprocess hdf5 to csv
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install numpy h5py pandas requests
+
+      - name: Download GW170817 GWTC‑1 posterior hdf5
+        run: |
+          wget -O GW170817_GWTC-1.hdf5 https://dcc.ligo.org/public/0157/P1800061/003/GW170817_GWTC-1.hdf5
+
+      - name: Run convert hdf5 to csv
+        run: python gw_h5_to_csv.py
+
+      - name: Commit generated csv
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: gw170817_posterior.csv
+          commit_message: Auto‑generate GW170817 posterior csv
