@@ -1,6 +1,7 @@
 name: Fetch GW170817 posterior
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
   fetch:
@@ -9,27 +10,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get GW170817 lowspin h5 sample
+      - name: Download low spin PhenomPNRT dat sample
         run: |
-          wget https://gwosc.org/dataset/GW170817/posterior_samples/GW170817_PhenomPNRT_lowSpin_posterior_samples.h5
+          wget https://dcc.ligo.org/public/0146/P1800061/011/low_spin_PhenomPNRT_posterior_samples.dat.gz
+          gunzip low_spin_PhenomPNRT_posterior_samples.dat.gz
 
-      - name: Install h5py via pip
-        run: |
-          python3 -m pip install h5py
-
-      - name: Convert h5 to csv
+      - name: Convert dat to csv
         run: |
           python3 - <<PY
-import h5py, csv
-with h5py.File("GW170817_PhenomPNRT_lowSpin_posterior_samples.h5","r") as f:
-    m1 = f["posterior_samples"]["mass_1"]
-    m2 = f["posterior_samples"]["mass_2"]
-    lamt = f["posterior_samples"]["lambda_tilde"]
-with open("gw170817_posterior.csv","w") as fw:
-    w = csv.writer(fw)
-    w.writerow(["mass_1","mass_2","lambda_tilde"])
-    for a,b,c in zip(m1,m2,lamt):
-        w.writerow([float(a), float(b), float(c)])
+import csv
+out = open("gw170817_posterior.csv", "w")
+w = csv.writer(out)
+w.writerow(["mass_1","mass_2","lambda_tilde"])
+with open("low_spin_PhenomPNRT_posterior_samples.dat","r") as f:
+    for line in f:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split()
+        m1 = parts[0]
+        m2 = parts[1]
+        lamt = parts[10]
+        w.writerow([m1,m2,lamt])
+out.close()
 PY
 
       - name: Commit csv file
@@ -37,5 +40,5 @@ PY
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add gw170817_posterior.csv
-          git commit -m "Generate GW170817 posterior csv (pip h5py)" || echo "No new csv file generated"
+          git commit -m "Generate GW170817 posterior csv from DCC dat (no h5py)" || echo "No new csv, skip commit"
           git push
