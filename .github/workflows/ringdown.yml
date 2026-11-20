@@ -1,0 +1,21 @@
+name: Ringdown 铃宕提取和V谷搜寻
+on:
+  workflow_dispatch:
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 缓存h5波形文件
+        uses: actions/cache@v4
+        with:
+          path: '*.h5'
+          key: Linux-ringdown-${{ github.sha }}
+      - name: 安装依赖
+        run: pip install h5py numpy pandas scipy
+      - name: 运行铃宕提取脚本
+        run: python fetch_ringdown_strain.py
+      - name: 自动提交生成的csv
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: '*.csv'
