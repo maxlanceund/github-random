@@ -1,10 +1,10 @@
 import h5py
 import numpy as np
-import urllib.request
 import os
 import pandas as pd
 from scipy.fft import fft, fftfreq
 from scipy.signal import argrelextrema
+from gwosc.datasets import event_strain
 
 event_name = "GW190521"
 det = "H1"
@@ -13,12 +13,17 @@ pre_win = 0.02
 post_win = 0.06
 
 h5_name = f"{event_name}_{det}_strain.h5"
-strain_url = "https://gwosc.org/eventapi/json/GW190521/H1/strain/"
 
 if not os.path.exists(h5_name):
-    print(f"本地无 {h5_name}，开始下载 strain h5")
-    urllib.request.urlretrieve(strain_url, h5_name)
-    print("下载完成")
+    print(f"本地无 {h5_name}，使用gwosc包下载 strain h5")
+    # gwosc 自动获取正确文件
+    strain_data, meta = event_strain(event_name, detector=det)
+    # 存成本地h5
+    with h5py.File(h5_name, "w") as f:
+        g = f.create_group(det)
+        g["strain"] = strain_data.value
+        g["times"] = strain_data.times
+    print("下载保存完成")
 else:
     print(f"✅ 命中缓存，跳过下载 {h5_name}")
 
