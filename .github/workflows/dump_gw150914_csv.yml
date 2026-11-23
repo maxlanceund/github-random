@@ -11,8 +11,8 @@ jobs:
       - name: install deps
         run: pip install h5py numpy pandas
 
-      - name: Download GW150914 posterior (LIGO, no zenodo)
-        run: wget --user-agent="Mozilla/5.0" -O GW150914_posterior.h5 https://dcc.ligo.org/public/0151/P1800229/001/GW150914.h5
+      - name: Download GW150914 posterior from GWOSC
+        run: wget --user-agent="Mozilla/5.0" -O GW150914_posterior.h5 https://gwosc.org/eventapi/json/GW150914-v3/posterior_samples.h5
 
       - name: convert h5 to csv
         run: python dump_gw150914.py

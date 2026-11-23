@@ -5,7 +5,8 @@ h5_path = "GW150914_posterior.h5"
 out_csv = "posterior_samples_GW150914.csv"
 
 with h5py.File(h5_path, "r") as f:
-    grp = f["IMRPhenomPv2_posterior"]
+    # GWOSC GW150914分组名
+    grp = f["posterior_samples"]
     m1 = grp["mass_1"][:]
     m2 = grp["mass_2"][:]
     chi1z = grp["spin_1z"][:]
