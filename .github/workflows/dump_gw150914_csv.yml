@@ -11,11 +11,12 @@ jobs:
       - name: install deps
         run: pip install h5py numpy pandas
 
-      - name: download h5
+      - name: Download full GWTC-1 sample tarball (LIGO DCC, not zenodo)
         run: |
-          wget --user-agent="Mozilla/5.0" -O GW150914-v3_posterior.h5 "https://zenodo.org/api/files/440a1f04-3c75-4875-bb85-44830842006c/GW150914-v3_posterior.h5"
+          wget --user-agent="Mozilla/5.0" -O GWTC-1_sample_release.tar.gz https://dcc.ligo.org/public/0157/P1800370/001/GWTC-1_sample_release.tar.gz
+          tar -xf GWTC-1_sample_release.tar.gz
 
-      - name: convert h5 to csv
+      - name: convert GW150914 h5 to csv
         run: python dump_gw150914.py
 
       - name: upload csv as artifact
