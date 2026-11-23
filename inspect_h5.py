@@ -1,10 +1,6 @@
 import h5py
-
-IN_H5 = "GWTC-1_sample_release/GW170817_GWTC-1.hdf5"
-
-def print_name(name):
-    print(name)
-
-with h5py.File(IN_H5, "r") as f:
-    print("===== 顶层所有key =====")
-    f.visit(print_name)
+h5_path = "./GWTC-1_sample_release/GW150914_GWTC-1.hdf5"
+with h5py.File(h5_path, "r") as f:
+    print("===== GW150914 顶层所有key =====")
+    for k in list(f.keys()):
+        print(k)
