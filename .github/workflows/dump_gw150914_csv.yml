@@ -9,12 +9,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: install deps
-        run: pip install h5py numpy pandas
+        run: pip install h5py pandas
 
-      - name: Download GWTC-1 full posteriors zenodo
-        run: |
-          wget --user-agent="Mozilla/5.0" -O GWTC-1_posteriors.tar.gz https://zenodo.org/record/3976528/files/GWTC-1_posteriors.tar.gz
-          tar -xf GWTC-1_posteriors.tar.gz
+      - name: Download GW150914 single posterior h5 from DCC
+        run: wget --user-agent="Mozilla/5.0" -O GW150914_posterior.h5 https://dcc.ligo.org/public/0142/P1800118/001/GW150914_posterior.h5
 
       - name: convert h5 to csv
         run: python dump_gw150914.py
