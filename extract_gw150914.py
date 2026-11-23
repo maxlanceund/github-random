@@ -6,9 +6,9 @@ out_csv = "./gw150914.csv"
 
 with h5py.File(h5_path, "r") as f:
     d = f["IMRPhenomPv2_posterior"]
-    keys = list(d.keys())
+    keys = d.dtype.names
     with open(out_csv, "w", newline="") as fw:
         writer = csv.writer(fw)
         writer.writerow(keys)
-        for row in zip(*[d[k][:] for k in keys]):
+        for row in d[:]:
             writer.writerow(row)
