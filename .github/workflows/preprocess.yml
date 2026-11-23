@@ -7,11 +7,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: install python
         run: pip install h5py
+      - name: download GWTC-1 sample
+        run: |
+          mkdir -p GWTC-1_sample_release
+          wget https://dcc.ligo.org/public/0157/G1900228/005/GWTC-1_sample_release.tar.gz
+          tar -zxf GWTC-1_sample_release.tar.gz
       - name: run gw170817
         run: python extract_gw170817.py
       - name: run gw150914
         run: python extract_gw150914.py
-      - name: list files
+      - name: list csv files
         run: ls -l *.csv
       - uses: actions/upload-artifact@v4
         with:
