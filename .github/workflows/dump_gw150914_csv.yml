@@ -6,18 +6,16 @@ jobs:
   dumpcsv:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: install deps
-        run: pip install h5py pandas
+      - name: Install Python dependencies
+        run: pip install gwosc pandas
 
-      - name: Download GW150914 single posterior h5 from DCC
-        run: wget --user-agent="Mozilla/5.0" -O GW150914_posterior.h5 https://dcc.ligo.org/public/0142/P1800118/001/GW150914_posterior.h5
-
-      - name: convert h5 to csv
+      - name: Run python script to get posterior samples
         run: python dump_gw150914.py
 
-      - name: upload csv artifact
+      - name: Upload csv as artifact
         uses: actions/upload-artifact@v4
         with:
           name: gw150914-posterior-csv

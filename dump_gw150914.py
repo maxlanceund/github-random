@@ -1,23 +1,23 @@
-import h5py
 import pandas as pd
+from gwosc.datasets import event_posterior_samples
 
-h5_path = "GW150914_posterior.h5"
-out_csv = "posterior_samples_GW150914.csv"
+# GWTC-1 对应的事件版本 GW150914-v3
+samples = event_posterior_samples("GW150914-v3")
 
-with h5py.File(h5_path, "r") as f:
-    # 和GW170817一致的分组名
-    grp = f["IMRPhenomPv2NRT_lowSpin_posterior"]
-    m1 = grp["mass_1"][:]
-    m2 = grp["mass_2"][:]
-    chi1z = grp["spin_1z"][:]
-    chi2z = grp["spin_2z"][:]
+# 打印所有字段，用来排错，防止键名不对直接崩溃
+print("===== 全部可用字段列表 =====")
+print(list(samples.keys()))
 
+# 注意：gwosc 的后验有两套质量：探测器系 mass_1 / 源系 mass_1_source
+# 你之前GW170817用的是源框架质量，这里保持对齐
 df = pd.DataFrame({
-    "m1": m1,
-    "m2": m2,
-    "chi1z": chi1z,
-    "chi2z": chi2z
+    "m1": samples["mass_1_source"],
+    "m2": samples["mass_2_source"],
+    "chi1z": samples["spin_1z"],
+    "chi2z": samples["spin_2z"]
 })
+
+# 和GW170817一样，固定随机种子采样5000条
 df = df.sample(n=5000, random_state=42, ignore_index=True)
-df.to_csv(out_csv, index=False)
-print("✅ GW150914 csv 生成完成")
+df.to_csv("posterior_samples_GW150914.csv", index=False)
+print("✅ GW150914 CSV导出完成")
