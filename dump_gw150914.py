@@ -1,14 +1,22 @@
-import os
-print("==== 当前目录 ====")
-print(os.listdir("."))
-print("==== GWTC-1_sample_release ====")
-if os.path.exists("GWTC-1_sample_release"):
-    print(os.listdir("GWTC-1_sample_release"))
-else:
-    print("GWTC-1_sample_release 不存在")
-gw150914 = "GWTC-1_sample_release/GW150914"
-print("==== GW150914 目录 ====")
-if os.path.exists(gw150914):
-    print(os.listdir(gw150914))
-else:
-    print("GW150914 文件夹不存在")
+import h5py
+import pandas as pd
+
+h5_path = "GW150914_posterior.h5"
+out_csv = "posterior_samples_GW150914.csv"
+
+with h5py.File(h5_path, "r") as f:
+    grp = f["IMRPhenomPv2_posterior"]
+    m1 = grp["mass_1"][:]
+    m2 = grp["mass_2"][:]
+    chi1z = grp["spin_1z"][:]
+    chi2z = grp["spin_2z"][:]
+
+df = pd.DataFrame({
+    "m1": m1,
+    "m2": m2,
+    "chi1z": chi1z,
+    "chi2z": chi2z
+})
+df = df.sample(n=5000, random_state=42, ignore_index=True)
+df.to_csv(out_csv, index=False)
+print("✅ 导出完成", out_csv)
