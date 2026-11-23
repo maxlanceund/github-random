@@ -1,0 +1,23 @@
+name: BH‑Echo‑Calculation
+on:
+  workflow_dispatch:
+
+jobs:
+  bh_calc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装运行所需python依赖
+        run: pip install h5py numpy pandas matplotlib requests
+
+      - name: 下载GW150914后验样本
+        run: python fetch_gw150914.py
+
+      - name: NR拟合计算残余参数、回声时延、铃宕频率
+        run: python compute_remnant_echo.py
+
+      - name: 将生成的csv与png图片自动提交推送回仓库
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: '*.csv *.png'
