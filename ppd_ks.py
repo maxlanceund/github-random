@@ -2,11 +2,6 @@ import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
 from scipy.stats import ks_2samp, norm
-import subprocess
-import os
-
-# 先执行预处理脚本，生成gw170817_lambda.csv
-subprocess.run(["python", "preprocess.py"], check=True)
 
 # Pre-computed TOV tables
 m_hc = np.array([0.14,0.31,0.52,0.74,0.94,1.11,1.26,1.38,1.48,1.56,1.61,1.64,1.65])
@@ -86,7 +81,7 @@ def ks_compare(obs, pred):
 
 ks_hc, p_hc, n_ok_hc, frac_ok_hc = ks_compare(lam_obs, lam_tilde_hc_pred)
 ks_sly, p_sly, n_ok_sly, frac_ok_sly = ks_compare(lam_obs, lam_tilde_sly_pred)
-ks_apr, p_apr, n_ok_apr, frac_ok_apr = ks_compare(lam_tilde_apr_pred, lam_tilde_apr_pred)
+ks_apr, p_apr, n_ok_apr, frac_ok_apr = ks_compare(lam_obs, lam_tilde_apr_pred)
 ks_dd2, p_dd2, n_ok_dd2, frac_ok_dd2 = ks_compare(lam_obs, lam_tilde_dd2_pred)
 
 out_lines = []
