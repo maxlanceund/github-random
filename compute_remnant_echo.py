@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt  # 云端CI禁用绘图
 
 # --------------------------
 # Constants
@@ -105,26 +105,23 @@ print(f"Echo delay median [s]: {med_dt:.4f}")
 print(f"Echo delay 5%‑95% quantile [s]: {p5_dt:.4f} ~ {p95_dt:.4f}")
 print(f"Ringdown frequency median [Hz]: {med_fd:.2f}")
 
-# --------------------------
-# Plot figures
-# --------------------------
-plt.figure(figsize=(8,5))
-plt.hist(df["echo_delay_s"], bins=80, density=True, alpha=0.7)
-plt.xlabel("Echo delay (s)")
-plt.ylabel("Posterior density")
-plt.title("GW150914 echo delay, Kerr‑spin + NR‑fit")
-plt.tight_layout()
-plt.savefig("bh_echo_delay_new.png", dpi=200)
-plt.close()
-print("[OK] Saved bh_echo_delay_new.png")
+# ============ 下面绘图代码全部注释，CI云端不运行绘图 ============
+# plt.figure(figsize=(8,5))
+# plt.hist(df["echo_delay_s"], bins=80, density=True, alpha=0.7)
+# plt.xlabel("Echo delay (s)")
+# plt.ylabel("Posterior density")
+# plt.title("GW150914 echo delay, Kerr‑spin + NR‑fit")
+# plt.tight_layout()
+# plt.savefig("bh_echo_delay_new.png", dpi=200)
+# plt.close()
+# print("[OK] Saved bh_echo_delay_new.png")
 
-plt.figure(figsize=(8,5))
-plt.hist(df["f_ringdown_Hz"],bins=80,density=True,alpha=0.7,color="orange")
-plt.xlabel("Ringdown frequency [Hz]")
-plt.ylabel("Posterior density")
-plt.title("GW150914 Ringdown Frequency Posterior")
-plt.tight_layout()
-plt.savefig("ringdown_posterior.png",dpi=200)
-plt.close()
-print("[OK] Saved ringdown_posterior.png")
-
+# plt.figure(figsize=(8,5))
+# plt.hist(df["f_ringdown_Hz"],bins=80,density=True,alpha=0.7,color="orange")
+# plt.xlabel("Ringdown frequency [Hz]")
+# plt.ylabel("Posterior density")
+# plt.title("GW150914 Ringdown Frequency Posterior")
+# plt.tight_layout()
+# plt.savefig("ringdown_posterior.png",dpi=200)
+# plt.close()
+# print("[OK] Saved ringdown_posterior.png")
