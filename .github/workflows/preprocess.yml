@@ -1,38 +1,21 @@
 name: GW170817 + GW150914 preprocess hdf5 to csv
-on:
-  push:
-    branches: [ main ]
-
+on: push
 jobs:
   preprocess:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install h5py numpy
-
-      - name: Download GWTC-1 sample release
-        run: |
-          wget --user-agent="Mozilla/5.0" https://dcc.ligo.org/public/0157/P1800370/002/GWTC-1_sample_release.tar.gz
-          tar -xf GWTC-1_sample_release.tar.gz
-
-      - name: Run extract script for GW170817
+      - uses: actions/checkout@v4
+      - name: install python
+        run: pip install h5py
+      - name: run gw170817
         run: python extract_gw170817.py
-
-      - name: Run extract script for GW150914
+      - name: run gw150914
         run: python extract_gw150914.py
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: list files
+        run: ls -l *.csv
+      - uses: actions/upload-artifact@v4
         with:
           name: gwtc1-csv-output
           path: |
             gw170817_lambda.csv
-            gw150914_samples.csv
+            gw150914.csv
