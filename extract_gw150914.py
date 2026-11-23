@@ -35,7 +35,8 @@ def z_of_dl(dl):
     return 0.5*(lo+hi)
 
 with h5py.File(H5, "r") as f:
-    d = f["IMRPhenomPv2NRT_lowSpin_posterior"][:]
+    # GW150914 这里：IMRPhenomPv2_lowSpin_posterior，没有NRT！
+    d = f["IMRPhenomPv2_lowSpin_posterior"][:]
     m1d = d["m1_detector_frame_Msun"]
     m2d = d["m2_detector_frame_Msun"]
     chi1z = d["chi1z"]
