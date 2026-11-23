@@ -1,4 +1,4 @@
-name: GW170817 preprocess hdf5 to csv
+name: GW170817 + GW150914 preprocess hdf5 to csv
 on:
   push:
     branches: [ main ]
@@ -23,11 +23,16 @@ jobs:
           wget --user-agent="Mozilla/5.0" https://dcc.ligo.org/public/0157/P1800370/002/GWTC-1_sample_release.tar.gz
           tar -xf GWTC-1_sample_release.tar.gz
 
-      - name: Run extract script
+      - name: Run extract script for GW170817
         run: python extract_gw170817.py
+
+      - name: Run extract script for GW150914
+        run: python extract_gw150914.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gw170817-lambda-csv
-          path: gw170817_lambda.csv
+          name: gwtc1-csv-output
+          path: |
+            gw170817_lambda.csv
+            gw150914_samples.csv
