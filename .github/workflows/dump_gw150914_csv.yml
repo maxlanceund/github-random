@@ -1,4 +1,4 @@
-name: dump‑gw150914‑csv‑one‑shot
+name: dump-gw150914-csv-one-shot
 on:
   workflow_dispatch:
 
@@ -7,31 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: install deps
-        run: pip install h5py numpy pandas requests
+        run: pip install h5py numpy pandas
 
       - name: download h5
         run: |
           wget --user-agent="Mozilla/5.0" -O GW150914-v3_posterior.h5 "https://zenodo.org/api/files/440a1f04-3c75-4875-bb85-44830842006c/GW150914-v3_posterior.h5"
 
       - name: convert h5 to csv
-        run: |
-python3 <<PYEOF
-import h5py,pandas as pd,numpy as np
-local_h5="GW150914-v3_posterior.h5"
-out_csv="posterior_samples_GW150914.csv"
-with h5py.File(local_h5,"r") as f:
-    m1=f["posterior_samples"]["mass_1"][:]
-    m2=f["posterior_samples"]["mass_2"][:]
-    chi1z=f["posterior_samples"]["spin_1z"][:]
-    chi2z=f["posterior_samples"]["spin_2z"][:]
-df=pd.DataFrame({"m1":m1,"m2":m2,"chi1z":chi1z,"chi2z":chi2z})
-df=df.sample(n=5000,random_state=42,ignore_index=True)
-df.to_csv(out_csv,index=False)
-PYEOF
+        run: python dump_gw150914.py
 
       - name: upload csv as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gw150914‑posterior‑csv
+          name: gw150914-posterior-csv
           path: posterior_samples_GW150914.csv
